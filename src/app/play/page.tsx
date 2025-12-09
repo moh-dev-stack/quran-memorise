@@ -188,10 +188,18 @@ export default function PlayPage() {
               )}
               {selectedMode === "sequential-order" && (
                 <SequentialOrderMode
-                  questions={questions.slice(
-                    currentQuestionIndex,
-                    Math.min(currentQuestionIndex + 4, questions.length)
-                  )}
+                  questions={(() => {
+                    // For sequential order, pick random verses (not sequential)
+                    // Shuffle available questions and pick 4 random ones
+                    const seed = seedFromValues(
+                      "sequential-order",
+                      currentQuestionIndex.toString(),
+                      questions.length.toString()
+                    );
+                    const rng = createSeededRandom(seed);
+                    const shuffled = rng.shuffle([...questions]);
+                    return shuffled.slice(0, Math.min(4, shuffled.length));
+                  })()}
                   onAnswer={handleAnswer}
                 />
               )}
