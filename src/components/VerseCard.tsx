@@ -18,12 +18,12 @@ export default function VerseCard({
           {verse.arabic}
         </div>
         {showTransliteration && (
-          <div className="text-center text-lg text-gray-600 italic mb-2">
+          <div className="text-center text-lg text-gray-600 italic mb-2 english-text">
             {verse.transliteration}
           </div>
         )}
         {showTranslation && (
-          <div className="text-center text-base text-gray-700">
+          <div className="text-center text-base text-gray-700 english-text">
             {verse.translation}
           </div>
         )}

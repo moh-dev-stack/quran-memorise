@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import FontSizeControl from "@/components/FontSizeControl";
 
 export const metadata: Metadata = {
   title: "Quran Memorization",
@@ -30,7 +31,10 @@ export default function RootLayout({
       <head>
         <meta name="theme-color" content="#3b82f6" />
       </head>
-      <body className="min-h-screen bg-gray-50 safe-area-inset">{children}</body>
+      <body className="min-h-screen bg-gray-50 safe-area-inset">
+        <FontSizeControl />
+        <div style={{ paddingTop: 'calc(max(env(safe-area-inset-top), 0.5rem) + 3.5rem)' }}>{children}</div>
+      </body>
     </html>
   );
 }
