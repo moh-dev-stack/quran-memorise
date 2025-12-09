@@ -113,12 +113,39 @@ Then update `src/lib/questions.ts` to load the new surah.
 
 ### Railway
 
-1. Push your code to GitHub
-2. Connect your repository to Railway
-3. Railway will automatically detect the Dockerfile and deploy
-4. Set environment variables if needed (prefixed with `NEXT_PUBLIC_` for client-side)
+The app is fully configured for Railway deployment with Docker.
 
-The app will be available at your Railway-provided URL.
+**Quick Deploy:**
+
+1. **Push to GitHub** (already done):
+   ```bash
+   git push origin main
+   ```
+
+2. **Deploy on Railway**:
+   - Go to [Railway.app](https://railway.app)
+   - Click "New Project"
+   - Select "Deploy from GitHub repo"
+   - Choose `moh-dev-stack/quran-memorise`
+   - Railway will automatically detect the Dockerfile and deploy
+
+3. **Configuration**:
+   - Railway will automatically:
+     - Build the Docker image
+     - Set PORT environment variable
+     - Deploy the app
+   - No additional environment variables needed
+
+4. **Access your app**:
+   - Railway provides a URL automatically
+   - You can add a custom domain in Railway settings
+
+**Files for Railway:**
+- `Dockerfile` - Multi-stage build configuration
+- `railway.json` - Railway deployment configuration
+- `.dockerignore` - Optimized build context
+
+The app is production-ready and will automatically build and deploy on Railway!
 
 ## Testing
 
