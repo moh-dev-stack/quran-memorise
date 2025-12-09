@@ -25,7 +25,18 @@ Railway will automatically:
 - ✅ Build the Docker image
 - ✅ Set PORT environment variable (defaults to 3000)
 - ✅ Deploy the application
-- ✅ Provide a public URL
+
+### 2a. Generate Public Domain
+
+**Important:** Railway doesn't automatically generate a public domain. You need to do this manually:
+
+1. Go to your **service** in Railway dashboard
+2. Click on **"Settings"** tab
+3. Scroll to **"Networking"** section
+4. Click **"Generate Domain"** button
+5. Railway will create a public domain like: `your-app-name.up.railway.app`
+
+Your app will then be publicly accessible at this URL!
 
 ### 3. Verify Deployment
 
