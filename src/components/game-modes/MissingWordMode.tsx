@@ -29,7 +29,8 @@ export default function MissingWordMode({
     setIsAnswered(false);
     setRevealed(false);
     // Generate new random seed each time question changes to ensure different blanks
-    setBlankSeed(Math.random());
+    // Use multiple random sources to ensure uniqueness
+    setBlankSeed(Math.random() * Date.now() + Math.random());
   }, [question.verse.number]);
 
   // Memoize blanked result - include blankSeed to ensure randomness each time

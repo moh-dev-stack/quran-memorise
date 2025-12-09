@@ -29,10 +29,14 @@ export default function FirstLastWordMode({
     setIsAnswered(false);
   }, [question.verse.number]);
 
-  // Randomly choose first or last words (stable per question, but varied)
+  // Randomly choose first or last words (different each time)
   const useFirst = useMemo(() => {
-    // Use seeded random for consistent but varied pattern per verse
-    const seed = seedFromValues(question.verse.number);
+    // Use verse number + timestamp + random for varied pattern each time
+    const seed = seedFromValues(
+      question.verse.number,
+      Date.now().toString(),
+      Math.random().toString()
+    );
     const rng = createSeededRandom(seed);
     return rng.next() > 0.5;
   }, [question.verse.number]);

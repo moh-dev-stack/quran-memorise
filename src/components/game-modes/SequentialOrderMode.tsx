@@ -4,100 +4,122 @@ import { useState, useEffect, useMemo, useCallback } from "react";
 import Feedback from "@/components/Feedback";
 import type { Question } from "@/lib/types";
 import { createSeededRandom, seedFromValues } from "@/lib/seededRandom";
-import { numberArraysEqual } from "@/lib/arrayComparator";
 
 interface SequentialOrderModeProps {
-  questions: Question[];
+  question: Question;
+  allQuestions: Question[];
   onAnswer: (isCorrect: boolean) => void;
 }
 
 export default function SequentialOrderMode({
-  questions,
+  question,
+  allQuestions,
   onAnswer,
 }: SequentialOrderModeProps) {
-  const [selectedOrder, setSelectedOrder] = useState<string | null>(null);
+  const [selectedAnswerId, setSelectedAnswerId] = useState<string | null>(null);
   const [isAnswered, setIsAnswered] = useState(false);
 
-  // Reset state when questions change
-  const questionsKey = useMemo(() => {
-    return questions.map((q) => q.verse.number).join(",");
-  }, [questions]);
-  
+  // Reset state when question changes
   useEffect(() => {
-    setSelectedOrder(null);
+    setSelectedAnswerId(null);
     setIsAnswered(false);
-  }, [questionsKey]);
+  }, [question.verse.number]);
 
-  // Memoize verses to show - shuffle them for better challenge
-  const versesToShow = useMemo(() => {
-    if (!questions || questions.length === 0) {
-      return [];
+  // Find the verse that comes before the current verse
+  const previousVerse = useMemo(() => {
+    const currentVerseNumber = question.verse.number;
+    if (currentVerseNumber <= 1) {
+      return null; // No verse before verse 1
     }
-    const verses = questions.slice(0, Math.min(4, questions.length));
-    // Shuffle verses but remember original order for correct answer
-    const seed = seedFromValues(...verses.map(q => q.verse.number));
-    const rng = createSeededRandom(seed);
-    return rng.shuffle([...verses]);
-  }, [questionsKey, questions]);
+    return allQuestions.find((q) => q.verse.number === currentVerseNumber - 1);
+  }, [question.verse.number, allQuestions]);
 
-  const correctOrder = useMemo(() => {
-    return versesToShow.map((q) => q.verse.number);
-  }, [versesToShow]);
-
-  // Memoize options generation with stable shuffle
+  // Generate options - correct answer + distractors
   const options = useMemo(() => {
-    if (versesToShow.length < 2) {
+    if (!previousVerse) {
       return [];
     }
 
+    const correctAnswer = previousVerse.verse.number;
+    const allVerseNumbers = allQuestions.map((q) => q.verse.number);
+    const minNumber = Math.min(...allVerseNumbers);
+    const maxNumber = Math.max(...allVerseNumbers);
+
+    // Generate wrong options - mix nearby numbers and random ones
+    const wrongOptions: number[] = [];
+    const seen = new Set([correctAnswer, question.verse.number]);
+
+    // Add nearby numbers (±1, ±2, ±3)
+    for (let offset of [-3, -2, -1, 1, 2, 3]) {
+      const candidate = correctAnswer + offset;
+      if (
+        candidate >= minNumber &&
+        candidate <= maxNumber &&
+        !seen.has(candidate)
+      ) {
+        wrongOptions.push(candidate);
+        seen.add(candidate);
+      }
+    }
+
+    // Add random numbers if we need more
+    const availableNumbers = allVerseNumbers.filter((n) => !seen.has(n));
+    const seed = seedFromValues(
+      question.verse.number,
+      question.verse.arabic
+    );
+    const rng = createSeededRandom(seed);
+    const shuffled = rng.shuffle([...availableNumbers]);
+
+    for (const num of shuffled) {
+      if (wrongOptions.length >= 3) break;
+      if (!seen.has(num)) {
+        wrongOptions.push(num);
+        seen.add(num);
+      }
+    }
+
+    // Create options array
     const optionsArray = [
       {
-        id: `correct-${correctOrder.join("-")}`,
-        order: [...correctOrder],
-        display: correctOrder.join(" → "),
+        id: `correct-${correctAnswer}`,
+        verseNumber: correctAnswer,
+        isCorrect: true,
       },
+      ...wrongOptions.slice(0, 3).map((num) => ({
+        id: `wrong-${num}`,
+        verseNumber: num,
+        isCorrect: false,
+      })),
     ];
 
-    // Generate wrong orders by swapping adjacent pairs
-    // Generate up to 3 wrong options, but handle cases with fewer verses
-    const maxWrongOptions = Math.min(3, versesToShow.length - 1);
-    for (let i = 0; i < maxWrongOptions; i++) {
-      const wrongOrder = [...correctOrder];
-      const swapIndex = i % (versesToShow.length - 1);
-      [wrongOrder[swapIndex], wrongOrder[swapIndex + 1]] = [
-        wrongOrder[swapIndex + 1],
-        wrongOrder[swapIndex],
-      ];
-      optionsArray.push({
-        id: `wrong-${wrongOrder.join("-")}-${i}`,
-        order: wrongOrder,
-        display: wrongOrder.join(" → "),
-      });
-    }
-
-    // Use seeded random for stable shuffle based on question content
-    const seed = seedFromValues(...correctOrder.map(String));
-    const rng = createSeededRandom(seed);
+    // Shuffle options
     return rng.shuffle(optionsArray);
-  }, [correctOrder, versesToShow.length]);
+  }, [previousVerse, question.verse.number, question.verse.arabic, allQuestions]);
 
   const correctAnswerId = useMemo(() => {
-    return options.find(o => numberArraysEqual(o.order, correctOrder))?.id || null;
-  }, [options, correctOrder]);
+    return options.find((o) => o.isCorrect)?.id || null;
+  }, [options]);
 
-  const handleSelect = useCallback((optionId: string) => {
-    if (isAnswered || !correctAnswerId) return;
-    setSelectedOrder(optionId);
-    setIsAnswered(true);
-    const isCorrect = optionId === correctAnswerId;
-    onAnswer(isCorrect);
-  }, [isAnswered, correctAnswerId, onAnswer]);
+  const handleSelect = useCallback(
+    (optionId: string) => {
+      if (isAnswered || !correctAnswerId) return;
+      setSelectedAnswerId(optionId);
+      setIsAnswered(true);
+      const isCorrect = optionId === correctAnswerId;
+      onAnswer(isCorrect);
+    },
+    [isAnswered, correctAnswerId, onAnswer]
+  );
 
-  // Early return after all hooks
-  if (!options || options.length === 0 || versesToShow.length < 2) {
+  if (!previousVerse || !options || options.length === 0) {
     return (
       <div className="w-full max-w-md space-y-4">
-        <p className="text-center text-gray-600">Not enough verses to generate order options.</p>
+        <p className="text-center text-gray-600">
+          {!previousVerse
+            ? "This is the first verse. No verse comes before it."
+            : "Unable to generate options. Please try again."}
+        </p>
       </div>
     );
   }
@@ -106,40 +128,35 @@ export default function SequentialOrderMode({
     <div className="w-full max-w-md space-y-4">
       <div className="w-full max-w-sm md:max-w-md rounded-xl shadow-lg bg-white p-6 mb-4">
         <h3 className="text-lg font-semibold text-gray-800 mb-4 text-center">
-          Arrange these verses in order:
+          Which verse comes before this one?
         </h3>
-        <div className="space-y-3">
-          {versesToShow.map((q, index) => (
-            <div
-              key={`${q.verse.number}-${index}`}
-              className="p-4 bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg border-2 border-gray-200 shadow-sm"
-            >
-              <div className="arabic-text text-xl mb-2 text-center">{q.verse.arabic}</div>
-              <div className="text-sm italic text-gray-600 text-center mb-2">
-                {q.verse.transliteration}
-              </div>
-              <div className="text-xs text-gray-500 text-center">
-                {q.verse.translation}
-              </div>
-            </div>
-          ))}
+        <div className="p-4 bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg border-2 border-blue-200 mb-4">
+          <div className="arabic-text text-2xl md:text-3xl mb-3 text-center text-gray-900">
+            {question.verse.arabic}
+          </div>
+          <div className="text-base italic text-gray-700 text-center mb-2">
+            {question.verse.transliteration}
+          </div>
+          <div className="text-sm text-gray-600 text-center mb-2">
+            {question.verse.translation}
+          </div>
+          <div className="text-center text-gray-500 font-semibold mt-2">
+            Verse {question.verse.number}
+          </div>
         </div>
-        <p className="text-sm text-gray-500 mt-4 text-center">
-          Select the correct sequence of verse numbers
-        </p>
       </div>
 
       <div className="space-y-2">
-        <h3 className="text-lg font-semibold text-gray-800 mb-3">
-          Choose the correct order:
+        <h3 className="text-lg font-semibold text-gray-800 mb-3 text-center">
+          Choose the verse that comes before:
         </h3>
         {options.map((option) => {
-          const isSelected = selectedOrder === option.id;
+          const isSelected = selectedAnswerId === option.id;
           const showFeedback = isAnswered;
-          const isCorrect = option.id === correctAnswerId;
+          const isCorrect = option.isCorrect;
 
           let buttonClass =
-            "w-full py-4 px-4 rounded-lg text-base transition-colors touch-target ";
+            "w-full py-4 px-4 rounded-lg text-base transition-colors touch-target font-semibold ";
           if (showFeedback) {
             if (isCorrect) {
               buttonClass += "bg-green-500 text-white";
@@ -161,7 +178,7 @@ export default function SequentialOrderMode({
               disabled={isAnswered}
               className={buttonClass}
             >
-              {option.display}
+              Verse {option.verseNumber}
             </button>
           );
         })}
@@ -169,11 +186,11 @@ export default function SequentialOrderMode({
 
       {isAnswered && (
         <Feedback
-          isCorrect={selectedOrder === correctAnswerId}
-          correctAnswer={correctOrder.join(" → ")}
+          isCorrect={selectedAnswerId === correctAnswerId}
+          correctAnswer={`Verse ${previousVerse.verse.number}`}
           userAnswer={
-            selectedOrder
-              ? options.find((o) => o.id === selectedOrder)?.display
+            selectedAnswerId
+              ? `Verse ${options.find((o) => o.id === selectedAnswerId)?.verseNumber}`
               : undefined
           }
         />
@@ -181,4 +198,3 @@ export default function SequentialOrderMode({
     </div>
   );
 }
-

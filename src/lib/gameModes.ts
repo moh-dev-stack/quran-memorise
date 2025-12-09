@@ -19,7 +19,7 @@ export const GAME_MODES: GameModeOption[] = [
   {
     id: "sequential-order",
     name: "Sequential Order",
-    description: "Choose the correct order of verses",
+    description: "See a verse, identify which verse comes before it",
   },
   {
     id: "first-last-word",

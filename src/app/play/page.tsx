@@ -53,8 +53,14 @@ export default function PlayPage() {
     setUsedReveal(false);
     
     // Shuffle questions randomly for this mode
-    // Use mode + timestamp for seed to ensure different order each time
-    const seed = seedFromValues(mode, Date.now().toString());
+    // Use mode + timestamp + random number for seed to ensure different order each time
+    const randomComponent = Math.random().toString(36).substring(2, 15);
+    const seed = seedFromValues(
+      mode,
+      Date.now().toString(),
+      randomComponent,
+      Math.random().toString()
+    );
     const rng = createSeededRandom(seed);
     const shuffled = rng.shuffle([...allQuestions]);
     setQuestions(shuffled);
@@ -91,6 +97,8 @@ export default function PlayPage() {
     setScores([]);
     setIsAnswered(false);
     setUsedReveal(false);
+    // Reset questions to original order (will be shuffled again when mode is selected)
+    setQuestions([...allQuestions]);
   };
 
   const currentQuestion = questions[currentQuestionIndex];
@@ -188,18 +196,8 @@ export default function PlayPage() {
               )}
               {selectedMode === "sequential-order" && (
                 <SequentialOrderMode
-                  questions={(() => {
-                    // For sequential order, pick random verses (not sequential)
-                    // Shuffle available questions and pick 4 random ones
-                    const seed = seedFromValues(
-                      "sequential-order",
-                      currentQuestionIndex.toString(),
-                      questions.length.toString()
-                    );
-                    const rng = createSeededRandom(seed);
-                    const shuffled = rng.shuffle([...questions]);
-                    return shuffled.slice(0, Math.min(4, shuffled.length));
-                  })()}
+                  question={currentQuestion}
+                  allQuestions={allQuestions}
                   onAnswer={handleAnswer}
                 />
               )}
