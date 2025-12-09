@@ -15,6 +15,7 @@ import { calculateScore } from "@/lib/scoreCalculator";
 import type { Question, GameMode } from "@/lib/types";
 import { isValidGameMode } from "@/lib/gameModes";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
+import { createSeededRandom, seedFromValues } from "@/lib/seededRandom";
 
 const SURAH_NUMBER = 93; // Ad-Duha
 
@@ -25,6 +26,7 @@ interface ScoreEntry {
 
 export default function PlayPage() {
   const router = useRouter();
+  const [allQuestions, setAllQuestions] = useState<Question[]>([]);
   const [questions, setQuestions] = useState<Question[]>([]);
   const [selectedMode, setSelectedMode] = useState<GameMode | null>(null);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -38,6 +40,8 @@ export default function PlayPage() {
       router.push("/");
       return;
     }
+    setAllQuestions(loadedQuestions);
+    // Initially set questions in order (will be shuffled when mode is selected)
     setQuestions(loadedQuestions);
   }, [router]);
 
@@ -47,6 +51,13 @@ export default function PlayPage() {
     setScores([]);
     setIsAnswered(false);
     setUsedReveal(false);
+    
+    // Shuffle questions randomly for this mode
+    // Use mode + timestamp for seed to ensure different order each time
+    const seed = seedFromValues(mode, Date.now().toString());
+    const rng = createSeededRandom(seed);
+    const shuffled = rng.shuffle([...allQuestions]);
+    setQuestions(shuffled);
   };
 
   const handleAnswer = useCallback((isCorrect: boolean, revealUsed: boolean = false) => {
