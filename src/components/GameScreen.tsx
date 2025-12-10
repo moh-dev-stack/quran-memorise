@@ -7,6 +7,7 @@ import MissingWordMode from "@/components/game-modes/MissingWordMode";
 import SequentialOrderMode from "@/components/game-modes/SequentialOrderMode";
 import FirstLastWordMode from "@/components/game-modes/FirstLastWordMode";
 import VerseNumberMode from "@/components/game-modes/VerseNumberMode";
+import WordOrderMode from "@/components/game-modes/WordOrderMode";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import type { Question, GameMode } from "@/lib/types";
 
@@ -110,6 +111,13 @@ export default function GameScreen({
             )}
             {selectedMode === "verse-number" && (
               <VerseNumberMode
+                question={currentQuestion}
+                allQuestions={questions}
+                onAnswer={onAnswer}
+              />
+            )}
+            {selectedMode === "word-order" && (
+              <WordOrderMode
                 question={currentQuestion}
                 allQuestions={questions}
                 onAnswer={onAnswer}

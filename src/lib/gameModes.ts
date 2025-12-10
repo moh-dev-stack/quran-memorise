@@ -31,6 +31,11 @@ export const GAME_MODES: GameModeOption[] = [
     name: "Verse Number",
     description: "See a verse, identify its verse number",
   },
+  {
+    id: "word-order",
+    name: "Word Order",
+    description: "Arrange Arabic words in the correct order to form the verse",
+  },
 ];
 
 export function getGameModeById(id: GameMode): GameModeOption | undefined {

@@ -43,7 +43,8 @@ export type GameMode =
   | "missing-word"
   | "sequential-order"
   | "first-last-word"
-  | "verse-number";
+  | "verse-number"
+  | "word-order";
 
 export interface GameModeOption {
   id: GameMode;
