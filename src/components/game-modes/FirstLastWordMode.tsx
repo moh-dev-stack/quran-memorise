@@ -67,12 +67,55 @@ export default function FirstLastWordMode({
 
   // Memoize options using question hash for stable dependencies
   const questionHash = useMemo(() => getQuestionHash(allQuestions), [allQuestions]);
-  const options = useMemo(() => {
+  const rawOptions = useMemo(() => {
     if (!question?.verse || !allQuestions || allQuestions.length === 0) {
       return [];
     }
     return generateArabicTransOptions(question.verse, allQuestions);
   }, [questionHash, question.verse, allQuestions]);
+
+  // Process options to remove shown words
+  const options = useMemo(() => {
+    if (!rawOptions || rawOptions.length === 0) {
+      return [];
+    }
+
+    // Number of words shown (same logic as shownArabic/shownTransliteration)
+    const numWordsShown = Math.min(2, arabicWords.length);
+
+    return rawOptions.map((option) => {
+      // Extract words from option verses
+      const optionArabicWords = extractArabicWords(option.arabic);
+      const optionTransWords = extractTransliterationWords(option.transliteration);
+
+      let remainingArabicWords: string[];
+      let remainingTransWords: string[];
+
+      if (useFirst) {
+        // Remove first words (same number as shown)
+        remainingArabicWords = optionArabicWords.slice(numWordsShown);
+        remainingTransWords = optionTransWords.slice(numWordsShown);
+      } else {
+        // Remove last words (same number as shown)
+        remainingArabicWords = optionArabicWords.slice(0, -numWordsShown);
+        remainingTransWords = optionTransWords.slice(0, -numWordsShown);
+      }
+
+      // Handle edge case: if all words removed, show placeholder
+      const displayArabic = remainingArabicWords.length > 0 
+        ? remainingArabicWords.join(" ") 
+        : "...";
+      const displayTrans = remainingTransWords.length > 0 
+        ? remainingTransWords.join(" ") 
+        : "...";
+
+      return {
+        ...option,
+        arabic: displayArabic,
+        transliteration: displayTrans,
+      };
+    });
+  }, [rawOptions, useFirst, arabicWords.length]);
 
   const correctAnswerId = useMemo(() => {
     return options.find(o => o.isCorrect)?.id || null;
