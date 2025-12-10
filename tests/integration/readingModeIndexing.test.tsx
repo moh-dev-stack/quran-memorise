@@ -1,9 +1,10 @@
 import { describe, it, expect, beforeEach, vi } from "vitest";
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import ReadingMode from "@/components/game-modes/ReadingMode";
 import { getQuestionsForSurah } from "@/lib/questions";
 import type { Question } from "@/lib/types";
+import { fastWaitFor, fastGetByText } from "../testUtils";
 
 describe("Reading Mode Verse Number Indexing", () => {
   let questions: Question[];
@@ -103,10 +104,10 @@ describe("Reading Mode Verse Number Indexing", () => {
     expect(verse5Button).toBeDefined();
     await user.click(verse5Button!);
 
-    await waitFor(() => {
+    await fastWaitFor(() => {
       const verse5Question = questions.find(q => q.verse.number === 5);
-      expect(screen.getByText(verse5Question!.verse.arabic)).toBeInTheDocument();
-      expect(screen.getByText(/Verse 5 of 11/i)).toBeInTheDocument();
+      expect(fastGetByText(verse5Question!.verse.arabic)).toBeInTheDocument();
+      expect(fastGetByText(/Verse 5 of 11/i)).toBeInTheDocument();
     });
   });
 
@@ -128,10 +129,10 @@ describe("Reading Mode Verse Number Indexing", () => {
       await user.click(nextButton);
     }
 
-    await waitFor(() => {
+    await fastWaitFor(() => {
       const verse5Question = questions.find(q => q.verse.number === 5);
-      expect(screen.getByText(verse5Question!.verse.arabic)).toBeInTheDocument();
-      expect(screen.getByText(/Verse 5 of 11/i)).toBeInTheDocument();
+      expect(fastGetByText(verse5Question!.verse.arabic)).toBeInTheDocument();
+      expect(fastGetByText(/Verse 5 of 11/i)).toBeInTheDocument();
     });
   });
 
