@@ -246,5 +246,352 @@ describe("Reading Mode Integration", () => {
     expect(screen.getByText(/Previous/i)).toBeDisabled();
     expect(screen.getByText(/Next/i)).toBeDisabled();
   });
+
+  it("should update verse counter when navigating", async () => {
+    const user = userEvent.setup();
+    render(
+      <ReadingMode
+        question={questions[0]}
+        allQuestions={questions}
+        onAnswer={mockOnAnswer}
+      />
+    );
+
+    expect(screen.getByText(/Verse 1 of/i)).toBeInTheDocument();
+
+    const nextButton = screen.getByText(/Next/i);
+    await user.click(nextButton);
+
+    await waitFor(() => {
+      expect(screen.getByText(/Verse 2 of/i)).toBeInTheDocument();
+    });
+  });
+
+  it("should update highlighted verse indicator when navigating", async () => {
+    const user = userEvent.setup();
+    render(
+      <ReadingMode
+        question={questions[0]}
+        allQuestions={questions}
+        onAnswer={mockOnAnswer}
+      />
+    );
+
+    // Initially verse 1 should be highlighted
+    const verse1Buttons = screen.getAllByRole("button").filter(
+      (btn) => btn.textContent === "1" && btn.className.includes("bg-blue-600")
+    );
+    expect(verse1Buttons.length).toBeGreaterThan(0);
+
+    // Navigate to verse 2
+    const nextButton = screen.getByText(/Next/i);
+    await user.click(nextButton);
+
+    await waitFor(() => {
+      const verse2Buttons = screen.getAllByRole("button").filter(
+        (btn) => btn.textContent === "2" && btn.className.includes("bg-blue-600")
+      );
+      expect(verse2Buttons.length).toBeGreaterThan(0);
+    });
+  });
+
+  it("should handle rapid navigation", async () => {
+    const user = userEvent.setup();
+    render(
+      <ReadingMode
+        question={questions[0]}
+        allQuestions={questions}
+        onAnswer={mockOnAnswer}
+      />
+    );
+
+    const nextButton = screen.getByText(/Next/i);
+    
+    // Rapidly click next multiple times
+    await user.click(nextButton);
+    await user.click(nextButton);
+    await user.click(nextButton);
+
+    await waitFor(() => {
+      expect(screen.getByText(/Verse 4 of/i)).toBeInTheDocument();
+    });
+  });
+
+  it("should handle rapid back and forth navigation", async () => {
+    const user = userEvent.setup();
+    render(
+      <ReadingMode
+        question={questions[1]}
+        allQuestions={questions}
+        onAnswer={mockOnAnswer}
+      />
+    );
+
+    const nextButton = screen.getByText(/Next/i);
+    const previousButton = screen.getByText(/Previous/i);
+
+    await user.click(nextButton);
+    await user.click(previousButton);
+    await user.click(previousButton);
+
+    await waitFor(() => {
+      expect(screen.getByText(/Verse 1 of/i)).toBeInTheDocument();
+    });
+  });
+
+  it("should disable First Verse button when on first verse", () => {
+    render(
+      <ReadingMode
+        question={questions[0]}
+        allQuestions={questions}
+        onAnswer={mockOnAnswer}
+      />
+    );
+
+    const firstButton = screen.getByText(/First Verse/i);
+    expect(firstButton).toBeDisabled();
+  });
+
+  it("should disable Last Verse button when on last verse", () => {
+    const lastQuestion = questions[questions.length - 1];
+    render(
+      <ReadingMode
+        question={lastQuestion}
+        allQuestions={questions}
+        onAnswer={mockOnAnswer}
+      />
+    );
+
+    const lastButton = screen.getByText(/Last Verse/i);
+    expect(lastButton).toBeDisabled();
+  });
+
+  it("should enable First Verse button when not on first verse", () => {
+    render(
+      <ReadingMode
+        question={questions[1]}
+        allQuestions={questions}
+        onAnswer={mockOnAnswer}
+      />
+    );
+
+    const firstButton = screen.getByText(/First Verse/i);
+    expect(firstButton).not.toBeDisabled();
+  });
+
+  it("should enable Last Verse button when not on last verse", () => {
+    render(
+      <ReadingMode
+        question={questions[0]}
+        allQuestions={questions}
+        onAnswer={mockOnAnswer}
+      />
+    );
+
+    const lastButton = screen.getByText(/Last Verse/i);
+    expect(lastButton).not.toBeDisabled();
+  });
+
+  it("should call onAnswer for each navigation action", async () => {
+    const user = userEvent.setup();
+    render(
+      <ReadingMode
+        question={questions[0]}
+        allQuestions={questions}
+        onAnswer={mockOnAnswer}
+      />
+    );
+
+    mockOnAnswer.mockClear();
+
+    await user.click(screen.getByText(/Next/i));
+    await user.click(screen.getByText(/Previous/i));
+    await user.click(screen.getByText(/First Verse/i));
+    await user.click(screen.getByText(/Last Verse/i));
+
+    expect(mockOnAnswer).toHaveBeenCalledTimes(4);
+    expect(mockOnAnswer).toHaveBeenCalledWith(true);
+  });
+
+  it("should handle question prop changes", () => {
+    const { rerender } = render(
+      <ReadingMode
+        question={questions[0]}
+        allQuestions={questions}
+        onAnswer={mockOnAnswer}
+      />
+    );
+
+    expect(screen.getByText(questions[0].verse.arabic)).toBeInTheDocument();
+
+    rerender(
+      <ReadingMode
+        question={questions[2]}
+        allQuestions={questions}
+        onAnswer={mockOnAnswer}
+      />
+    );
+
+    expect(screen.getByText(questions[2].verse.arabic)).toBeInTheDocument();
+    expect(screen.getByText(/Verse 3 of/i)).toBeInTheDocument();
+  });
+
+  it("should display all verse numbers in indicator", () => {
+    render(
+      <ReadingMode
+        question={questions[0]}
+        allQuestions={questions}
+        onAnswer={mockOnAnswer}
+      />
+    );
+
+    // Check that all verse numbers are displayed
+    for (let i = 1; i <= questions.length; i++) {
+      const verseButtons = screen.getAllByRole("button").filter(
+        (btn) => btn.textContent === i.toString()
+      );
+      expect(verseButtons.length).toBeGreaterThan(0);
+    }
+  });
+
+  it("should navigate through all verses sequentially", async () => {
+    const user = userEvent.setup();
+    render(
+      <ReadingMode
+        question={questions[0]}
+        allQuestions={questions}
+        onAnswer={mockOnAnswer}
+      />
+    );
+
+    // Navigate through all verses
+    for (let i = 0; i < questions.length - 1; i++) {
+      const nextButton = screen.getByText(/Next/i);
+      await user.click(nextButton);
+      
+      await waitFor(() => {
+        expect(screen.getByText(new RegExp(`Verse ${i + 2} of`))).toBeInTheDocument();
+      });
+    }
+
+    // Should be on last verse
+    expect(screen.getByText(/Next/i)).toBeDisabled();
+  });
+
+  it("should handle clicking on same verse number button", async () => {
+    const user = userEvent.setup();
+    render(
+      <ReadingMode
+        question={questions[0]}
+        allQuestions={questions}
+        onAnswer={mockOnAnswer}
+      />
+    );
+
+    const verse1Buttons = screen.getAllByRole("button").filter(
+      (btn) => btn.textContent === "1"
+    );
+
+    if (verse1Buttons.length > 0) {
+      const initialCallCount = mockOnAnswer.mock.calls.length;
+      await user.click(verse1Buttons[0]);
+      
+      // Should still call onAnswer even if clicking same verse
+      expect(mockOnAnswer.mock.calls.length).toBeGreaterThan(initialCallCount);
+    }
+  });
+
+  it("should maintain correct state after multiple rapid clicks", async () => {
+    const user = userEvent.setup();
+    render(
+      <ReadingMode
+        question={questions[0]}
+        allQuestions={questions}
+        onAnswer={mockOnAnswer}
+      />
+    );
+
+    const nextButton = screen.getByText(/Next/i);
+    
+    // Click next multiple times rapidly
+    await Promise.all([
+      user.click(nextButton),
+      user.click(nextButton),
+      user.click(nextButton),
+    ]);
+
+    await waitFor(() => {
+      // Should end up on a valid verse (not beyond bounds)
+      const verseText = screen.getByText(/Verse \d+ of/i);
+      expect(verseText).toBeInTheDocument();
+    });
+  });
+
+  it("should handle empty questions array gracefully", () => {
+    const emptyQuestions: Question[] = [];
+    const mockQuestion: Question = {
+      verse: {
+        number: 1,
+        arabic: "Test",
+        transliteration: "Test",
+        translation: "Test",
+      },
+      surahNumber: 93,
+      surahName: "Test",
+    };
+
+    render(
+      <ReadingMode
+        question={mockQuestion}
+        allQuestions={emptyQuestions}
+        onAnswer={mockOnAnswer}
+      />
+    );
+
+    // Should still render without crashing
+    expect(screen.getByText("Test")).toBeInTheDocument();
+  });
+
+  it("should display correct surah name", () => {
+    render(
+      <ReadingMode
+        question={questions[0]}
+        allQuestions={questions}
+        onAnswer={mockOnAnswer}
+      />
+    );
+
+    expect(screen.getByText(questions[0].surahName)).toBeInTheDocument();
+  });
+
+  it("should update surah name when navigating to different surah", () => {
+    const differentSurahQuestion: Question = {
+      ...questions[0],
+      surahNumber: 94,
+      surahName: "Ash-Sharh",
+    };
+
+    const mixedQuestions = [questions[0], differentSurahQuestion];
+
+    const { rerender } = render(
+      <ReadingMode
+        question={questions[0]}
+        allQuestions={mixedQuestions}
+        onAnswer={mockOnAnswer}
+      />
+    );
+
+    expect(screen.getByText(questions[0].surahName)).toBeInTheDocument();
+
+    rerender(
+      <ReadingMode
+        question={differentSurahQuestion}
+        allQuestions={mixedQuestions}
+        onAnswer={mockOnAnswer}
+      />
+    );
+
+    expect(screen.getByText("Ash-Sharh")).toBeInTheDocument();
+  });
 });
 

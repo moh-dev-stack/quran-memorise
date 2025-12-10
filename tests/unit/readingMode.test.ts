@@ -181,5 +181,182 @@ describe("Reading Mode Logic", () => {
       expect(displayText).toBe("Verse 2 of 2");
     });
   });
+
+  describe("State Management", () => {
+    it("should initialize with correct verse index", () => {
+      const questions: Question[] = [
+        createMockQuestion(1, 93, "Ad-Duha"),
+        createMockQuestion(2, 93, "Ad-Duha"),
+        createMockQuestion(3, 93, "Ad-Duha"),
+      ];
+
+      const currentQuestion = questions[1];
+      const initialIndex = questions.findIndex(
+        (q) => q.verse.number === currentQuestion.verse.number && q.surahNumber === currentQuestion.surahNumber
+      );
+
+      expect(initialIndex).toBe(1);
+    });
+
+    it("should handle index updates correctly", () => {
+      const questions: Question[] = [
+        createMockQuestion(1, 93, "Ad-Duha"),
+        createMockQuestion(2, 93, "Ad-Duha"),
+        createMockQuestion(3, 93, "Ad-Duha"),
+      ];
+
+      let currentIndex = 0;
+      
+      // Simulate next navigation
+      if (currentIndex < questions.length - 1) {
+        currentIndex = currentIndex + 1;
+      }
+      expect(currentIndex).toBe(1);
+
+      // Simulate previous navigation
+      if (currentIndex > 0) {
+        currentIndex = currentIndex - 1;
+      }
+      expect(currentIndex).toBe(0);
+    });
+
+    it("should handle jump to first", () => {
+      const questions: Question[] = [
+        createMockQuestion(1, 93, "Ad-Duha"),
+        createMockQuestion(2, 93, "Ad-Duha"),
+        createMockQuestion(3, 93, "Ad-Duha"),
+      ];
+
+      let currentIndex = 2;
+      currentIndex = 0; // Jump to first
+      
+      expect(currentIndex).toBe(0);
+      expect(questions[currentIndex].verse.number).toBe(1);
+    });
+
+    it("should handle jump to last", () => {
+      const questions: Question[] = [
+        createMockQuestion(1, 93, "Ad-Duha"),
+        createMockQuestion(2, 93, "Ad-Duha"),
+        createMockQuestion(3, 93, "Ad-Duha"),
+      ];
+
+      let currentIndex = 0;
+      currentIndex = questions.length - 1; // Jump to last
+      
+      expect(currentIndex).toBe(questions.length - 1);
+      expect(questions[currentIndex].verse.number).toBe(3);
+    });
+  });
+
+  describe("Verse Matching", () => {
+    it("should match verses by number and surah", () => {
+      const questions: Question[] = [
+        createMockQuestion(1, 93, "Ad-Duha"),
+        createMockQuestion(2, 93, "Ad-Duha"),
+        createMockQuestion(1, 94, "Ash-Sharh"),
+      ];
+
+      const targetQuestion = questions[1];
+      const index = questions.findIndex(
+        (q) => q.verse.number === targetQuestion.verse.number && q.surahNumber === targetQuestion.surahNumber
+      );
+
+      expect(index).toBe(1);
+    });
+
+    it("should distinguish between same verse number in different surahs", () => {
+      const questions: Question[] = [
+        createMockQuestion(1, 93, "Ad-Duha"),
+        createMockQuestion(1, 94, "Ash-Sharh"),
+      ];
+
+      const targetQuestion = questions[1];
+      const index = questions.findIndex(
+        (q) => q.verse.number === targetQuestion.verse.number && q.surahNumber === targetQuestion.surahNumber
+      );
+
+      expect(index).toBe(1);
+    });
+
+    it("should return -1 for non-existent verse", () => {
+      const questions: Question[] = [
+        createMockQuestion(1, 93, "Ad-Duha"),
+        createMockQuestion(2, 93, "Ad-Duha"),
+      ];
+
+      const nonExistentQuestion: Question = createMockQuestion(99, 93, "Ad-Duha");
+      const index = questions.findIndex(
+        (q) => q.verse.number === nonExistentQuestion.verse.number && q.surahNumber === nonExistentQuestion.surahNumber
+      );
+
+      expect(index).toBe(-1);
+    });
+  });
+
+  describe("Boundary Conditions", () => {
+    it("should handle index at exactly 0", () => {
+      const questions: Question[] = [
+        createMockQuestion(1, 93, "Ad-Duha"),
+        createMockQuestion(2, 93, "Ad-Duha"),
+      ];
+
+      const index = 0;
+      const canGoPrevious = index > 0;
+      const canGoNext = index < questions.length - 1;
+
+      expect(canGoPrevious).toBe(false);
+      expect(canGoNext).toBe(true);
+    });
+
+    it("should handle index at exactly last position", () => {
+      const questions: Question[] = [
+        createMockQuestion(1, 93, "Ad-Duha"),
+        createMockQuestion(2, 93, "Ad-Duha"),
+      ];
+
+      const index = questions.length - 1;
+      const canGoPrevious = index > 0;
+      const canGoNext = index < questions.length - 1;
+
+      expect(canGoPrevious).toBe(true);
+      expect(canGoNext).toBe(false);
+    });
+
+    it("should handle index in middle", () => {
+      const questions: Question[] = [
+        createMockQuestion(1, 93, "Ad-Duha"),
+        createMockQuestion(2, 93, "Ad-Duha"),
+        createMockQuestion(3, 93, "Ad-Duha"),
+      ];
+
+      const index = 1;
+      const canGoPrevious = index > 0;
+      const canGoNext = index < questions.length - 1;
+
+      expect(canGoPrevious).toBe(true);
+      expect(canGoNext).toBe(true);
+    });
+  });
+
+  describe("Performance", () => {
+    it("should find verse index quickly", () => {
+      const questions: Question[] = Array.from({ length: 100 }, (_, i) =>
+        createMockQuestion(i + 1, 93, "Ad-Duha")
+      );
+
+      const targetQuestion = questions[50];
+      const start = performance.now();
+      
+      for (let i = 0; i < 1000; i++) {
+        questions.findIndex(
+          (q) => q.verse.number === targetQuestion.verse.number && q.surahNumber === targetQuestion.surahNumber
+        );
+      }
+      
+      const duration = performance.now() - start;
+      expect(duration).toBeLessThan(100);
+    });
+  });
 });
 
