@@ -15,24 +15,35 @@ export default function ReadingMode({
   allQuestions,
   onAnswer,
 }: ReadingModeProps) {
-  // Find current verse index
+  // Sort questions by verse number to ensure correct order
+  const sortedQuestions = useMemo(() => {
+    return [...allQuestions].sort((a, b) => {
+      // First sort by surah number, then by verse number
+      if (a.surahNumber !== b.surahNumber) {
+        return a.surahNumber - b.surahNumber;
+      }
+      return a.verse.number - b.verse.number;
+    });
+  }, [allQuestions]);
+
+  // Find current verse index in sorted array
   const currentIndex = useMemo(() => {
-    return allQuestions.findIndex(
+    return sortedQuestions.findIndex(
       (q) => q.verse.number === question.verse.number && q.surahNumber === question.surahNumber
     );
-  }, [question, allQuestions]);
+  }, [question, sortedQuestions]);
 
-  const [currentVerseIndex, setCurrentVerseIndex] = useState(currentIndex);
+  const [currentVerseIndex, setCurrentVerseIndex] = useState(currentIndex >= 0 ? currentIndex : 0);
 
   const currentVerse = useMemo(() => {
-    if (currentVerseIndex >= 0 && currentVerseIndex < allQuestions.length) {
-      return allQuestions[currentVerseIndex];
+    if (currentVerseIndex >= 0 && currentVerseIndex < sortedQuestions.length) {
+      return sortedQuestions[currentVerseIndex];
     }
     return question;
-  }, [currentVerseIndex, allQuestions, question]);
+  }, [currentVerseIndex, sortedQuestions, question]);
 
   const canGoPrevious = currentVerseIndex > 0;
-  const canGoNext = currentVerseIndex < allQuestions.length - 1;
+  const canGoNext = currentVerseIndex < sortedQuestions.length - 1;
 
   const handlePrevious = useCallback(() => {
     if (canGoPrevious) {
@@ -56,9 +67,9 @@ export default function ReadingMode({
   }, [onAnswer]);
 
   const handleLast = useCallback(() => {
-    setCurrentVerseIndex(allQuestions.length - 1);
+    setCurrentVerseIndex(sortedQuestions.length - 1);
     onAnswer(true);
-  }, [allQuestions.length, onAnswer]);
+  }, [sortedQuestions.length, onAnswer]);
 
   return (
     <div className="w-full max-w-md space-y-4">
@@ -69,7 +80,7 @@ export default function ReadingMode({
             {currentVerse.surahName}
           </h3>
           <p className="text-sm text-gray-600 english-text">
-            Verse {currentVerseIndex + 1} of {allQuestions.length}
+            Verse {currentVerse.verse.number} of {sortedQuestions.length}
           </p>
         </div>
       </div>
@@ -127,7 +138,7 @@ export default function ReadingMode({
           </button>
           <button
             onClick={handleLast}
-            disabled={currentVerseIndex === allQuestions.length - 1}
+            disabled={currentVerseIndex === sortedQuestions.length - 1}
             className={`flex-1 py-2 rounded-lg text-sm transition-colors touch-target english-text ${
               currentVerseIndex === allQuestions.length - 1
                 ? "bg-gray-200 text-gray-400 cursor-not-allowed"
@@ -142,7 +153,7 @@ export default function ReadingMode({
 
       {/* Verse list indicator */}
       <div className="flex flex-wrap gap-1 justify-center">
-        {allQuestions.map((q, index) => (
+        {sortedQuestions.map((q, index) => (
           <button
             key={`${q.surahNumber}-${q.verse.number}`}
             onClick={() => {
@@ -154,9 +165,9 @@ export default function ReadingMode({
                 ? "bg-blue-600 text-white"
                 : "bg-gray-200 text-gray-700 hover:bg-gray-300"
             }`}
-            aria-label={`Go to verse ${index + 1}`}
+            aria-label={`Go to verse ${q.verse.number}`}
           >
-            {index + 1}
+            {q.verse.number}
           </button>
         ))}
       </div>
