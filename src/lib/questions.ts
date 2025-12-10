@@ -41,6 +41,7 @@ import alAla from "@/data/surahs/al-ala.json";
 import alBalad from "@/data/surahs/al-balad.json";
 import alLayl from "@/data/surahs/al-layl.json";
 import alAlaq from "@/data/surahs/al-alaq.json";
+import alWaqiah from "@/data/surahs/al-waqiah.json";
 
 /**
  * Loads a surah by its number
@@ -82,6 +83,8 @@ export function loadSurah(surahNumber: number): Surah | null {
       return atTariq as Surah;
     case 87:
       return alAla as Surah;
+    case 56:
+      return alWaqiah as Surah;
     case 90:
       return alBalad as Surah;
     case 91:
@@ -177,7 +180,7 @@ export function getRandomQuestion(surahNumber: number): Question | null {
  */
 export function getAvailableSurahs(): Surah[] {
   const surahNumbers = [
-    1, 49, 58, 59, 60, 61, 62, 63, 64, 65, 66, 73, 82, 84, 85, 86, 87, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114,
+    1, 49, 56, 58, 59, 60, 61, 62, 63, 64, 65, 66, 73, 82, 84, 85, 86, 87, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114,
   ];
   
   const surahs: Surah[] = [];

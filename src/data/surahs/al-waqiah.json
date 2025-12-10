@@ -1,0 +1,583 @@
+{
+  "number": 56,
+  "name": "Al-Waqi'ah",
+  "nameArabic": "الواقعة",
+  "verses": [
+    {
+      "number": 1,
+      "arabic": "إِذَا وَقَعَتِ الْوَاقِعَةُ",
+      "transliteration": "Idha waqa'ati al-waqi'ah",
+      "translation": "When the Occurrence occurs"
+    },
+    {
+      "number": 2,
+      "arabic": "لَيْسَ لِوَقْعَتِهَا كَاذِبَةٌ",
+      "transliteration": "Laysa li-waq'atiha kathibah",
+      "translation": "There is, at its occurrence"
+    },
+    {
+      "number": 3,
+      "arabic": "خَافِضَةٌ رَّافِعَةٌ",
+      "transliteration": "Khafidatun rafi'ah",
+      "translation": "It will bring down [some] and raise up [others]"
+    },
+    {
+      "number": 4,
+      "arabic": "إِذَا رُجَّتِ الْأَرْضُ رَجًّا",
+      "transliteration": "Idha rujjati al-ardu rajja",
+      "translation": "When the earth is shaken with convulsion"
+    },
+    {
+      "number": 5,
+      "arabic": "وَبُسَّتِ الْجِبَالُ بَسًّا",
+      "transliteration": "Wa bussati al-jibalu bassa",
+      "translation": "And the mountains are broken down, crumbling"
+    },
+    {
+      "number": 6,
+      "arabic": "فَكَانَتْ هَبَاءً مُّنبَثًّا",
+      "transliteration": "Fa-kanat haba'an munbaththa",
+      "translation": "And become dust dispersing"
+    },
+    {
+      "number": 7,
+      "arabic": "وَكُنتُمْ أَزْوَاجًا ثَلَاثَةً",
+      "transliteration": "Wa kuntum azwajan thalathah",
+      "translation": "And you become [of] three kinds"
+    },
+    {
+      "number": 8,
+      "arabic": "فَأَصْحَابُ الْمَيْمَنَةِ مَا أَصْحَابُ الْمَيْمَنَةِ",
+      "transliteration": "Fa-as-habu al-maymanati ma as-habu al-maymanah",
+      "translation": "Then the companions of the right - what are the companions of the right?"
+    },
+    {
+      "number": 9,
+      "arabic": "وَأَصْحَابُ الْمَشْأَمَةِ مَا أَصْحَابُ الْمَشْأَمَةِ",
+      "transliteration": "Wa as-habu al-mash'amati ma as-habu al-mash'amah",
+      "translation": "And the companions of the left - what are the companions of the left?"
+    },
+    {
+      "number": 10,
+      "arabic": "وَالسَّابِقُونَ السَّابِقُونَ",
+      "transliteration": "Wa as-sabiquna as-sabiqun",
+      "translation": "And the forerunners, the forerunners"
+    },
+    {
+      "number": 11,
+      "arabic": "أُولَٰئِكَ الْمُقَرَّبُونَ",
+      "transliteration": "Ula'ika al-muqarrabun",
+      "translation": "Those are the ones brought near [to Allah]"
+    },
+    {
+      "number": 12,
+      "arabic": "فِي جَنَّاتِ النَّعِيمِ",
+      "transliteration": "Fi jannati an-na'im",
+      "translation": "In the Gardens of Pleasure"
+    },
+    {
+      "number": 13,
+      "arabic": "ثُلَّةٌ مِّنَ الْأَوَّلِينَ",
+      "transliteration": "Thullatun mina al-awwalin",
+      "translation": "A [large] company of the former peoples"
+    },
+    {
+      "number": 14,
+      "arabic": "وَقَلِيلٌ مِّنَ الْآخِرِينَ",
+      "transliteration": "Wa qalilun mina al-akhirin",
+      "translation": "And a few of the later peoples"
+    },
+    {
+      "number": 15,
+      "arabic": "عَلَىٰ سُرُرٍ مَّوْضُونَةٍ",
+      "transliteration": "'Ala sururin mawdunah",
+      "translation": "On thrones woven [with ornament]"
+    },
+    {
+      "number": 16,
+      "arabic": "مُتَّكِئِينَ عَلَيْهَا مُتَقَابِلِينَ",
+      "transliteration": "Muttaki'ina 'alayha mutaqabilin",
+      "translation": "Reclining on them, facing each other"
+    },
+    {
+      "number": 17,
+      "arabic": "يَطُوفُ عَلَيْهِمْ وِلْدَانٌ مُّخَلَّدُونَ",
+      "transliteration": "Yatufu 'alayhim wildanun mukhalladun",
+      "translation": "There will circulate among them young boys made eternal"
+    },
+    {
+      "number": 18,
+      "arabic": "بِأَكْوَابٍ وَأَبَارِيقَ وَكَأْسٍ مِّن مَّعِينٍ",
+      "transliteration": "Bi-akwabin wa abariqa wa ka'sin min ma'in",
+      "translation": "With vessels, pitchers and a cup [of wine] from a flowing spring"
+    },
+    {
+      "number": 19,
+      "arabic": "لَّا يُصَدَّعُونَ عَنْهَا وَلَا يُنزِفُونَ",
+      "transliteration": "La yusadda'una 'anha wa la yunzifun",
+      "translation": "No headache will they have therefrom, nor will they be intoxicated"
+    },
+    {
+      "number": 20,
+      "arabic": "وَفَاكِهَةٍ مِّمَّا يَتَخَيَّرُونَ",
+      "transliteration": "Wa fakihatin mimma yatakhayyarun",
+      "translation": "And fruit of what they select"
+    },
+    {
+      "number": 21,
+      "arabic": "وَلَحْمِ طَيْرٍ مِّمَّا يَشْتَهُونَ",
+      "transliteration": "Wa lahm tayrin mimma yashtahun",
+      "translation": "And the meat of fowl, from whatever they desire"
+    },
+    {
+      "number": 22,
+      "arabic": "وَحُورٌ عِينٌ",
+      "transliteration": "Wa hurun 'in",
+      "translation": "And fair women with large, [beautiful] eyes"
+    },
+    {
+      "number": 23,
+      "arabic": "كَأَمْثَالِ اللُّؤْلُؤِ الْمَكْنُونِ",
+      "transliteration": "Ka-amthali al-lu'lu'i al-maknun",
+      "translation": "The likenesses of pearls well-protected"
+    },
+    {
+      "number": 24,
+      "arabic": "جَزَاءً بِمَا كَانُوا يَعْمَلُونَ",
+      "transliteration": "Jaza'an bima kanu ya'malun",
+      "translation": "As reward for what they used to do"
+    },
+    {
+      "number": 25,
+      "arabic": "لَا يَسْمَعُونَ فِيهَا لَغْوًا وَلَا تَأْثِيمًا",
+      "transliteration": "La yasma'una fiha laghwan wa la ta'thima",
+      "translation": "They will not hear therein ill speech or commission of sin"
+    },
+    {
+      "number": 26,
+      "arabic": "إِلَّا قِيلًا سَلَامًا سَلَامًا",
+      "transliteration": "Illa qilan salaman salama",
+      "translation": "Only a saying: \"Peace, peace.\""
+    },
+    {
+      "number": 27,
+      "arabic": "وَأَصْحَابُ الْيَمِينِ مَا أَصْحَابُ الْيَمِينِ",
+      "transliteration": "Wa as-habu al-yamin ma as-habu al-yamin",
+      "translation": "And the companions of the right - what are the companions of the right?"
+    },
+    {
+      "number": 28,
+      "arabic": "فِي سِدْرٍ مَّخْضُودٍ",
+      "transliteration": "Fi sidrin makhdud",
+      "translation": "[They will be] among lote trees with thorns removed"
+    },
+    {
+      "number": 29,
+      "arabic": "وَطَلْحٍ مَّنضُودٍ",
+      "transliteration": "Wa talhin mandud",
+      "translation": "And [banana] trees layered [with fruit]"
+    },
+    {
+      "number": 30,
+      "arabic": "وَظِلٍّ مَّمْدُودٍ",
+      "transliteration": "Wa zillin mamdud",
+      "translation": "And shade extended"
+    },
+    {
+      "number": 31,
+      "arabic": "وَمَاءٍ مَّسْكُوبٍ",
+      "transliteration": "Wa ma'in maskub",
+      "translation": "And water poured out"
+    },
+    {
+      "number": 32,
+      "arabic": "وَفَاكِهَةٍ كَثِيرَةٍ",
+      "transliteration": "Wa fakihatin kathirah",
+      "translation": "And fruit, abundant [and varied],"
+    },
+    {
+      "number": 33,
+      "arabic": "لَّا مَقْطُوعَةٍ وَلَا مَمْنُوعَةٍ",
+      "transliteration": "La maqtu'ah wa la mamnu'ah",
+      "translation": "Neither limited [to season] nor forbidden"
+    },
+    {
+      "number": 34,
+      "arabic": "وَفُرُشٍ مَّرْفُوعَةٍ",
+      "transliteration": "Wa furushin marfu'ah",
+      "translation": "And beds [of Paradise] raised high"
+    },
+    {
+      "number": 35,
+      "arabic": "إِنَّا أَنشَأْنَاهُنَّ إِنشَاءً",
+      "transliteration": "Inna ansha'nahunna insha'an",
+      "translation": "Indeed, We have produced the women of Paradise in a [new] creation"
+    },
+    {
+      "number": 36,
+      "arabic": "فَجَعَلْنَاهُنَّ أَبْكَارًا",
+      "transliteration": "Faja'alnahunna abkara",
+      "translation": "And made them virgins"
+    },
+    {
+      "number": 37,
+      "arabic": "عُرُبًا أَتْرَابًا",
+      "transliteration": "'Uruban atraba",
+      "translation": "Devoted [to their husbands] and of equal age"
+    },
+    {
+      "number": 38,
+      "arabic": "لِّأَصْحَابِ الْيَمِينِ",
+      "transliteration": "Li-as-habi al-yamin",
+      "translation": "For the companions of the right [hand]"
+    },
+    {
+      "number": 39,
+      "arabic": "ثُلَّةٌ مِّنَ الْأَوَّلِينَ",
+      "transliteration": "Thullatun mina al-awwalin",
+      "translation": "A company of the former peoples"
+    },
+    {
+      "number": 40,
+      "arabic": "وَثُلَّةٌ مِّنَ الْآخِرِينَ",
+      "transliteration": "Wa thullatun mina al-akhirin",
+      "translation": "And a company of the later peoples"
+    },
+    {
+      "number": 41,
+      "arabic": "وَأَصْحَابُ الشِّمَالِ مَا أَصْحَابُ الشِّمَالِ",
+      "transliteration": "Wa as-habu ash-shimali ma as-habu ash-shimal",
+      "translation": "And the companions of the left - what are the companions of the left?"
+    },
+    {
+      "number": 42,
+      "arabic": "فِي سَمُومٍ وَحَمِيمٍ",
+      "transliteration": "Fi samumin wa hamim",
+      "translation": "[They will be] in scorching fire and scalding water"
+    },
+    {
+      "number": 43,
+      "arabic": "وَظِلٍّ مِّن يَحْمُومٍ",
+      "transliteration": "Wa zillin min yahmum",
+      "translation": "And a shade of black smoke"
+    },
+    {
+      "number": 44,
+      "arabic": "لَّا بَارِدٍ وَلَا كَرِيمٍ",
+      "transliteration": "La baridin wa la karim",
+      "translation": "Neither cool nor beneficial"
+    },
+    {
+      "number": 45,
+      "arabic": "إِنَّهُمْ كَانُوا قَبْلَ ذَٰلِكَ مُتْرَفِينَ",
+      "transliteration": "Innahum kanu qabla dhalika mutrafin",
+      "translation": "Indeed, they were, before that, indulging in affluence"
+    },
+    {
+      "number": 46,
+      "arabic": "وَكَانُوا يُصِرُّونَ عَلَى الْحِنثِ الْعَظِيمِ",
+      "transliteration": "Wa kanu yusirruna 'ala al-hinthi al-'azim",
+      "translation": "And they used to persist in the great violation"
+    },
+    {
+      "number": 47,
+      "arabic": "وَكَانُوا يَقُولُونَ أَئِذَا مِتْنَا وَكُنَّا تُرَابًا وَعِظَامًا أَئِنَّا لَمَبْعُوثُونَ",
+      "transliteration": "Wa kanu yaquluna a-idha mitna wa kunna turaban wa 'izaman a-inna la-mab'uthun",
+      "translation": "And they used to say, \"When we die and become dust and bones, are we indeed to be resurrected?"
+    },
+    {
+      "number": 48,
+      "arabic": "أَوَ آبَاؤُنَا الْأَوَّلُونَ",
+      "transliteration": "Awa aba'una al-awwalun",
+      "translation": "\"Even our forefathers [as well]?\""
+    },
+    {
+      "number": 49,
+      "arabic": "قُلْ إِنَّ الْأَوَّلِينَ وَالْآخِرِينَ",
+      "transliteration": "Qul inna al-awwalina wa al-akhirin",
+      "translation": "Say, \"Indeed, the former and the latter peoples"
+    },
+    {
+      "number": 50,
+      "arabic": "لَمَجْمُوعُونَ إِلَىٰ مِيقَاتِ يَوْمٍ مَّعْلُومٍ",
+      "transliteration": "La-majmu'una ila miqati yawmin ma'lum",
+      "translation": "Will all be gathered together for the appointment of a known Day.\""
+    },
+    {
+      "number": 51,
+      "arabic": "ثُمَّ إِنَّكُمْ أَيُّهَا الضَّالُّونَ الْمُكَذِّبُونَ",
+      "transliteration": "Thumma innakum ayyuha ad-dalluna al-mukaththibun",
+      "translation": "Then indeed you, O those astray [who are] deniers"
+    },
+    {
+      "number": 52,
+      "arabic": "لَآكِلُونَ مِن شَجَرٍ مِّن زَقُّومٍ",
+      "transliteration": "La-akiluna min shajarin min zaqqum",
+      "translation": "Will be eating from trees of zaqqum"
+    },
+    {
+      "number": 53,
+      "arabic": "فَمَالِئُونَ مِنْهَا الْبُطُونَ",
+      "transliteration": "Fa-mali'una minha al-butun",
+      "translation": "And filling with it your bellies"
+    },
+    {
+      "number": 54,
+      "arabic": "فَشَارِبُونَ عَلَيْهِ مِنَ الْحَمِيمِ",
+      "transliteration": "Fa-sharibuna 'alayhi mina al-hamim",
+      "translation": "And drinking on top of it from scalding water"
+    },
+    {
+      "number": 55,
+      "arabic": "فَشَارِبُونَ شُرْبَ الْهِيمِ",
+      "transliteration": "Fa-sharibuna shurba al-him",
+      "translation": "And will drink as the drinking of thirsty camels."
+    },
+    {
+      "number": 56,
+      "arabic": "هَٰذَا نُزُلُهُمْ يَوْمَ الدِّينِ",
+      "transliteration": "Hatha nuzuluhum yawma ad-din",
+      "translation": "This is their accommodation on the Day of Recompense."
+    },
+    {
+      "number": 57,
+      "arabic": "نَحْنُ خَلَقْنَاكُمْ فَلَوْلَا تُصَدِّقُونَ",
+      "transliteration": "Nahnu khalaqnakum fa-lawla tusaddiqun",
+      "translation": "We have created you, so why do you not believe?"
+    },
+    {
+      "number": 58,
+      "arabic": "أَفَرَأَيْتُم مَّا تُمْنُونَ",
+      "transliteration": "A-fa-ra'aytum ma tumnun",
+      "translation": "Have you seen that which you emit?"
+    },
+    {
+      "number": 59,
+      "arabic": "أَأَنتُمْ تَخْلُقُونَهُ أَمْ نَحْنُ الْخَالِقُونَ",
+      "transliteration": "A-antum takhluqunahu am nahnu al-khaliqun",
+      "translation": "Is it you who creates it, or are We the Creator?"
+    },
+    {
+      "number": 60,
+      "arabic": "نَحْنُ قَدَّرْنَا بَيْنَكُمُ الْمَوْتَ وَمَا نَحْنُ بِمَسْبُوقِينَ",
+      "transliteration": "Nahnu qaddarna baynakumu al-mawta wa ma nahnu bi-masbuqin",
+      "translation": "We have decreed death among you, and We are not to be outdone"
+    },
+    {
+      "number": 61,
+      "arabic": "عَلَىٰ أَن نُّبَدِّلَ أَمْثَالَكُمْ وَنُنشِئَكُمْ فِي مَا لَا تَعْلَمُونَ",
+      "transliteration": "'Ala an nubaddila amthalakum wa nunshi'akum fi ma la ta'lamun",
+      "translation": "In that We will change [similar] people and produce you therein [in a form] that you do not know"
+    },
+    {
+      "number": 62,
+      "arabic": "وَلَقَدْ عَلِمْتُمُ النَّشْأَةَ الْأُولَىٰ فَلَوْلَا تَذَكَّرُونَ",
+      "transliteration": "Wa laqad 'alimtumu an-nash'ata al-ula fa-lawla tadhakkarun",
+      "translation": "And you have already known the first creation, so will you not remember?"
+    },
+    {
+      "number": 63,
+      "arabic": "أَفَرَأَيْتُم مَّا تَحْرُثُونَ",
+      "transliteration": "A-fa-ra'aytum ma taharthun",
+      "translation": "And have you seen that [seed] which you sow?"
+    },
+    {
+      "number": 64,
+      "arabic": "أَأَنتُمْ تَزْرَعُونَهُ أَمْ نَحْنُ الزَّارِعُونَ",
+      "transliteration": "A-antum tazra'unahu am nahnu az-zari'un",
+      "translation": "Is it you who makes it grow, or are We the one who grows?"
+    },
+    {
+      "number": 65,
+      "arabic": "لَوْ نَشَاءُ لَجَعَلْنَاهُ حُطَامًا فَظَلْتُمْ تَفَكَّهُونَ",
+      "transliteration": "Law nasha'u laja'alnahu hutaman fa-zaltum tafakkahun",
+      "translation": "If We willed, We could make it [dry] debris, and you would remain in wonder"
+    },
+    {
+      "number": 66,
+      "arabic": "إِنَّا لَمُغْرَمُونَ",
+      "transliteration": "Inna la-mughramun",
+      "translation": "[Saying], \"Indeed, we are [now] in debt"
+    },
+    {
+      "number": 67,
+      "arabic": "بَلْ نَحْنُ مَحْرُومُونَ",
+      "transliteration": "Bal nahnu mahrumun",
+      "translation": "Rather, we have been deprived.\""
+    },
+    {
+      "number": 68,
+      "arabic": "أَفَرَأَيْتُمُ الْمَاءَ الَّذِي تَشْرَبُونَ",
+      "transliteration": "A-fa-ra'aytumu al-ma'a alladhi tashrabun",
+      "translation": "And have you seen the water that you drink?"
+    },
+    {
+      "number": 69,
+      "arabic": "أَأَنتُمْ أَنزَلْتُمُوهُ مِنَ الْمُزْنِ أَمْ نَحْنُ الْمُنزِلُونَ",
+      "transliteration": "A-antum anzaltumuhu mina al-muzni am nahnu al-munzilun",
+      "translation": "Is it you who brought it down from the clouds, or is it We who bring it down?"
+    },
+    {
+      "number": 70,
+      "arabic": "لَوْ نَشَاءُ جَعَلْنَاهُ أَجَاجًا فَلَوْلَا تَشْكُرُونَ",
+      "transliteration": "Law nasha'u ja'alnahu ajajan fa-lawla tashkurun",
+      "translation": "If We willed, We could make it bitter, so why are you not grateful?"
+    },
+    {
+      "number": 71,
+      "arabic": "أَفَرَأَيْتُمُ النَّارَ الَّتِي تُورُونَ",
+      "transliteration": "A-fa-ra'aytumu an-nara allati turun",
+      "translation": "And have you seen the fire that you ignite?"
+    },
+    {
+      "number": 72,
+      "arabic": "أَأَنتُمْ أَنشَأْتُمْ شَجَرَتَهَا أَمْ نَحْنُ الْمُنشِئُونَ",
+      "transliteration": "A-antum ansha'tum shajarataha am nahnu al-munshi'un",
+      "translation": "Is it you who produced its tree, or are We the producer?"
+    },
+    {
+      "number": 73,
+      "arabic": "نَحْنُ جَعَلْنَاهَا تَذْكِرَةً وَمَتَاعًا لِّلْمُقْوِينَ",
+      "transliteration": "Nahnu ja'alnaha tadhkiratan wa mata'an li-al-muqwin",
+      "translation": "We have made it a reminder and provision for the travelers"
+    },
+    {
+      "number": 74,
+      "arabic": "فَسَبِّحْ بِاسْمِ رَبِّكَ الْعَظِيمِ",
+      "transliteration": "Fasabbih bi-ismi rabbika al-'azim",
+      "translation": "So exalt the name of your Lord, the Most Great"
+    },
+    {
+      "number": 75,
+      "arabic": "فَلَا أُقْسِمُ بِمَوَاقِعِ النُّجُومِ",
+      "transliteration": "Fala uqsimu bi-mawaqi'i an-nujum",
+      "translation": "Then I swear by the setting of the stars"
+    },
+    {
+      "number": 76,
+      "arabic": "وَإِنَّهُ لَقَسَمٌ لَّوْ تَعْلَمُونَ عَظِيمٌ",
+      "transliteration": "Wa innahu laqasamun law ta'lamuna 'azim",
+      "translation": "And indeed, it is an oath - if you could know - [most] great"
+    },
+    {
+      "number": 77,
+      "arabic": "إِنَّهُ لَقُرْآنٌ كَرِيمٌ",
+      "transliteration": "Innahu laqur'anun karim",
+      "translation": "Indeed, it is a noble Qur'an"
+    },
+    {
+      "number": 78,
+      "arabic": "فِي كِتَابٍ مَّكْنُونٍ",
+      "transliteration": "Fi kitabin maknun",
+      "translation": "In a Register well-protected"
+    },
+    {
+      "number": 79,
+      "arabic": "لَّا يَمَسُّهُ إِلَّا الْمُطَهَّرُونَ",
+      "transliteration": "La yamassuhu illa al-mutahharun",
+      "translation": "None touch it except the purified"
+    },
+    {
+      "number": 80,
+      "arabic": "تَنزِيلٌ مِّن رَّبِّ الْعَالَمِينَ",
+      "transliteration": "Tanzilun min rabbi al-'alamin",
+      "translation": "[It is] a revelation from the Lord of the worlds"
+    },
+    {
+      "number": 81,
+      "arabic": "أَفَبِهَٰذَا الْحَدِيثِ أَنتُم مُّدْهِنُونَ",
+      "transliteration": "A-fa-bi-hadha al-hadithi antum mudhinun",
+      "translation": "Then is it to this statement that you are indifferent"
+    },
+    {
+      "number": 82,
+      "arabic": "وَتَجْعَلُونَ رِزْقَكُمْ أَنَّكُمْ تُكَذِّبُونَ",
+      "transliteration": "Wa taj'aluna rizqakum annakum tukaththibun",
+      "translation": "And make [the thanks for] your provision that you deny [the Prophet]?"
+    },
+    {
+      "number": 83,
+      "arabic": "فَلَوْلَا إِذَا بَلَغَتِ الْحُلْقُومَ",
+      "transliteration": "Falawla idha balaghati al-hulqum",
+      "translation": "Then why, when the soul at death reaches the throat"
+    },
+    {
+      "number": 84,
+      "arabic": "وَأَنتُمْ حِينَئِذٍ تَنظُرُونَ",
+      "transliteration": "Wa antum hin'idhin tanzurun",
+      "translation": "And you are at that time looking on"
+    },
+    {
+      "number": 85,
+      "arabic": "وَنَحْنُ أَقْرَبُ إِلَيْهِ مِنكُمْ وَلَٰكِن لَّا تُبْصِرُونَ",
+      "transliteration": "Wa nahnu aqrabu ilayhi minkum wa lakin la tubsirun",
+      "translation": "And We are nearer to him than you, but you do not see"
+    },
+    {
+      "number": 86,
+      "arabic": "فَلَوْلَا إِن كُنتُمْ غَيْرَ مَدِينِينَ",
+      "transliteration": "Falawla in kuntum ghayra madinin",
+      "translation": "Then why do you not, if you are not to be recompensed"
+    },
+    {
+      "number": 87,
+      "arabic": "تَرْجِعُونَهَا إِن كُنتُمْ صَادِقِينَ",
+      "transliteration": "Tarji'unaha in kuntum sadiqin",
+      "translation": "Restore it, if you should be truthful?"
+    },
+    {
+      "number": 88,
+      "arabic": "فَأَمَّا إِن كَانَ مِنَ الْمُقَرَّبِينَ",
+      "transliteration": "Fa-amma in kana mina al-muqarrabin",
+      "translation": "And if [the deceased] was of those brought near [to Allah]"
+    },
+    {
+      "number": 89,
+      "arabic": "فَرَوْحٌ وَرَيْحَانٌ وَجَنَّتُ نَعِيمٍ",
+      "transliteration": "Fa-rawhun wa rayhanun wa jannatu na'im",
+      "translation": "Then [for him is] rest and bounty and a garden of pleasure"
+    },
+    {
+      "number": 90,
+      "arabic": "وَأَمَّا إِن كَانَ مِنْ أَصْحَابِ الْيَمِينِ",
+      "transliteration": "Wa amma in kana min as-habi al-yamin",
+      "translation": "And if he was of the companions of the right"
+    },
+    {
+      "number": 91,
+      "arabic": "فَسَلَامٌ لَّكَ مِنْ أَصْحَابِ الْيَمِينِ",
+      "transliteration": "Fa-salamun laka min as-habi al-yamin",
+      "translation": "Then [the angels will say], \"Peace for you; [you are] from the companions of the right.\""
+    },
+    {
+      "number": 92,
+      "arabic": "وَأَمَّا إِن كَانَ مِنَ الْمُكَذِّبِينَ الضَّالِّينَ",
+      "transliteration": "Wa amma in kana mina al-mukaththibina ad-dallin",
+      "translation": "But if he was of the deniers [who were] astray"
+    },
+    {
+      "number": 93,
+      "arabic": "فَنُزُلٌ مِّنْ حَمِيمٍ",
+      "transliteration": "Fa-nuzulun min hamim",
+      "translation": "Then [for him is] accommodation of scalding water"
+    },
+    {
+      "number": 94,
+      "arabic": "وَتَصْلِيَةُ جَحِيمٍ",
+      "transliteration": "Wa tasliyatu jahim",
+      "translation": "And burning in Hellfire"
+    },
+    {
+      "number": 95,
+      "arabic": "إِنَّ هَٰذَا لَهُوَ حَقُّ الْيَقِينِ",
+      "transliteration": "Inna hadha lahuwa haqqu al-yaqin",
+      "translation": "Indeed, this is the true certainty"
+    },
+    {
+      "number": 96,
+      "arabic": "فَسَبِّحْ بِاسْمِ رَبِّكَ الْعَظِيمِ",
+      "transliteration": "Fasabbih bi-ismi rabbika al-'azim",
+      "translation": "So exalt the name of your Lord, the Most Great"
+    }
+  ]
+}

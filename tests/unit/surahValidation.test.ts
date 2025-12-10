@@ -6,6 +6,7 @@ describe("Surah Validation", () => {
   const expectedSurahs = [
     { number: 1, name: "Al-Fatihah", verses: 7 },
     { number: 49, name: "Al-Hujurat", verses: 18 },
+    { number: 56, name: "Al-Waqi'ah", verses: 96 },
     { number: 58, name: "Al-Mujadila", verses: 22 },
     { number: 59, name: "Al-Hashr", verses: 24 },
     { number: 60, name: "Al-Mumtahanah", verses: 13 },
