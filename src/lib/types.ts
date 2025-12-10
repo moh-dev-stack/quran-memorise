@@ -44,7 +44,8 @@ export type GameMode =
   | "sequential-order"
   | "first-last-word"
   | "verse-number"
-  | "word-order";
+  | "word-order"
+  | "reading-mode";
 
 export interface GameModeOption {
   id: GameMode;

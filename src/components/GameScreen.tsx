@@ -8,6 +8,7 @@ import SequentialOrderMode from "@/components/game-modes/SequentialOrderMode";
 import FirstLastWordMode from "@/components/game-modes/FirstLastWordMode";
 import VerseNumberMode from "@/components/game-modes/VerseNumberMode";
 import WordOrderMode from "@/components/game-modes/WordOrderMode";
+import ReadingMode from "@/components/game-modes/ReadingMode";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import type { Question, GameMode } from "@/lib/types";
 
@@ -123,14 +124,21 @@ export default function GameScreen({
                 onAnswer={onAnswer}
               />
             )}
+            {selectedMode === "reading-mode" && (
+              <ReadingMode
+                question={currentQuestion}
+                allQuestions={questions}
+                onAnswer={onAnswer}
+              />
+            )}
           </div>
         </ErrorBoundary>
 
-        {/* Next Button */}
-        {isAnswered && (
+        {/* Next Button - Hide for reading mode */}
+        {isAnswered && selectedMode !== "reading-mode" && (
           <button
             onClick={onNextQuestion}
-            className="w-full py-4 rounded-lg text-lg bg-green-600 text-white hover:bg-green-700 transition-colors touch-target mb-2"
+            className="w-full py-4 rounded-lg text-lg bg-green-600 text-white hover:bg-green-700 transition-colors touch-target mb-2 english-text"
             aria-label={
               currentQuestionIndex < questions.length - 1
                 ? "Go to next question"
@@ -143,11 +151,11 @@ export default function GameScreen({
           </button>
         )}
 
-        {/* Restart Button */}
-        {isAnswered && (
+        {/* Restart Button - Hide for reading mode */}
+        {isAnswered && selectedMode !== "reading-mode" && (
           <button
             onClick={onRestart}
-            className="w-full py-3 rounded-lg text-base bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors touch-target"
+            className="w-full py-3 rounded-lg text-base bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors touch-target english-text"
             aria-label="Change game mode"
           >
             Change Mode
