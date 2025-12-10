@@ -2,7 +2,6 @@ import { describe, it, expect, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import SurahSelector from "@/components/SurahSelector";
 import { getAvailableSurahs } from "@/lib/questions";
-import type { Surah } from "@/lib/types";
 
 // Mock the onSelectSurah and onBack functions
 const mockOnSelectSurah = vi.fn();
