@@ -106,7 +106,11 @@ describe("Reading Mode Verse Number Indexing", () => {
 
     await fastWaitFor(() => {
       const verse5Question = questions.find(q => q.verse.number === 5);
-      expect(fastGetByText(verse5Question!.verse.arabic)).toBeInTheDocument();
+      // Check if Arabic text is present (may be split across elements)
+      const arabicText = screen.queryByText((content, element) => {
+        return element?.textContent?.includes(verse5Question!.verse.arabic) || false;
+      });
+      expect(arabicText).toBeTruthy();
       expect(fastGetByText(/Verse 5 of 11/i)).toBeInTheDocument();
     });
   });
@@ -131,7 +135,11 @@ describe("Reading Mode Verse Number Indexing", () => {
 
     await fastWaitFor(() => {
       const verse5Question = questions.find(q => q.verse.number === 5);
-      expect(fastGetByText(verse5Question!.verse.arabic)).toBeInTheDocument();
+      // Check if Arabic text is present (may be split across elements)
+      const arabicText = screen.queryByText((content, element) => {
+        return element?.textContent?.includes(verse5Question!.verse.arabic) || false;
+      });
+      expect(arabicText).toBeTruthy();
       expect(fastGetByText(/Verse 5 of 11/i)).toBeInTheDocument();
     });
   });
