@@ -66,21 +66,34 @@ export function selectMode(
     return state;
   }
 
-  // Shuffle questions randomly for this mode
-  const randomComponent = Math.random().toString(36).substring(2, 15);
-  const seed = seedFromValues(
-    mode,
-    Date.now().toString(),
-    randomComponent,
-    Math.random().toString()
-  );
-  const rng = createSeededRandom(seed);
-  const shuffled = rng.shuffle([...state.allQuestions]);
+  // For reading mode, keep questions sorted by verse number (no shuffling)
+  // For other modes, shuffle questions randomly
+  let questionsToUse: Question[];
+  if (mode === "reading-mode") {
+    questionsToUse = [...state.allQuestions].sort((a, b) => {
+      // First sort by surah number, then by verse number
+      if (a.surahNumber !== b.surahNumber) {
+        return a.surahNumber - b.surahNumber;
+      }
+      return a.verse.number - b.verse.number;
+    });
+  } else {
+    // Shuffle questions randomly for other modes
+    const randomComponent = Math.random().toString(36).substring(2, 15);
+    const seed = seedFromValues(
+      mode,
+      Date.now().toString(),
+      randomComponent,
+      Math.random().toString()
+    );
+    const rng = createSeededRandom(seed);
+    questionsToUse = rng.shuffle([...state.allQuestions]);
+  }
 
   return {
     ...state,
     selectedMode: mode,
-    questions: shuffled,
+    questions: questionsToUse,
     currentQuestionIndex: 0,
     scores: [],
     isAnswered: false,

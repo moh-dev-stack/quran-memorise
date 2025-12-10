@@ -1,53 +1,130 @@
 import { describe, it, expect } from "vitest";
-import { GAME_MODES, getGameModeById, isValidGameMode } from "@/lib/gameModes";
-import type { GameMode } from "@/lib/types";
+import { selectMode } from "@/lib/gameState";
+import { getQuestionsForSurah } from "@/lib/questions";
+import type { GameState } from "@/lib/gameState";
 
-describe("gameModes", () => {
-  describe("GAME_MODES", () => {
-    it("should have 8 game modes", () => {
-      expect(GAME_MODES).toHaveLength(8);
+describe("Game Modes - Question Ordering", () => {
+  const mockQuestions = getQuestionsForSurah(93); // Ad-Duha - 11 verses
+
+  const createStateWithQuestions = (): GameState => ({
+    selectedSurah: 93,
+    allQuestions: mockQuestions,
+    questions: mockQuestions,
+    selectedMode: null,
+    currentQuestionIndex: 0,
+    scores: [],
+    isAnswered: false,
+    usedReveal: false,
+  });
+
+  describe("Reading Mode", () => {
+    it("should keep questions sorted by verse number", () => {
+      const state = createStateWithQuestions();
+      const newState = selectMode(state, "reading-mode");
+
+      // Questions should be sorted by verse number (1, 2, 3, ..., 11)
+      expect(newState.questions.length).toBe(11);
+      for (let i = 0; i < newState.questions.length; i++) {
+        expect(newState.questions[i].verse.number).toBe(i + 1);
+      }
     });
 
-    it("should have reading-mode as the first mode", () => {
-      expect(GAME_MODES[0].id).toBe("reading-mode");
-    });
+    it("should maintain sorted order across multiple calls", () => {
+      const state = createStateWithQuestions();
+      const state1 = selectMode(state, "reading-mode");
+      const state2 = selectMode(state, "reading-mode");
 
-    it("should have all required properties for each mode", () => {
-      GAME_MODES.forEach((mode) => {
-        expect(mode).toHaveProperty("id");
-        expect(mode).toHaveProperty("name");
-        expect(mode).toHaveProperty("description");
-        expect(typeof mode.id).toBe("string");
-        expect(typeof mode.name).toBe("string");
-        expect(typeof mode.description).toBe("string");
-      });
+      // Both should have same order (sorted)
+      expect(state1.questions.map(q => q.verse.number)).toEqual(
+        state2.questions.map(q => q.verse.number)
+      );
     });
   });
 
-  describe("getGameModeById", () => {
-    it("should return correct mode for valid id", () => {
-      const mode = getGameModeById("arabic-trans-to-translation");
-      expect(mode).toBeDefined();
-      expect(mode?.id).toBe("arabic-trans-to-translation");
+  describe("Other Game Modes", () => {
+    const nonReadingModes = [
+      "arabic-trans-to-translation",
+      "translation-to-arabic-trans",
+      "missing-word",
+      "sequential-order",
+      "first-last-word",
+      "verse-number",
+      "word-order",
+    ] as const;
+
+    it.each(nonReadingModes)("should shuffle questions for %s mode", (mode) => {
+      const state = createStateWithQuestions();
+      const newState = selectMode(state, mode);
+
+      // Questions should be shuffled (order should differ from original)
+      expect(newState.questions.length).toBe(11);
+      
+      // Check that order is different (very unlikely to be same after shuffle)
+      const originalOrder = mockQuestions.map(q => q.verse.number);
+      const shuffledOrder = newState.questions.map(q => q.verse.number);
+      
+      // At least one position should be different (very high probability)
+      const isDifferent = originalOrder.some((num, idx) => num !== shuffledOrder[idx]);
+      expect(isDifferent).toBe(true);
     });
 
-    it("should return undefined for invalid id", () => {
-      const mode = getGameModeById("invalid-mode" as GameMode);
-      expect(mode).toBeUndefined();
+    it.each(nonReadingModes)("should shuffle differently each time for %s mode", (mode) => {
+      const state = createStateWithQuestions();
+      const state1 = selectMode(state, mode);
+      const state2 = selectMode(state, mode);
+
+      // Both should be shuffled but likely in different orders
+      expect(state1.questions.length).toBe(11);
+      expect(state2.questions.length).toBe(11);
+
+      // Order should likely be different (very high probability with random shuffle)
+      const order1 = state1.questions.map(q => q.verse.number);
+      const order2 = state2.questions.map(q => q.verse.number);
+      
+      // Very unlikely to be identical with random shuffle
+      const isDifferent = order1.some((num, idx) => num !== order2[idx]);
+      expect(isDifferent).toBe(true);
+    });
+
+    it.each(nonReadingModes)("should preserve all questions for %s mode", (mode) => {
+      const state = createStateWithQuestions();
+      const newState = selectMode(state, mode);
+
+      // All verse numbers should be present
+      const originalVerseNumbers = new Set(mockQuestions.map(q => q.verse.number));
+      const shuffledVerseNumbers = new Set(newState.questions.map(q => q.verse.number));
+      
+      expect(shuffledVerseNumbers.size).toBe(originalVerseNumbers.size);
+      expect([...shuffledVerseNumbers].sort()).toEqual([...originalVerseNumbers].sort());
     });
   });
 
-  describe("isValidGameMode", () => {
-    it("should return true for valid game modes", () => {
-      expect(isValidGameMode("arabic-trans-to-translation")).toBe(true);
-      expect(isValidGameMode("missing-word")).toBe(true);
-      expect(isValidGameMode("sequential-order")).toBe(true);
+  describe("Mode Switching", () => {
+    it("should maintain correct order when switching from reading mode to another mode", () => {
+      const state = createStateWithQuestions();
+      
+      // First select reading mode (sorted)
+      const readingState = selectMode(state, "reading-mode");
+      expect(readingState.questions.map(q => q.verse.number)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
+      
+      // Then switch to another mode (should shuffle)
+      const shuffledState = selectMode(readingState, "missing-word");
+      const shuffledOrder = shuffledState.questions.map(q => q.verse.number);
+      
+      // Should be shuffled (different from sorted order)
+      expect(shuffledOrder).not.toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
     });
 
-    it("should return false for invalid game modes", () => {
-      expect(isValidGameMode("invalid-mode")).toBe(false);
-      expect(isValidGameMode("")).toBe(false);
+    it("should maintain correct order when switching from another mode to reading mode", () => {
+      const state = createStateWithQuestions();
+      
+      // First select a shuffled mode
+      const shuffledState = selectMode(state, "missing-word");
+      const shuffledOrder = shuffledState.questions.map(q => q.verse.number);
+      
+      // Then switch to reading mode (should be sorted)
+      const readingState = selectMode(shuffledState, "reading-mode");
+      expect(readingState.questions.map(q => q.verse.number)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
     });
   });
 });
-

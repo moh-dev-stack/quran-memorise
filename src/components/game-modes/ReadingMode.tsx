@@ -33,17 +33,17 @@ export default function ReadingMode({
     );
   }, [question, sortedQuestions]);
 
-  const [currentVerseIndex, setCurrentVerseIndex] = useState(currentIndex >= 0 ? currentIndex : 0);
+  // Initialize state with the correct index based on question prop
+  const [currentVerseIndex, setCurrentVerseIndex] = useState(() => {
+    return currentIndex >= 0 ? currentIndex : 0;
+  });
 
-  // Update currentVerseIndex when question changes
+  // Update currentVerseIndex when question prop changes (but not when user navigates)
   useEffect(() => {
-    const newIndex = sortedQuestions.findIndex(
-      (q) => q.verse.number === question.verse.number && q.surahNumber === question.surahNumber
-    );
-    if (newIndex >= 0 && newIndex !== currentVerseIndex) {
-      setCurrentVerseIndex(newIndex);
+    if (currentIndex >= 0 && currentIndex !== currentVerseIndex) {
+      setCurrentVerseIndex(currentIndex);
     }
-  }, [question.verse.number, question.surahNumber, sortedQuestions, currentVerseIndex]);
+  }, [currentIndex]);
 
   const currentVerse = useMemo(() => {
     if (currentVerseIndex >= 0 && currentVerseIndex < sortedQuestions.length) {
@@ -167,6 +167,7 @@ export default function ReadingMode({
           <button
             key={`${q.surahNumber}-${q.verse.number}`}
             onClick={() => {
+              // Since sortedQuestions is sorted by verse number, index directly corresponds to verse position
               setCurrentVerseIndex(index);
               onAnswer(true);
             }}
