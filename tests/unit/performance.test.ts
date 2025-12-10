@@ -243,5 +243,133 @@ describe("Performance Tests", () => {
       expect(duration).toBeLessThan(50);
     });
   });
+
+  describe("Reading Mode Performance", () => {
+    it("should find verse index quickly in large arrays", () => {
+      const { extractArabicWords } = require("@/lib/wordExtractor");
+      
+      // Create large question array
+      const largeQuestions: Question[] = [];
+      for (let i = 0; i < 1000; i++) {
+        largeQuestions.push({
+          verse: {
+            number: i + 1,
+            arabic: `Arabic ${i + 1}`,
+            transliteration: `Trans ${i + 1}`,
+            translation: `Translation ${i + 1}`,
+          },
+          surahNumber: 93,
+          surahName: "Ad-Duha",
+        });
+      }
+
+      const targetQuestion = largeQuestions[500];
+      const start = performance.now();
+      
+      for (let i = 0; i < 100; i++) {
+        largeQuestions.findIndex(
+          (q) => q.verse.number === targetQuestion.verse.number && q.surahNumber === targetQuestion.surahNumber
+        );
+      }
+      
+      const duration = performance.now() - start;
+      expect(duration).toBeLessThan(100);
+    });
+
+    it("should handle verse navigation calculations efficiently", () => {
+      const questions = allQuestions.slice(0, 100);
+      const start = performance.now();
+      
+      for (let i = 0; i < 1000; i++) {
+        const index = Math.floor(Math.random() * questions.length);
+        const canGoPrevious = index > 0;
+        const canGoNext = index < questions.length - 1;
+        const currentVerse = questions[index];
+        
+        // Simulate navigation logic
+        if (canGoPrevious) {
+          const prevVerse = questions[index - 1];
+        }
+        if (canGoNext) {
+          const nextVerse = questions[index + 1];
+        }
+      }
+      
+      const duration = performance.now() - start;
+      expect(duration).toBeLessThan(50);
+    });
+  });
+
+  describe("Stress Test Performance", () => {
+    it("should handle 1000 distractor generations quickly", () => {
+      const verse = allQuestions[0].verse;
+      const start = performance.now();
+      
+      for (let i = 0; i < 1000; i++) {
+        generateDistractors(verse, allQuestions, 3);
+      }
+      
+      const duration = performance.now() - start;
+      expect(duration).toBeLessThan(500);
+    });
+
+    it("should handle 1000 blank generations quickly", () => {
+      const verse = allQuestions[0].verse;
+      const start = performance.now();
+      
+      for (let i = 0; i < 1000; i++) {
+        generateBlanks(verse, true);
+      }
+      
+      const duration = performance.now() - start;
+      expect(duration).toBeLessThan(500);
+    });
+
+    it("should handle 1000 option generations quickly", () => {
+      const verse = allQuestions[0].verse;
+      const start = performance.now();
+      
+      for (let i = 0; i < 1000; i++) {
+        generateTranslationOptions(verse, allQuestions);
+        generateArabicTransOptions(verse, allQuestions);
+      }
+      
+      const duration = performance.now() - start;
+      expect(duration).toBeLessThan(1000);
+    });
+  });
+
+  describe("Large Dataset Performance", () => {
+    it("should handle very large question arrays", () => {
+      // Create a very large array by duplicating
+      const largeArray: Question[] = [];
+      for (let i = 0; i < 10; i++) {
+        largeArray.push(...allQuestions);
+      }
+      
+      expect(largeArray.length).toBeGreaterThan(1000);
+      
+      const start = performance.now();
+      const verse = largeArray[0].verse;
+      generateDistractors(verse, largeArray, 3);
+      const duration = performance.now() - start;
+      
+      expect(duration).toBeLessThan(200);
+    });
+
+    it("should handle all surahs simultaneously", () => {
+      const allSurahs = getAvailableSurahs();
+      const allQuestionsCombined: Question[] = [];
+      
+      const start = performance.now();
+      for (const surah of allSurahs) {
+        allQuestionsCombined.push(...getQuestionsForSurah(surah.number));
+      }
+      const duration = performance.now() - start;
+      
+      expect(duration).toBeLessThan(100);
+      expect(allQuestionsCombined.length).toBeGreaterThan(100);
+    });
+  });
 });
 
