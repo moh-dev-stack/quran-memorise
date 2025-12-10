@@ -69,14 +69,17 @@ describe("Word Order Game Logic", () => {
       
       const shuffle1 = shuffleArray([...originalWords]);
       const shuffle2 = shuffleArray([...originalWords]);
+      const shuffle3 = shuffleArray([...originalWords]);
       
-      // At least one shuffle should be different (high probability)
-      const allSame = shuffle1.every((word, index) => word === originalWords[index]);
-      // If original order is preserved, try again
-      if (allSame) {
-        const shuffle3 = shuffleArray([...originalWords]);
-        expect(shuffle3).not.toEqual(originalWords);
-      }
+      // With multiple shuffles, at least one should be different from original
+      // Check if any shuffle differs from original order
+      const shuffles = [shuffle1, shuffle2, shuffle3];
+      const hasDifferentOrder = shuffles.some(shuffle => 
+        !shuffle.every((word, index) => word === originalWords[index])
+      );
+      
+      // With 3 shuffles, probability of all being same as original is extremely low
+      expect(hasDifferentOrder).toBe(true);
     });
 
     it("should handle single word (no shuffle needed)", () => {
