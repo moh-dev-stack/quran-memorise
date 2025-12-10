@@ -1,0 +1,73 @@
+{
+  "number": 100,
+  "name": "Al-Adiyat",
+  "nameArabic": "العاديات",
+  "verses": [
+    {
+      "number": 1,
+      "arabic": "وَالْعَادِيَاتِ ضَبْحًا",
+      "transliteration": "Wa al-'adiyati dabhan",
+      "translation": "By those [horses] that run with panting breath"
+    },
+    {
+      "number": 2,
+      "arabic": "فَالْمُورِيَاتِ قَدْحًا",
+      "transliteration": "Fa al-muriyati qadhan",
+      "translation": "Striking sparks of fire"
+    },
+    {
+      "number": 3,
+      "arabic": "فَالْمُغِيرَاتِ صُبْحًا",
+      "transliteration": "Fa al-mughirati subhan",
+      "translation": "And raiding by dawn"
+    },
+    {
+      "number": 4,
+      "arabic": "فَأَثَرْنَ بِهِ نَقْعًا",
+      "transliteration": "Fa atharna bihi naq'an",
+      "translation": "And stirring up thereby [clouds of] dust"
+    },
+    {
+      "number": 5,
+      "arabic": "فَوَسَطْنَ بِهِ جَمْعًا",
+      "transliteration": "Fa wasatna bihi jam'an",
+      "translation": "And penetrating thereby into the midst [of the enemy] en masse"
+    },
+    {
+      "number": 6,
+      "arabic": "إِنَّ الْإِنسَانَ لِرَبِّهِ لَكَنُودٌ",
+      "transliteration": "Inna al-insana li-rabbihi la-kanud",
+      "translation": "Indeed mankind, to his Lord, is ungrateful"
+    },
+    {
+      "number": 7,
+      "arabic": "وَإِنَّهُ عَلَىٰ ذَٰلِكَ لَشَهِيدٌ",
+      "transliteration": "Wa innahu 'ala dhalika la-shahid",
+      "translation": "And indeed, he is to that a witness"
+    },
+    {
+      "number": 8,
+      "arabic": "وَإِنَّهُ لِحُبِّ الْخَيْرِ لَشَدِيدٌ",
+      "transliteration": "Wa innahu li-hubbi al-khayri la-shadid",
+      "translation": "And indeed he is, in love of wealth, intense"
+    },
+    {
+      "number": 9,
+      "arabic": "أَفَلَا يَعْلَمُ إِذَا بُعْثِرَ مَا فِي الْقُبُورِ",
+      "transliteration": "Afala ya'lamu idha bu'thira ma fi al-qubur",
+      "translation": "But does he not know that when the contents of the graves are scattered"
+    },
+    {
+      "number": 10,
+      "arabic": "وَحُصِّلَ مَا فِي الصُّدُورِ",
+      "transliteration": "Wa hussila ma fi as-sudur",
+      "translation": "And that within the breasts is obtained"
+    },
+    {
+      "number": 11,
+      "arabic": "إِنَّ رَبَّهُم بِهِمْ يَوْمَئِذٍ لَّخَبِيرٌ",
+      "transliteration": "Inna rabbahum bihim yawma'idhin la-khabir",
+      "translation": "Indeed, their Lord with them, that Day, is [fully] Acquainted"
+    }
+  ]
+}
