@@ -96,12 +96,9 @@ export default function WordOrderMode({
           Click words below to add them to your answer. Click on selected words to remove them.
         </p>
         <div className="text-center mb-2">
-          <div className="text-sm text-gray-500 english-text mb-2">Correct verse:</div>
-          <div className="arabic-text text-xl text-gray-700">
-            {question.verse.arabic}
-          </div>
-          <div className="text-sm italic text-gray-600 english-text mt-2">
-            {question.verse.transliteration}
+          <div className="text-sm text-gray-500 english-text mb-2">Translate this verse:</div>
+          <div className="text-lg text-gray-700 english-text font-medium">
+            {question.verse.translation}
           </div>
         </div>
       </div>
