@@ -14,12 +14,6 @@ export default function HomePage() {
           >
             Start Memorizing
           </Link>
-          <Link
-            href="/review"
-            className="block w-full py-4 rounded-lg text-xl bg-green-600 text-white hover:bg-green-700 transition-colors shadow-lg"
-          >
-            Review (Coming Soon)
-          </Link>
         </div>
 
         <div className="mt-12 p-6 bg-white rounded-xl shadow-lg">
