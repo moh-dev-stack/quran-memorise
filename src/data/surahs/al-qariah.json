@@ -1,0 +1,73 @@
+{
+  "number": 101,
+  "name": "Al-Qari'ah",
+  "nameArabic": "القارعة",
+  "verses": [
+    {
+      "number": 1,
+      "arabic": "الْقَارِعَةُ",
+      "transliteration": "Al-qari'ah",
+      "translation": "The Striking Calamity"
+    },
+    {
+      "number": 2,
+      "arabic": "مَا الْقَارِعَةُ",
+      "transliteration": "Ma al-qari'ah",
+      "translation": "What is the Striking Calamity?"
+    },
+    {
+      "number": 3,
+      "arabic": "وَمَا أَدْرَاكَ مَا الْقَارِعَةُ",
+      "transliteration": "Wa ma adraka ma al-qari'ah",
+      "translation": "And what can make you know what is the Striking Calamity?"
+    },
+    {
+      "number": 4,
+      "arabic": "يَوْمَ يَكُونُ النَّاسُ كَالْفَرَاشِ الْمَبْثُوثِ",
+      "transliteration": "Yawma yakunu an-nasu ka-al-farashi al-mabthuth",
+      "translation": "It is the Day when people will be like moths, dispersed"
+    },
+    {
+      "number": 5,
+      "arabic": "وَتَكُونُ الْجِبَالُ كَالْعِهْنِ الْمَنفُوشِ",
+      "transliteration": "Wa takunu al-jibalu ka-al-'ihni al-manfush",
+      "translation": "And the mountains will be like wool, fluffed up"
+    },
+    {
+      "number": 6,
+      "arabic": "فَأَمَّا مَن ثَقُلَتْ مَوَازِينُهُ",
+      "transliteration": "Fa amma man thaqulat mawazinuhu",
+      "translation": "Then as for one whose scales are heavy [with good deeds]"
+    },
+    {
+      "number": 7,
+      "arabic": "فَهُوَ فِي عِيشَةٍ رَّاضِيَةٍ",
+      "transliteration": "Fahuwa fi 'ishatin radiyah",
+      "translation": "He will be in a pleasant life"
+    },
+    {
+      "number": 8,
+      "arabic": "وَأَمَّا مَنْ خَفَّتْ مَوَازِينُهُ",
+      "transliteration": "Wa amma man khaffat mawazinuhu",
+      "translation": "But as for one whose scales are light"
+    },
+    {
+      "number": 9,
+      "arabic": "فَأُمُّهُ هَاوِيَةٌ",
+      "transliteration": "Fa ummuhu hawiyah",
+      "translation": "His refuge will be an abyss"
+    },
+    {
+      "number": 10,
+      "arabic": "وَمَا أَدْرَاكَ مَا هِيَهْ",
+      "transliteration": "Wa ma adraka ma hiyah",
+      "translation": "And what can make you know what that is?"
+    },
+    {
+      "number": 11,
+      "arabic": "نَارٌ حَامِيَةٌ",
+      "transliteration": "Narun hamiyah",
+      "translation": "It is a Fire, intensely hot"
+    }
+  ]
+}

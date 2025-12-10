@@ -4,12 +4,18 @@ import type { Surah } from "@/lib/types";
 
 describe("Surah Validation", () => {
   const expectedSurahs = [
+    { number: 62, name: "Al-Jumu'ah", verses: 11 },
+    { number: 63, name: "Al-Munafiqun", verses: 11 },
+    { number: 65, name: "At-Talaq", verses: 12 },
+    { number: 66, name: "At-Tahrim", verses: 12 },
     { number: 93, name: "Ad-Duha", verses: 11 },
     { number: 94, name: "Ash-Sharh", verses: 8 },
     { number: 95, name: "At-Tin", verses: 8 },
     { number: 97, name: "Al-Qadr", verses: 5 },
     { number: 98, name: "Al-Bayyinah", verses: 8 },
     { number: 99, name: "Az-Zalzalah", verses: 8 },
+    { number: 100, name: "Al-Adiyat", verses: 11 },
+    { number: 101, name: "Al-Qari'ah", verses: 11 },
     { number: 102, name: "At-Takathur", verses: 8 },
     { number: 103, name: "Al-Asr", verses: 3 },
     { number: 104, name: "Al-Humazah", verses: 9 },

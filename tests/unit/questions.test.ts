@@ -9,11 +9,59 @@ import {
 
 describe("questions", () => {
   describe("loadSurah", () => {
+    it("should load Surah 62 (Al-Jumu'ah)", () => {
+      const surah = loadSurah(62);
+      expect(surah).not.toBeNull();
+      expect(surah?.number).toBe(62);
+      expect(surah?.name).toBe("Al-Jumu'ah");
+      expect(surah?.verses.length).toBe(11);
+    });
+
+    it("should load Surah 63 (Al-Munafiqun)", () => {
+      const surah = loadSurah(63);
+      expect(surah).not.toBeNull();
+      expect(surah?.number).toBe(63);
+      expect(surah?.name).toBe("Al-Munafiqun");
+      expect(surah?.verses.length).toBe(11);
+    });
+
+    it("should load Surah 65 (At-Talaq)", () => {
+      const surah = loadSurah(65);
+      expect(surah).not.toBeNull();
+      expect(surah?.number).toBe(65);
+      expect(surah?.name).toBe("At-Talaq");
+      expect(surah?.verses.length).toBe(12);
+    });
+
+    it("should load Surah 66 (At-Tahrim)", () => {
+      const surah = loadSurah(66);
+      expect(surah).not.toBeNull();
+      expect(surah?.number).toBe(66);
+      expect(surah?.name).toBe("At-Tahrim");
+      expect(surah?.verses.length).toBe(12);
+    });
+
     it("should load Surah 93 (Ad-Duha)", () => {
       const surah = loadSurah(93);
       expect(surah).not.toBeNull();
       expect(surah?.number).toBe(93);
       expect(surah?.name).toBe("Ad-Duha");
+    });
+
+    it("should load Surah 100 (Al-Adiyat)", () => {
+      const surah = loadSurah(100);
+      expect(surah).not.toBeNull();
+      expect(surah?.number).toBe(100);
+      expect(surah?.name).toBe("Al-Adiyat");
+      expect(surah?.verses.length).toBe(11);
+    });
+
+    it("should load Surah 101 (Al-Qari'ah)", () => {
+      const surah = loadSurah(101);
+      expect(surah).not.toBeNull();
+      expect(surah?.number).toBe(101);
+      expect(surah?.name).toBe("Al-Qari'ah");
+      expect(surah?.verses.length).toBe(11);
     });
 
     it("should return null for unsupported surah", () => {
@@ -121,11 +169,34 @@ describe("questions", () => {
       expect(surahs.length).toBeGreaterThan(0);
     });
 
+    it("should include all new surahs", () => {
+      const surahs = getAvailableSurahs();
+      const newSurahs = [
+        { number: 62, name: "Al-Jumu'ah" },
+        { number: 63, name: "Al-Munafiqun" },
+        { number: 65, name: "At-Talaq" },
+        { number: 66, name: "At-Tahrim" },
+        { number: 100, name: "Al-Adiyat" },
+        { number: 101, name: "Al-Qari'ah" },
+      ];
+      
+      for (const expectedSurah of newSurahs) {
+        const surah = surahs.find((s) => s.number === expectedSurah.number);
+        expect(surah).toBeDefined();
+        expect(surah?.name).toBe(expectedSurah.name);
+      }
+    });
+
     it("should include Surah 93 (Ad-Duha)", () => {
       const surahs = getAvailableSurahs();
       const adDuha = surahs.find((s) => s.number === 93);
       expect(adDuha).toBeDefined();
       expect(adDuha?.name).toBe("Ad-Duha");
+    });
+
+    it("should have 25 surahs total", () => {
+      const surahs = getAvailableSurahs();
+      expect(surahs.length).toBe(25);
     });
 
     it("should return surahs with all required properties", () => {
