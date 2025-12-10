@@ -28,6 +28,19 @@ import alAdiyat from "@/data/surahs/al-adiyat.json";
 import alQariah from "@/data/surahs/al-qariah.json";
 import ashShams from "@/data/surahs/ash-shams.json";
 import atTariq from "@/data/surahs/at-tariq.json";
+import alFatihah from "@/data/surahs/al-fatihah.json";
+import alHujurat from "@/data/surahs/al-hujurat.json";
+import alMujadila from "@/data/surahs/al-mujadila.json";
+import alHashr from "@/data/surahs/al-hashr.json";
+import atTaghabun from "@/data/surahs/at-taghabun.json";
+import alMuzzammil from "@/data/surahs/al-muzzammil.json";
+import alInfitar from "@/data/surahs/al-infitar.json";
+import alInshiqap from "@/data/surahs/al-inshiqap.json";
+import alBuruj from "@/data/surahs/al-buruj.json";
+import alAla from "@/data/surahs/al-ala.json";
+import alBalad from "@/data/surahs/al-balad.json";
+import alLayl from "@/data/surahs/al-layl.json";
+import alAlaq from "@/data/surahs/al-alaq.json";
 
 /**
  * Loads a surah by its number
@@ -35,6 +48,14 @@ import atTariq from "@/data/surahs/at-tariq.json";
  */
 export function loadSurah(surahNumber: number): Surah | null {
   switch (surahNumber) {
+    case 1:
+      return alFatihah as Surah;
+    case 49:
+      return alHujurat as Surah;
+    case 58:
+      return alMujadila as Surah;
+    case 59:
+      return alHashr as Surah;
     case 60:
       return alMumtahanah as Surah;
     case 61:
@@ -43,14 +64,32 @@ export function loadSurah(surahNumber: number): Surah | null {
       return alJumuah as Surah;
     case 63:
       return alMunafiqun as Surah;
+    case 64:
+      return atTaghabun as Surah;
     case 65:
       return atTalaq as Surah;
     case 66:
       return atTahrim as Surah;
+    case 73:
+      return alMuzzammil as Surah;
+    case 82:
+      return alInfitar as Surah;
+    case 84:
+      return alInshiqap as Surah;
+    case 85:
+      return alBuruj as Surah;
     case 86:
       return atTariq as Surah;
+    case 87:
+      return alAla as Surah;
+    case 90:
+      return alBalad as Surah;
     case 91:
       return ashShams as Surah;
+    case 92:
+      return alLayl as Surah;
+    case 96:
+      return alAlaq as Surah;
     case 93:
       return adDuha as Surah;
     case 94:
@@ -138,7 +177,7 @@ export function getRandomQuestion(surahNumber: number): Question | null {
  */
 export function getAvailableSurahs(): Surah[] {
   const surahNumbers = [
-    60, 61, 62, 63, 65, 66, 86, 91, 93, 94, 95, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114,
+    1, 49, 58, 59, 60, 61, 62, 63, 64, 65, 66, 73, 82, 84, 85, 86, 87, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114,
   ];
   
   const surahs: Surah[] = [];

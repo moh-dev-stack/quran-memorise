@@ -194,9 +194,9 @@ describe("questions", () => {
       expect(adDuha?.name).toBe("Ad-Duha");
     });
 
-    it("should have 29 surahs total", () => {
+    it("should have 42 surahs total", () => {
       const surahs = getAvailableSurahs();
-      expect(surahs.length).toBe(25);
+      expect(surahs.length).toBe(42);
     });
 
     it("should return surahs with all required properties", () => {

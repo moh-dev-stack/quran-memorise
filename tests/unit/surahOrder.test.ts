@@ -13,10 +13,10 @@ describe("Surah Ordering", () => {
     }
   });
 
-  it("should have Al-Mumtahanah (60) as the first surah", () => {
+  it("should have Al-Fatihah (1) as the first surah", () => {
     const surahs = getAvailableSurahs();
-    expect(surahs[0].number).toBe(60);
-    expect(surahs[0].name).toBe("Al-Mumtahanah");
+    expect(surahs[0].number).toBe(1);
+    expect(surahs[0].name).toBe("Al-Fatihah");
   });
 
   it("should have An-Nas (114) as the last surah", () => {
@@ -38,7 +38,7 @@ describe("Surah Ordering", () => {
 
   it("should have all surahs in correct numerical order", () => {
     const surahs = getAvailableSurahs();
-    const expectedOrder = [60, 61, 62, 63, 65, 66, 86, 91, 93, 94, 95, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114];
+    const expectedOrder = [1, 49, 58, 59, 60, 61, 62, 63, 64, 65, 66, 73, 82, 84, 85, 86, 87, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114];
     
     expect(surahs.length).toBe(expectedOrder.length);
     surahs.forEach((surah, index) => {
