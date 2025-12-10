@@ -65,7 +65,7 @@ describe("questions", () => {
     });
 
     it("should return null for unsupported surah", () => {
-      const surah = loadSurah(1);
+      const surah = loadSurah(2); // Surah 2 is not in our list
       expect(surah).toBeNull();
     });
 
@@ -112,7 +112,7 @@ describe("questions", () => {
     });
 
     it("should return empty array for unsupported surah", () => {
-      const questions = getQuestionsForSurah(1);
+      const questions = getQuestionsForSurah(2); // Surah 2 is not in our list
       expect(questions).toEqual([]);
     });
 
@@ -130,7 +130,7 @@ describe("questions", () => {
     });
 
     it("should return null for unsupported surah", () => {
-      const question = getRandomQuestion(1);
+      const question = getRandomQuestion(2); // Surah 2 is not in our list
       expect(question).toBeNull();
     });
 
