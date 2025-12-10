@@ -4,8 +4,12 @@ import type { GameMode } from "@/lib/types";
 
 describe("gameModes", () => {
   describe("GAME_MODES", () => {
-    it("should have 6 game modes", () => {
-      expect(GAME_MODES).toHaveLength(6);
+    it("should have 8 game modes", () => {
+      expect(GAME_MODES).toHaveLength(8);
+    });
+
+    it("should have reading-mode as the first mode", () => {
+      expect(GAME_MODES[0].id).toBe("reading-mode");
     });
 
     it("should have all required properties for each mode", () => {

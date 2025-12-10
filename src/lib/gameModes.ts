@@ -2,6 +2,11 @@ import type { GameMode, GameModeOption, Verse, Question } from "./types";
 
 export const GAME_MODES: GameModeOption[] = [
   {
+    id: "reading-mode",
+    name: "Reading Mode",
+    description: "Read through the surah verse by verse with navigation",
+  },
+  {
     id: "arabic-trans-to-translation",
     name: "Arabic + Transliteration → Translation",
     description: "See Arabic and transliteration, choose the correct translation",
@@ -35,11 +40,6 @@ export const GAME_MODES: GameModeOption[] = [
     id: "word-order",
     name: "Word Order",
     description: "Arrange Arabic words in the correct order to form the verse",
-  },
-  {
-    id: "reading-mode",
-    name: "Reading Mode",
-    description: "Read through the surah verse by verse with navigation",
   },
 ];
 
