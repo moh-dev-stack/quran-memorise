@@ -1,0 +1,38 @@
+{
+  "number": 105,
+  "name": "Al-Fil",
+  "nameArabic": "الفيل",
+  "verses": [
+    {
+      "number": 1,
+      "arabic": "أَلَمْ تَرَ كَيْفَ فَعَلَ رَبُّكَ بِأَصْحَابِ الْفِيلِ",
+      "transliteration": "Alam tara kayfa fa'ala rabbuka bi ashabi al-fil",
+      "translation": "Have you not considered, [O Muhammad], how your Lord dealt with the companions of the elephant?"
+    },
+    {
+      "number": 2,
+      "arabic": "أَلَمْ يَجْعَلْ كَيْدَهُمْ فِي تَضْلِيلٍ",
+      "transliteration": "Alam yaj'al kaydahum fi tadlil",
+      "translation": "Did He not make their plan into misguidance?"
+    },
+    {
+      "number": 3,
+      "arabic": "وَأَرْسَلَ عَلَيْهِمْ طَيْرًا أَبَابِيلَ",
+      "transliteration": "Wa arsala 'alayhim tayran ababil",
+      "translation": "And He sent against them birds in flocks"
+    },
+    {
+      "number": 4,
+      "arabic": "تَرْمِيهِم بِحِجَارَةٍ مِّن سِجِّيلٍ",
+      "transliteration": "Tarmihim bi hijaratin min sijjil",
+      "translation": "Striking them with stones of hard clay"
+    },
+    {
+      "number": 5,
+      "arabic": "فَجَعَلَهُمْ كَعَصْفٍ مَّأْكُولٍ",
+      "transliteration": "Faja'alahum ka'asfin ma'kul",
+      "translation": "And He made them like eaten straw"
+    }
+  ]
+}
+

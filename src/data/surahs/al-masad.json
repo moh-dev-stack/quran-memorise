@@ -1,0 +1,38 @@
+{
+  "number": 111,
+  "name": "Al-Masad",
+  "nameArabic": "المسد",
+  "verses": [
+    {
+      "number": 1,
+      "arabic": "تَبَّتْ يَدَا أَبِي لَهَبٍ وَتَبَّ",
+      "transliteration": "Tabbat yada abi Lahabin wa tabb",
+      "translation": "May the hands of Abu Lahab be ruined, and ruined is he"
+    },
+    {
+      "number": 2,
+      "arabic": "مَا أَغْنَىٰ عَنْهُ مَالُهُ وَمَا كَسَبَ",
+      "transliteration": "Ma aghna 'anhu maluhu wa ma kasab",
+      "translation": "His wealth will not avail him or that which he gained"
+    },
+    {
+      "number": 3,
+      "arabic": "سَيَصْلَىٰ نَارًا ذَاتَ لَهَبٍ",
+      "transliteration": "Sayasla naran dhat lahab",
+      "translation": "He will [enter to] burn in a Fire of [blazing] flame"
+    },
+    {
+      "number": 4,
+      "arabic": "وَامْرَأَتُهُ حَمَّالَةَ الْحَطَبِ",
+      "transliteration": "Wa imra'atuhu hammalata al-hatab",
+      "translation": "And his wife [as well] - the carrier of firewood"
+    },
+    {
+      "number": 5,
+      "arabic": "فِي جِيدِهَا حَبْلٌ مِّن مَّسَدٍ",
+      "transliteration": "Fi jidiha hablun min masad",
+      "translation": "Around her neck is a rope of [twisted] fiber"
+    }
+  ]
+}
+

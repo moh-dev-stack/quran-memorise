@@ -1,0 +1,38 @@
+{
+  "number": 113,
+  "name": "Al-Falaq",
+  "nameArabic": "الفلق",
+  "verses": [
+    {
+      "number": 1,
+      "arabic": "قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ",
+      "transliteration": "Qul a'udhu bi rabbi al-falaq",
+      "translation": "Say, 'I seek refuge in the Lord of daybreak"
+    },
+    {
+      "number": 2,
+      "arabic": "مِن شَرِّ مَا خَلَقَ",
+      "transliteration": "Min sharri ma khalaq",
+      "translation": "From the evil of that which He created"
+    },
+    {
+      "number": 3,
+      "arabic": "وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ",
+      "transliteration": "Wa min sharri ghasiqin idha waqab",
+      "translation": "And from the evil of darkness when it settles"
+    },
+    {
+      "number": 4,
+      "arabic": "وَمِن شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ",
+      "transliteration": "Wa min sharri an-naffathati fi al-uqad",
+      "translation": "And from the evil of the blowers in knots"
+    },
+    {
+      "number": 5,
+      "arabic": "وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ",
+      "transliteration": "Wa min sharri hasidin idha hasad",
+      "translation": "And from the evil of an envier when he envies"
+    }
+  ]
+}
+

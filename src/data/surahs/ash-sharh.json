@@ -1,0 +1,56 @@
+{
+  "number": 94,
+  "name": "Ash-Sharh",
+  "nameArabic": "الشرح",
+  "verses": [
+    {
+      "number": 1,
+      "arabic": "أَلَمْ نَشْرَحْ لَكَ صَدْرَكَ",
+      "transliteration": "Alam nashrah laka sadrak",
+      "translation": "Did We not expand for you, [O Muhammad], your breast?"
+    },
+    {
+      "number": 2,
+      "arabic": "وَوَضَعْنَا عَنكَ وِزْرَكَ",
+      "transliteration": "Wa wada'na 'anka wizrak",
+      "translation": "And We removed from you your burden"
+    },
+    {
+      "number": 3,
+      "arabic": "الَّذِي أَنقَضَ ظَهْرَكَ",
+      "transliteration": "Alladhi anqada zahrak",
+      "translation": "Which had weighed upon your back"
+    },
+    {
+      "number": 4,
+      "arabic": "وَرَفَعْنَا لَكَ ذِكْرَكَ",
+      "transliteration": "Wa rafa'na laka dhikrak",
+      "translation": "And raised high for you your repute"
+    },
+    {
+      "number": 5,
+      "arabic": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",
+      "transliteration": "Fa inna ma'a al-'usri yusran",
+      "translation": "For indeed, with hardship [will be] ease"
+    },
+    {
+      "number": 6,
+      "arabic": "إِنَّ مَعَ الْعُسْرِ يُسْرًا",
+      "transliteration": "Inna ma'a al-'usri yusran",
+      "translation": "Indeed, with hardship [will be] ease"
+    },
+    {
+      "number": 7,
+      "arabic": "فَإِذَا فَرَغْتَ فَانصَبْ",
+      "transliteration": "Fa idha faraghta fansab",
+      "translation": "So when you have finished [your duties], then stand up [for worship]"
+    },
+    {
+      "number": 8,
+      "arabic": "وَإِلَىٰ رَبِّكَ فَارْغَبْ",
+      "transliteration": "Wa ila rabbika farghab",
+      "translation": "And to your Lord direct [your] longing"
+    }
+  ]
+}
+

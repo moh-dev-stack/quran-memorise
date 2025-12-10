@@ -1,0 +1,26 @@
+{
+  "number": 108,
+  "name": "Al-Kawthar",
+  "nameArabic": "الكوثر",
+  "verses": [
+    {
+      "number": 1,
+      "arabic": "إِنَّا أَعْطَيْنَاكَ الْكَوْثَرَ",
+      "transliteration": "Inna a'tayna ka al-kawthar",
+      "translation": "Indeed, We have granted you, [O Muhammad], al-Kawthar"
+    },
+    {
+      "number": 2,
+      "arabic": "فَصَلِّ لِرَبِّكَ وَانْحَرْ",
+      "transliteration": "Fasalli li rabbika wanhar",
+      "translation": "So pray to your Lord and sacrifice [to Him alone]"
+    },
+    {
+      "number": 3,
+      "arabic": "إِنَّ شَانِئَكَ هُوَ الْأَبْتَرُ",
+      "transliteration": "Inna shani'aka huwa al-abtar",
+      "translation": "Indeed, your enemy is the one cut off"
+    }
+  ]
+}
+

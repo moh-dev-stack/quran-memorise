@@ -1,0 +1,56 @@
+{
+  "number": 102,
+  "name": "At-Takathur",
+  "nameArabic": "التكاثر",
+  "verses": [
+    {
+      "number": 1,
+      "arabic": "أَلْهَاكُمُ التَّكَاثُرُ",
+      "transliteration": "Alhakumu at-takathur",
+      "translation": "Competition in [worldly] increase diverts you"
+    },
+    {
+      "number": 2,
+      "arabic": "حَتَّىٰ زُرْتُمُ الْمَقَابِرَ",
+      "transliteration": "Hatta zurtumu al-maqabir",
+      "translation": "Until you visit the graveyards"
+    },
+    {
+      "number": 3,
+      "arabic": "كَلَّا سَوْفَ تَعْلَمُونَ",
+      "transliteration": "Kalla sawfa ta'lamun",
+      "translation": "No! You are going to know"
+    },
+    {
+      "number": 4,
+      "arabic": "ثُمَّ كَلَّا سَوْفَ تَعْلَمُونَ",
+      "transliteration": "Thumma kalla sawfa ta'lamun",
+      "translation": "Then no! You are going to know"
+    },
+    {
+      "number": 5,
+      "arabic": "كَلَّا لَوْ تَعْلَمُونَ عِلْمَ الْيَقِينِ",
+      "transliteration": "Kalla law ta'lamuna 'ilma al-yaqin",
+      "translation": "No! If you only knew with knowledge of certainty"
+    },
+    {
+      "number": 6,
+      "arabic": "لَتَرَوُنَّ الْجَحِيمَ",
+      "transliteration": "Latarawunna al-jahim",
+      "translation": "You will surely see the Hellfire"
+    },
+    {
+      "number": 7,
+      "arabic": "ثُمَّ لَتَرَوُنَّهَا عَيْنَ الْيَقِينِ",
+      "transliteration": "Thumma latarawunnaha 'ayna al-yaqin",
+      "translation": "Then you will surely see it with the eye of certainty"
+    },
+    {
+      "number": 8,
+      "arabic": "ثُمَّ لَتُسْأَلُنَّ يَوْمَئِذٍ عَنِ النَّعِيمِ",
+      "transliteration": "Thumma latus'alunna yawma'idhin 'ani an-na'im",
+      "translation": "Then you will surely be asked that Day about pleasure"
+    }
+  ]
+}
+

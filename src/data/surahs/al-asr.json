@@ -1,0 +1,26 @@
+{
+  "number": 103,
+  "name": "Al-Asr",
+  "nameArabic": "العصر",
+  "verses": [
+    {
+      "number": 1,
+      "arabic": "وَالْعَصْرِ",
+      "transliteration": "Wa al-asr",
+      "translation": "By time"
+    },
+    {
+      "number": 2,
+      "arabic": "إِنَّ الْإِنْسَانَ لَفِي خُسْرٍ",
+      "transliteration": "Inna al-insana lafi khusr",
+      "translation": "Indeed, mankind is in loss"
+    },
+    {
+      "number": 3,
+      "arabic": "إِلَّا الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ وَتَوَاصَوْا بِالْحَقِّ وَتَوَاصَوْا بِالصَّبْرِ",
+      "transliteration": "Illa alladhina amanu wa 'amilu as-salihati wa tawasaw bil-haqqi wa tawasaw bis-sabr",
+      "translation": "Except those who have believed and done righteous deeds and advised each other to truth and advised each other to patience"
+    }
+  ]
+}
+

@@ -22,8 +22,15 @@ export default defineConfig({
       },
     },
     // Faster test execution
-    testTimeout: 10000,
-    hookTimeout: 10000,
+    testTimeout: 3000, // Reduced from 10000 for faster feedback
+    hookTimeout: 2000, // Reduced from 10000
+    // Optimize for speed
+    isolate: false, // Share context between tests for faster execution
+    fileParallelism: true, // Run test files in parallel
+    // Increase thread pool for parallel execution
+    maxConcurrency: 5, // Run more tests in parallel
+    minThreads: 2, // Minimum threads for parallel execution
+    maxThreads: 4, // Maximum threads
     // Coverage settings
     coverage: {
       provider: "v8",

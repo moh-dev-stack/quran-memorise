@@ -98,8 +98,12 @@ export function generateMissingWordOptions(
   // Remove correct words from distractors
   correctWords.forEach((word) => allWords.delete(word));
 
-  // Convert to array and shuffle
-  const distractorArray = Array.from(allWords).sort(() => Math.random() - 0.5);
+  // Convert to array and shuffle efficiently
+  const distractorArray = Array.from(allWords);
+  for (let i = distractorArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [distractorArray[i], distractorArray[j]] = [distractorArray[j], distractorArray[i]];
+  }
 
   // If multiple words missing, combine them as one option
   const correctOption = correctWords.join(" ");
@@ -110,7 +114,11 @@ export function generateMissingWordOptions(
       .map((word, index) => ({ text: word, isCorrect: false, id: `distractor-${word}-${index}` })),
   ];
 
-  // Shuffle options
-  return options.sort(() => Math.random() - 0.5);
+  // Shuffle options efficiently
+  for (let i = options.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [options[i], options[j]] = [options[j], options[i]];
+  }
+  return options;
 }
 

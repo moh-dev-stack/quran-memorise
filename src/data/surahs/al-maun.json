@@ -1,0 +1,50 @@
+{
+  "number": 107,
+  "name": "Al-Ma'un",
+  "nameArabic": "الماعون",
+  "verses": [
+    {
+      "number": 1,
+      "arabic": "أَرَأَيْتَ الَّذِي يُكَذِّبُ بِالدِّينِ",
+      "transliteration": "Ara'ayta alladhi yukadhdhibu bid-din",
+      "translation": "Have you seen the one who denies the Recompense?"
+    },
+    {
+      "number": 2,
+      "arabic": "فَذَٰلِكَ الَّذِي يَدُعُّ الْيَتِيمَ",
+      "transliteration": "Fadhalika alladhi yadu''u al-yatim",
+      "translation": "For that is the one who drives away the orphan"
+    },
+    {
+      "number": 3,
+      "arabic": "وَلَا يَحُضُّ عَلَىٰ طَعَامِ الْمِسْكِينِ",
+      "transliteration": "Wa la yahuddu 'ala ta'ami al-miskin",
+      "translation": "And does not encourage the feeding of the poor"
+    },
+    {
+      "number": 4,
+      "arabic": "فَوَيْلٌ لِّلْمُصَلِّينَ",
+      "transliteration": "Fawaylun lil-musallin",
+      "translation": "So woe to those who pray"
+    },
+    {
+      "number": 5,
+      "arabic": "الَّذِينَ هُمْ عَن صَلَاتِهِمْ سَاهُونَ",
+      "transliteration": "Alladhina hum 'an salatihim sahun",
+      "translation": "[But] who are heedless of their prayer"
+    },
+    {
+      "number": 6,
+      "arabic": "الَّذِينَ هُمْ يُرَاءُونَ",
+      "transliteration": "Alladhina hum yura'un",
+      "translation": "Those who make show [of their deeds]"
+    },
+    {
+      "number": 7,
+      "arabic": "وَيَمْنَعُونَ الْمَاعُونَ",
+      "transliteration": "Wa yamna'una al-ma'un",
+      "translation": "And withhold [simple] assistance"
+    }
+  ]
+}
+

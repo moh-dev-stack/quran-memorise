@@ -1,111 +1,165 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
-import { useRouter } from "next/navigation";
-import ModeSelector from "@/components/ModeSelector";
-import ScoreDisplay from "@/components/ScoreDisplay";
-import ArabicTransToTranslationMode from "@/components/game-modes/ArabicTransToTranslationMode";
-import TranslationToArabicTransMode from "@/components/game-modes/TranslationToArabicTransMode";
-import MissingWordMode from "@/components/game-modes/MissingWordMode";
-import SequentialOrderMode from "@/components/game-modes/SequentialOrderMode";
-import FirstLastWordMode from "@/components/game-modes/FirstLastWordMode";
-import VerseNumberMode from "@/components/game-modes/VerseNumberMode";
-import { getQuestionsForSurah } from "@/lib/questions";
+import { useState, useEffect, useCallback, useMemo, Suspense } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+
+export const dynamic = "force-dynamic";
+import SurahSelector from "@/components/SurahSelector";
+import ModeSelectorScreen from "@/components/ModeSelectorScreen";
+import GameScreen from "@/components/GameScreen";
+import { getQuestionsForSurah, getAvailableSurahs } from "@/lib/questions";
 import { calculateScore } from "@/lib/scoreCalculator";
-import type { Question, GameMode } from "@/lib/types";
-import { isValidGameMode } from "@/lib/gameModes";
-import { ErrorBoundary } from "@/components/ErrorBoundary";
-import { createSeededRandom, seedFromValues } from "@/lib/seededRandom";
+import type { Question, GameMode, Surah } from "@/lib/types";
+import {
+  selectSurah,
+  selectMode,
+  submitAnswer,
+  nextQuestion,
+  resetToModeSelection,
+  resetToSurahSelection,
+  type GameState,
+} from "@/lib/gameState";
 
-const SURAH_NUMBER = 93; // Ad-Duha
-
-interface ScoreEntry {
-  points: number;
-  maxPoints: number;
-}
-
-export default function PlayPage() {
+function PlayPageContent() {
   const router = useRouter();
-  const [allQuestions, setAllQuestions] = useState<Question[]>([]);
-  const [questions, setQuestions] = useState<Question[]>([]);
-  const [selectedMode, setSelectedMode] = useState<GameMode | null>(null);
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [scores, setScores] = useState<ScoreEntry[]>([]);
-  const [isAnswered, setIsAnswered] = useState(false);
-  const [usedReveal, setUsedReveal] = useState(false);
+  const searchParams = useSearchParams();
+  const [gameState, setGameState] = useState<GameState>({
+    selectedSurah: null,
+    allQuestions: [],
+    questions: [],
+    selectedMode: null,
+    currentQuestionIndex: 0,
+    scores: [],
+    isAnswered: false,
+    usedReveal: false,
+  });
+  const [availableSurahs, setAvailableSurahs] = useState<Surah[]>([]);
 
+  // Load available surahs
   useEffect(() => {
-    const loadedQuestions = getQuestionsForSurah(SURAH_NUMBER);
-    if (loadedQuestions.length === 0) {
+    const surahs = getAvailableSurahs();
+    setAvailableSurahs(surahs);
+    
+    // Check if surah is specified in URL params
+    const surahParam = searchParams.get("surah");
+    if (surahParam) {
+      const surahNumber = parseInt(surahParam, 10);
+      if (!isNaN(surahNumber) && surahs.some(s => s.number === surahNumber)) {
+        const questions = getQuestionsForSurah(surahNumber);
+        if (questions.length > 0) {
+          setGameState((prev) => selectSurah(prev, surahNumber, questions));
+        }
+      }
+    }
+  }, [searchParams]);
+
+  // Load questions when surah is selected
+  useEffect(() => {
+    if (gameState.selectedSurah && gameState.allQuestions.length === 0) {
+      const loadedQuestions = getQuestionsForSurah(gameState.selectedSurah);
+      if (loadedQuestions.length === 0) {
+        router.push("/");
+        return;
+      }
+      setGameState((prev) => selectSurah(prev, gameState.selectedSurah!, loadedQuestions));
+    }
+  }, [gameState.selectedSurah, gameState.allQuestions.length, router]);
+
+  const handleSurahSelect = useCallback((surahNumber: number) => {
+    const questions = getQuestionsForSurah(surahNumber);
+    if (questions.length === 0) {
       router.push("/");
       return;
     }
-    setAllQuestions(loadedQuestions);
-    // Initially set questions in order (will be shuffled when mode is selected)
-    setQuestions(loadedQuestions);
+    setGameState((prev) => selectSurah(prev, surahNumber, questions));
   }, [router]);
 
-  const handleModeSelect = (mode: GameMode) => {
-    setSelectedMode(mode);
-    setCurrentQuestionIndex(0);
-    setScores([]);
-    setIsAnswered(false);
-    setUsedReveal(false);
-    
-    // Shuffle questions randomly for this mode
-    // Use mode + timestamp + random number for seed to ensure different order each time
-    const randomComponent = Math.random().toString(36).substring(2, 15);
-    const seed = seedFromValues(
-      mode,
-      Date.now().toString(),
-      randomComponent,
-      Math.random().toString()
-    );
-    const rng = createSeededRandom(seed);
-    const shuffled = rng.shuffle([...allQuestions]);
-    setQuestions(shuffled);
-  };
+  const handleModeSelect = useCallback((mode: GameMode) => {
+    setGameState((prev) => selectMode(prev, mode));
+  }, []);
 
   const handleAnswer = useCallback((isCorrect: boolean, revealUsed: boolean = false) => {
-    if (!selectedMode || isAnswered) return;
-    
-    setIsAnswered(true);
-    setUsedReveal(revealUsed);
-    
-    const scoreResult = calculateScore(selectedMode, isCorrect, revealUsed);
-    setScores((prev) => [...prev, scoreResult]);
-  }, [selectedMode, isAnswered]);
+    setGameState((prev) => {
+      if (!prev.selectedMode || prev.isAnswered) return prev;
+      
+      const newState = submitAnswer(prev, isCorrect, revealUsed);
+      const scoreResult = calculateScore(prev.selectedMode!, isCorrect, revealUsed);
+      
+      return {
+        ...newState,
+        scores: [...prev.scores, scoreResult],
+      };
+    });
+  }, []);
 
-  const handleNextQuestion = () => {
-    if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex((prev) => prev + 1);
-      setIsAnswered(false);
-      setUsedReveal(false);
-    } else {
-      // Game completed
-      const totalScore = scores.reduce((sum, s) => sum + s.points, 0);
-      const maxScore = scores.reduce((sum, s) => sum + s.maxPoints, 0);
-      router.push(
-        `/play/complete?score=${totalScore}&total=${maxScore}&mode=${selectedMode}`
-      );
-    }
-  };
+  const handleNextQuestion = useCallback(() => {
+    setGameState((prev) => {
+      if (prev.currentQuestionIndex < prev.questions.length - 1) {
+        return nextQuestion(prev);
+      } else {
+        // Game completed
+        const totalScore = prev.scores.reduce((sum, s) => sum + s.points, 0);
+        const maxScore = prev.scores.reduce((sum, s) => sum + s.maxPoints, 0);
+        router.push(
+          `/play/complete?score=${totalScore}&total=${maxScore}&mode=${prev.selectedMode}`
+        );
+        return prev;
+      }
+    });
+  }, [router]);
 
-  const handleRestart = () => {
-    setSelectedMode(null);
-    setCurrentQuestionIndex(0);
-    setScores([]);
-    setIsAnswered(false);
-    setUsedReveal(false);
-    // Reset questions to original order (will be shuffled again when mode is selected)
-    setQuestions([...allQuestions]);
-  };
+  const handleBackToSurahSelection = useCallback(() => {
+    setGameState(resetToSurahSelection());
+  }, []);
 
-  const currentQuestion = questions[currentQuestionIndex];
-  const totalScore = scores.reduce((sum, s) => sum + s.points, 0);
-  const maxScore = scores.reduce((sum, s) => sum + s.maxPoints, 0);
+  const handleRestart = useCallback(() => {
+    setGameState((prev) => resetToModeSelection(prev));
+  }, []);
 
-  if (questions.length === 0) {
+  const handleBackToModes = useCallback(() => {
+    setGameState((prev) => resetToModeSelection(prev));
+  }, []);
+
+  const currentQuestion = useMemo(
+    () => gameState.questions[gameState.currentQuestionIndex],
+    [gameState.questions, gameState.currentQuestionIndex]
+  );
+
+  const totalScore = useMemo(
+    () => gameState.scores.reduce((sum, s) => sum + s.points, 0),
+    [gameState.scores]
+  );
+
+  const maxScore = useMemo(
+    () => gameState.scores.reduce((sum, s) => sum + s.maxPoints, 0),
+    [gameState.scores]
+  );
+
+  // Surah selection screen
+  if (!gameState.selectedSurah) {
+    return (
+      <SurahSelector
+        surahs={availableSurahs}
+        onSelectSurah={handleSurahSelect}
+        onBack={() => router.push("/")}
+      />
+    );
+  }
+
+  // Mode selection screen
+  if (!gameState.selectedMode) {
+    return (
+      <ModeSelectorScreen
+        questions={gameState.questions}
+        selectedMode={gameState.selectedMode}
+        onSelectMode={handleModeSelect}
+        onBack={handleBackToSurahSelection}
+      />
+    );
+  }
+
+  // Game mode screen
+  if (!currentQuestion) {
     return (
       <div className="min-h-screen flex items-center justify-center p-4">
         <div className="text-center">Loading...</div>
@@ -113,134 +167,33 @@ export default function PlayPage() {
     );
   }
 
-  // Mode selection screen
-  if (!selectedMode) {
-    return (
-      <main className="min-h-screen flex flex-col items-center justify-center p-4 safe-area-inset">
-        <div className="w-full max-w-md">
-          <div className="mb-6">
-            <button
-              onClick={() => router.push("/")}
-              className="text-gray-600 hover:text-gray-800 mb-4 touch-target"
-            >
-              ← Back to Home
-            </button>
-            <h1 className="text-3xl font-bold text-gray-800 mb-2">
-              {questions[0]?.surahName}
-            </h1>
-            <p className="text-gray-600">
-              {questions.length} verses • Choose a game mode
-            </p>
-          </div>
-          <ModeSelector
-            selectedMode={selectedMode}
-            onSelectMode={handleModeSelect}
-          />
-        </div>
-      </main>
-    );
-  }
-
-  // Game mode screen
   return (
-    <main className="min-h-screen flex flex-col items-center p-4 safe-area-inset">
-      <div className="w-full max-w-md">
-        {/* Header */}
-        <div className="mb-4">
-          <div className="flex justify-between items-center mb-2">
-            <button
-              onClick={() => setSelectedMode(null)}
-              className="text-gray-600 hover:text-gray-800 touch-target"
-            >
-              ← Modes
-            </button>
-            <button
-              onClick={() => router.push("/")}
-              className="text-gray-600 hover:text-gray-800 touch-target"
-            >
-              Home
-            </button>
-          </div>
-          <ScoreDisplay
-            score={totalScore}
-            total={maxScore}
-            currentQuestion={currentQuestionIndex + 1}
-            totalQuestions={questions.length}
-          />
-        </div>
+    <GameScreen
+      currentQuestion={currentQuestion}
+      questions={gameState.questions}
+      allQuestions={gameState.allQuestions}
+      selectedMode={gameState.selectedMode}
+      currentQuestionIndex={gameState.currentQuestionIndex}
+      totalScore={totalScore}
+      maxScore={maxScore}
+      isAnswered={gameState.isAnswered}
+      onAnswer={handleAnswer}
+      onNextQuestion={handleNextQuestion}
+      onBackToModes={handleBackToModes}
+      onRestart={handleRestart}
+      onHome={() => router.push("/")}
+    />
+  );
+}
 
-        {/* Game Mode Component */}
-        {currentQuestion && (
-          <ErrorBoundary>
-            <div className="mb-4" key={`${selectedMode}-${currentQuestionIndex}`}>
-              {selectedMode === "arabic-trans-to-translation" && (
-                <ArabicTransToTranslationMode
-                  question={currentQuestion}
-                  allQuestions={questions}
-                  onAnswer={handleAnswer}
-                />
-              )}
-              {selectedMode === "translation-to-arabic-trans" && (
-                <TranslationToArabicTransMode
-                  question={currentQuestion}
-                  allQuestions={questions}
-                  onAnswer={handleAnswer}
-                />
-              )}
-              {selectedMode === "missing-word" && (
-                <MissingWordMode
-                  question={currentQuestion}
-                  allQuestions={questions}
-                  onAnswer={handleAnswer}
-                />
-              )}
-              {selectedMode === "sequential-order" && (
-                <SequentialOrderMode
-                  question={currentQuestion}
-                  allQuestions={allQuestions}
-                  onAnswer={handleAnswer}
-                />
-              )}
-              {selectedMode === "first-last-word" && (
-                <FirstLastWordMode
-                  question={currentQuestion}
-                  allQuestions={questions}
-                  onAnswer={handleAnswer}
-                />
-              )}
-              {selectedMode === "verse-number" && (
-                <VerseNumberMode
-                  question={currentQuestion}
-                  allQuestions={questions}
-                  onAnswer={handleAnswer}
-                />
-              )}
-            </div>
-          </ErrorBoundary>
-        )}
-
-        {/* Next Button */}
-        {isAnswered && (
-          <button
-            onClick={handleNextQuestion}
-            className="w-full py-4 rounded-lg text-lg bg-green-600 text-white hover:bg-green-700 transition-colors touch-target mb-2"
-          >
-            {currentQuestionIndex < questions.length - 1
-              ? "Next Question"
-              : "Finish"}
-          </button>
-        )}
-
-        {/* Restart Button */}
-        {scores.length > 0 && (
-          <button
-            onClick={handleRestart}
-            className="w-full py-3 rounded-lg text-base bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors touch-target"
-          >
-            Change Mode
-          </button>
-        )}
+export default function PlayPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center p-4">
+        <div className="text-center">Loading...</div>
       </div>
-    </main>
+    }>
+      <PlayPageContent />
+    </Suspense>
   );
 }

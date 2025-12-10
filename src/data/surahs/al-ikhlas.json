@@ -1,0 +1,32 @@
+{
+  "number": 112,
+  "name": "Al-Ikhlas",
+  "nameArabic": "الإخلاص",
+  "verses": [
+    {
+      "number": 1,
+      "arabic": "قُلْ هُوَ اللَّهُ أَحَدٌ",
+      "transliteration": "Qul huwa Allahu ahad",
+      "translation": "Say, 'He is Allah, [who is] One"
+    },
+    {
+      "number": 2,
+      "arabic": "اللَّهُ الصَّمَدُ",
+      "transliteration": "Allahu as-samad",
+      "translation": "Allah, the Eternal Refuge"
+    },
+    {
+      "number": 3,
+      "arabic": "لَمْ يَلِدْ وَلَمْ يُولَدْ",
+      "transliteration": "Lam yalid wa lam yulad",
+      "translation": "He neither begets nor is born"
+    },
+    {
+      "number": 4,
+      "arabic": "وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ",
+      "transliteration": "Wa lam yakun lahu kufuwan ahad",
+      "translation": "Nor is there to Him any equivalent"
+    }
+  ]
+}
+

@@ -1,0 +1,56 @@
+{
+  "number": 99,
+  "name": "Az-Zalzalah",
+  "nameArabic": "الزلزلة",
+  "verses": [
+    {
+      "number": 1,
+      "arabic": "إِذَا زُلْزِلَتِ الْأَرْضُ زِلْزَالَهَا",
+      "transliteration": "Idha zulzilati al-ardu zilzalaha",
+      "translation": "When the earth is shaken with its [final] earthquake"
+    },
+    {
+      "number": 2,
+      "arabic": "وَأَخْرَجَتِ الْأَرْضُ أَثْقَالَهَا",
+      "transliteration": "Wa akhrajati al-ardu athqalaha",
+      "translation": "And the earth discharges its burdens"
+    },
+    {
+      "number": 3,
+      "arabic": "وَقَالَ الْإِنْسَانُ مَا لَهَا",
+      "transliteration": "Wa qala al-insanu ma laha",
+      "translation": "And man says, 'What is [wrong] with it?'"
+    },
+    {
+      "number": 4,
+      "arabic": "يَوْمَئِذٍ تُحَدِّثُ أَخْبَارَهَا",
+      "transliteration": "Yawma'idhin tuhaddithu akhbaraha",
+      "translation": "That Day, it will report its news"
+    },
+    {
+      "number": 5,
+      "arabic": "بِأَنَّ رَبَّكَ أَوْحَىٰ لَهَا",
+      "transliteration": "Bi anna rabbaka awha laha",
+      "translation": "Because your Lord has commanded it"
+    },
+    {
+      "number": 6,
+      "arabic": "يَوْمَئِذٍ يَصْدُرُ النَّاسُ أَشْتَاتًا لِّيُرَوْا أَعْمَالَهُمْ",
+      "transliteration": "Yawma'idhin yasduru an-nasu ashtatan liyuraw a'malahum",
+      "translation": "That Day, the people will depart separated [into categories] to be shown [the result of] their deeds"
+    },
+    {
+      "number": 7,
+      "arabic": "فَمَن يَعْمَلْ مِثْقَالَ ذَرَّةٍ خَيْرًا يَرَهُ",
+      "transliteration": "Faman ya'mal mithqala dharratin khayran yarah",
+      "translation": "So whoever does an atom's weight of good will see it"
+    },
+    {
+      "number": 8,
+      "arabic": "وَمَن يَعْمَلْ مِثْقَالَ ذَرَّةٍ شَرًّا يَرَهُ",
+      "transliteration": "Wa man ya'mal mithqala dharratin sharran yarah",
+      "translation": "And whoever does an atom's weight of evil will see it"
+    }
+  ]
+}
+

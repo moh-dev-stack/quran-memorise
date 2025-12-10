@@ -1,0 +1,44 @@
+{
+  "number": 114,
+  "name": "An-Nas",
+  "nameArabic": "الناس",
+  "verses": [
+    {
+      "number": 1,
+      "arabic": "قُلْ أَعُوذُ بِرَبِّ النَّاسِ",
+      "transliteration": "Qul a'udhu bi rabbi an-nas",
+      "translation": "Say, 'I seek refuge in the Lord of mankind"
+    },
+    {
+      "number": 2,
+      "arabic": "مَلِكِ النَّاسِ",
+      "transliteration": "Maliki an-nas",
+      "translation": "The Sovereign of mankind"
+    },
+    {
+      "number": 3,
+      "arabic": "إِلَٰهِ النَّاسِ",
+      "transliteration": "Ilahi an-nas",
+      "translation": "The God of mankind"
+    },
+    {
+      "number": 4,
+      "arabic": "مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ",
+      "transliteration": "Min sharri al-waswasi al-khannas",
+      "translation": "From the evil of the retreating whisperer"
+    },
+    {
+      "number": 5,
+      "arabic": "الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ",
+      "transliteration": "Alladhi yuwaswisu fi suduri an-nas",
+      "translation": "Who whispers [evil] into the breasts of mankind"
+    },
+    {
+      "number": 6,
+      "arabic": "مِنَ الْجِنَّةِ وَالنَّاسِ",
+      "transliteration": "Mina al-jinnati wa an-nas",
+      "translation": "From among the jinn and mankind"
+    }
+  ]
+}
+

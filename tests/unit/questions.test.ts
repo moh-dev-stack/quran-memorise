@@ -4,6 +4,7 @@ import {
   surahToQuestions,
   getQuestionsForSurah,
   getRandomQuestion,
+  getAvailableSurahs,
 } from "@/lib/questions";
 
 describe("questions", () => {
@@ -110,6 +111,32 @@ describe("questions", () => {
       expect(question1).not.toBeNull();
       expect(question2).not.toBeNull();
       expect(question3).not.toBeNull();
+    });
+  });
+
+  describe("getAvailableSurahs", () => {
+    it("should return array of available surahs", () => {
+      const surahs = getAvailableSurahs();
+      expect(Array.isArray(surahs)).toBe(true);
+      expect(surahs.length).toBeGreaterThan(0);
+    });
+
+    it("should include Surah 93 (Ad-Duha)", () => {
+      const surahs = getAvailableSurahs();
+      const adDuha = surahs.find((s) => s.number === 93);
+      expect(adDuha).toBeDefined();
+      expect(adDuha?.name).toBe("Ad-Duha");
+    });
+
+    it("should return surahs with all required properties", () => {
+      const surahs = getAvailableSurahs();
+      surahs.forEach((surah) => {
+        expect(surah.number).toBeGreaterThan(0);
+        expect(surah.name).toBeDefined();
+        expect(surah.nameArabic).toBeDefined();
+        expect(Array.isArray(surah.verses)).toBe(true);
+        expect(surah.verses.length).toBeGreaterThan(0);
+      });
     });
   });
 });

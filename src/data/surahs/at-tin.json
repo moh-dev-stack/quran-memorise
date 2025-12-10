@@ -1,0 +1,56 @@
+{
+  "number": 95,
+  "name": "At-Tin",
+  "nameArabic": "التين",
+  "verses": [
+    {
+      "number": 1,
+      "arabic": "وَالتِّينِ وَالزَّيْتُونِ",
+      "transliteration": "Wa at-tini wa az-zaytun",
+      "translation": "By the fig and the olive"
+    },
+    {
+      "number": 2,
+      "arabic": "وَطُورِ سِينِينَ",
+      "transliteration": "Wa turi Sinin",
+      "translation": "And [by] Mount Sinai"
+    },
+    {
+      "number": 3,
+      "arabic": "وَهَٰذَا الْبَلَدِ الْأَمِينِ",
+      "transliteration": "Wa hadha al-baladi al-amin",
+      "translation": "And [by] this secure city [Makkah]"
+    },
+    {
+      "number": 4,
+      "arabic": "لَقَدْ خَلَقْنَا الْإِنْسَانَ فِي أَحْسَنِ تَقْوِيمٍ",
+      "transliteration": "Laqad khalaqna al-insana fi ahsani taqwim",
+      "translation": "We have certainly created man in the best of stature"
+    },
+    {
+      "number": 5,
+      "arabic": "ثُمَّ رَدَدْنَاهُ أَسْفَلَ سَافِلِينَ",
+      "transliteration": "Thumma radadnahu asfala safilin",
+      "translation": "Then We return him to the lowest of the low"
+    },
+    {
+      "number": 6,
+      "arabic": "إِلَّا الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ فَلَهُمْ أَجْرٌ غَيْرُ مَمْنُونٍ",
+      "transliteration": "Illa alladhina amanu wa 'amilu as-salihati falahum ajrun ghayru mamnun",
+      "translation": "Except those who believe and do righteous deeds, for they will have a reward uninterrupted"
+    },
+    {
+      "number": 7,
+      "arabic": "فَمَا يُكَذِّبُكَ بَعْدُ بِالدِّينِ",
+      "transliteration": "Fama yukadhdhibuka ba'du bid-din",
+      "translation": "So what yet causes you to deny the Recompense?"
+    },
+    {
+      "number": 8,
+      "arabic": "أَلَيْسَ اللَّهُ بِأَحْكَمِ الْحَاكِمِينَ",
+      "transliteration": "Alaysa Allahu bi ahkami al-hakimin",
+      "translation": "Is not Allah the most just of judges?"
+    }
+  ]
+}
+

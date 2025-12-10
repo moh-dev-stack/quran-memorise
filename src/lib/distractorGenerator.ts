@@ -23,7 +23,12 @@ export function generateDistractors(
   }
 
   // Shuffle and take count (or all available if less than count)
-  const shuffled = [...otherVerses].sort(() => Math.random() - 0.5);
+  // Use Fisher-Yates shuffle for better performance
+  const shuffled = [...otherVerses];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
   return shuffled.slice(0, Math.min(count, otherVerses.length));
 }
 
@@ -83,8 +88,12 @@ export function generateTranslationOptions(
     attempts++;
   }
 
-  // Shuffle options
-  return options.sort(() => Math.random() - 0.5);
+  // Shuffle options efficiently using Fisher-Yates
+  for (let i = options.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [options[i], options[j]] = [options[j], options[i]];
+  }
+  return options;
 }
 
 /**
@@ -146,8 +155,12 @@ export function generateArabicTransOptions(
     attempts++;
   }
 
-  // Shuffle options
-  return options.sort(() => Math.random() - 0.5);
+  // Shuffle options efficiently using Fisher-Yates
+  for (let i = options.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [options[i], options[j]] = [options[j], options[i]];
+  }
+  return options;
 }
 
 /**
@@ -206,8 +219,12 @@ export function generateTransliterationOptions(
     attempts++;
   }
 
-  // Shuffle options
-  return options.sort(() => Math.random() - 0.5);
+  // Shuffle options efficiently using Fisher-Yates
+  for (let i = options.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [options[i], options[j]] = [options[j], options[i]];
+  }
+  return options;
 }
 
 /**
@@ -268,7 +285,11 @@ export function generateArabicOptions(
     attempts++;
   }
 
-  // Shuffle options
-  return options.sort(() => Math.random() - 0.5);
+  // Shuffle options efficiently using Fisher-Yates
+  for (let i = options.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [options[i], options[j]] = [options[j], options[i]];
+  }
+  return options;
 }
 

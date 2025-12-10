@@ -1,0 +1,26 @@
+{
+  "number": 110,
+  "name": "An-Nasr",
+  "nameArabic": "النصر",
+  "verses": [
+    {
+      "number": 1,
+      "arabic": "إِذَا جَاءَ نَصْرُ اللَّهِ وَالْفَتْحُ",
+      "transliteration": "Idha ja'a nasru Allahi wal-fath",
+      "translation": "When the victory of Allah has come and the conquest"
+    },
+    {
+      "number": 2,
+      "arabic": "وَرَأَيْتَ النَّاسَ يَدْخُلُونَ فِي دِينِ اللَّهِ أَفْوَاجًا",
+      "transliteration": "Wa ra'ayta an-nasa yadkhuluna fi dini Allahi afwajan",
+      "translation": "And you see the people entering into the religion of Allah in multitudes"
+    },
+    {
+      "number": 3,
+      "arabic": "فَسَبِّحْ بِحَمْدِ رَبِّكَ وَاسْتَغْفِرْهُ إِنَّهُ كَانَ تَوَّابًا",
+      "transliteration": "Fasabbih bihamdi rabbika wastaghfirhu innahu kana tawwaban",
+      "translation": "Then exalt [Him] with praise of your Lord and ask forgiveness of Him. Indeed, He is ever Accepting of repentance"
+    }
+  ]
+}
+
