@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useMemo } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import VerseCard from "@/components/VerseCard";
 import type { Question } from "@/lib/types";
 
@@ -34,6 +34,16 @@ export default function ReadingMode({
   }, [question, sortedQuestions]);
 
   const [currentVerseIndex, setCurrentVerseIndex] = useState(currentIndex >= 0 ? currentIndex : 0);
+
+  // Update currentVerseIndex when question changes
+  useEffect(() => {
+    const newIndex = sortedQuestions.findIndex(
+      (q) => q.verse.number === question.verse.number && q.surahNumber === question.surahNumber
+    );
+    if (newIndex >= 0 && newIndex !== currentVerseIndex) {
+      setCurrentVerseIndex(newIndex);
+    }
+  }, [question.verse.number, question.surahNumber, sortedQuestions, currentVerseIndex]);
 
   const currentVerse = useMemo(() => {
     if (currentVerseIndex >= 0 && currentVerseIndex < sortedQuestions.length) {
@@ -140,7 +150,7 @@ export default function ReadingMode({
             onClick={handleLast}
             disabled={currentVerseIndex === sortedQuestions.length - 1}
             className={`flex-1 py-2 rounded-lg text-sm transition-colors touch-target english-text ${
-              currentVerseIndex === allQuestions.length - 1
+              currentVerseIndex === sortedQuestions.length - 1
                 ? "bg-gray-200 text-gray-400 cursor-not-allowed"
                 : "bg-gray-100 text-gray-700 hover:bg-gray-200"
             }`}
