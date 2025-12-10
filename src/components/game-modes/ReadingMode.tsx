@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback, useMemo } from "react";
+import { useState, useEffect, useCallback, useMemo, useRef } from "react";
 import VerseCard from "@/components/VerseCard";
 import type { Question } from "@/lib/types";
 
@@ -38,12 +38,29 @@ export default function ReadingMode({
     return currentIndex >= 0 ? currentIndex : 0;
   });
 
-  // Update currentVerseIndex when question prop changes (but not when user navigates)
+  // Track initial mount to only sync on first render or when question prop changes externally
+  const isInitialMount = useRef(true);
+  const prevQuestionKey = useRef<string | null>(null);
+  
   useEffect(() => {
-    if (currentIndex >= 0 && currentIndex !== currentVerseIndex) {
-      setCurrentVerseIndex(currentIndex);
+    const questionKey = `${question.surahNumber}-${question.verse.number}`;
+    
+    // On initial mount, set the index
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      prevQuestionKey.current = questionKey;
+      if (currentIndex >= 0) {
+        setCurrentVerseIndex(currentIndex);
+      }
+      return;
     }
-  }, [currentIndex]);
+    
+    // Only update if question prop changed from parent (external change)
+    if (prevQuestionKey.current !== questionKey && currentIndex >= 0) {
+      setCurrentVerseIndex(currentIndex);
+      prevQuestionKey.current = questionKey;
+    }
+  }, [question.verse.number, question.surahNumber, currentIndex]);
 
   const currentVerse = useMemo(() => {
     if (currentVerseIndex >= 0 && currentVerseIndex < sortedQuestions.length) {
@@ -58,28 +75,22 @@ export default function ReadingMode({
   const handlePrevious = useCallback(() => {
     if (canGoPrevious) {
       setCurrentVerseIndex((prev) => prev - 1);
-      // Call onAnswer with true since reading mode doesn't have scoring
-      onAnswer(true);
     }
-  }, [canGoPrevious, onAnswer]);
+  }, [canGoPrevious]);
 
   const handleNext = useCallback(() => {
     if (canGoNext) {
       setCurrentVerseIndex((prev) => prev + 1);
-      // Call onAnswer with true since reading mode doesn't have scoring
-      onAnswer(true);
     }
-  }, [canGoNext, onAnswer]);
+  }, [canGoNext]);
 
   const handleFirst = useCallback(() => {
     setCurrentVerseIndex(0);
-    onAnswer(true);
-  }, [onAnswer]);
+  }, []);
 
   const handleLast = useCallback(() => {
     setCurrentVerseIndex(sortedQuestions.length - 1);
-    onAnswer(true);
-  }, [sortedQuestions.length, onAnswer]);
+  }, [sortedQuestions.length]);
 
   return (
     <div className="w-full max-w-md space-y-4">
@@ -169,7 +180,6 @@ export default function ReadingMode({
             onClick={() => {
               // Since sortedQuestions is sorted by verse number, index directly corresponds to verse position
               setCurrentVerseIndex(index);
-              onAnswer(true);
             }}
             className={`w-8 h-8 rounded text-xs transition-colors touch-target ${
               index === currentVerseIndex
