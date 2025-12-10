@@ -188,7 +188,7 @@ export default function WordOrderMode({
       {isAnswered && (
         <Feedback
           isCorrect={isCorrect}
-          correctAnswer={question.verse.arabic}
+          correctAnswer={question.verse.translation}
           userAnswer={selectedWords.join(" ")}
         />
       )}
