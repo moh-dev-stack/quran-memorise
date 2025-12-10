@@ -246,8 +246,6 @@ describe("Performance Tests", () => {
 
   describe("Reading Mode Performance", () => {
     it("should find verse index quickly in large arrays", () => {
-      const { extractArabicWords } = require("@/lib/wordExtractor");
-      
       // Create large question array
       const largeQuestions: Question[] = [];
       for (let i = 0; i < 1000; i++) {
