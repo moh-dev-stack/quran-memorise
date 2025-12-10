@@ -230,5 +230,78 @@ describe("Stress Tests - Integration", () => {
       }
     });
   });
+
+  describe("Word Order Mode Stress Test", () => {
+    it("should handle rapid word selection and deselection", async () => {
+      const user = userEvent.setup();
+      render(<PlayPage />);
+
+      await fastWaitFor(() => {
+        expect(fastGetByText(/Select a Surah/i)).toBeInTheDocument();
+      });
+
+      const surahButton = fastGetByText(/Surah Ad-Duha/i).closest("button");
+      await user.click(surahButton!);
+      await fastWaitFor(() => {
+        expect(fastGetByText(/Choose a game mode/i)).toBeInTheDocument();
+      });
+
+      await user.click(fastGetByText(/Word Order/i));
+      await fastWaitFor(() => {
+        expect(fastGetByText(/Arrange the words/i)).toBeInTheDocument();
+      });
+
+      // Rapidly click words
+      const wordButtons = screen
+        .getAllByRole("button")
+        .filter(
+          (btn) =>
+            btn.textContent &&
+            btn.textContent.length > 0 &&
+            !btn.textContent.includes("Back") &&
+            !btn.textContent.includes("Home") &&
+            !btn.textContent.includes("Question") &&
+            !btn.textContent.includes("Reset") &&
+            !btn.textContent.includes("Check")
+        );
+
+      if (wordButtons.length > 0) {
+        const start = performance.now();
+        // Click first few words rapidly
+        for (let i = 0; i < Math.min(3, wordButtons.length); i++) {
+          if (!wordButtons[i].disabled) {
+            await user.click(wordButtons[i]);
+          }
+        }
+        const duration = performance.now() - start;
+        expect(duration).toBeLessThan(1000);
+      }
+    });
+
+    it("should handle multiple word order games efficiently", async () => {
+      const user = userEvent.setup();
+      render(<PlayPage />);
+
+      await fastWaitFor(() => {
+        expect(fastGetByText(/Select a Surah/i)).toBeInTheDocument();
+      });
+
+      const surahButton = fastGetByText(/Surah Ad-Duha/i).closest("button");
+      await user.click(surahButton!);
+      await fastWaitFor(() => {
+        expect(fastGetByText(/Choose a game mode/i)).toBeInTheDocument();
+      });
+
+      await user.click(fastGetByText(/Word Order/i));
+      
+      const start = performance.now();
+      await fastWaitFor(() => {
+        expect(fastGetByText(/Arrange the words/i)).toBeInTheDocument();
+      });
+      const duration = performance.now() - start;
+      
+      expect(duration).toBeLessThan(500); // Should load quickly
+    });
+  });
 });
 

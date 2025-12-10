@@ -8,6 +8,8 @@ import { generateBlanks, generateMissingWordOptions } from "@/lib/blankGenerator
 import { getQuestionsForSurah, getAvailableSurahs } from "@/lib/questions";
 import { selectMode, selectSurah, nextQuestion, submitAnswer } from "@/lib/gameState";
 import { createSeededRandom } from "@/lib/seededRandom";
+import { extractArabicWords } from "@/lib/wordExtractor";
+import { shuffleArray } from "@/lib/utils";
 import type { Question, Verse } from "@/lib/types";
 
 describe("Performance Tests", () => {
@@ -176,6 +178,63 @@ describe("Performance Tests", () => {
       const verse = allQuestions[0].verse;
       const promises = Array.from({ length: 20 }, () =>
         Promise.resolve(generateBlanks(verse, true))
+      );
+      
+      const start = performance.now();
+      await Promise.all(promises);
+      const duration = performance.now() - start;
+      expect(duration).toBeLessThan(50);
+    });
+  });
+
+  describe("Word Order Performance", () => {
+    it("should extract and shuffle words quickly", () => {
+      const verse = allQuestions[0].verse;
+      const start = performance.now();
+      
+      for (let i = 0; i < 100; i++) {
+        const words = extractArabicWords(verse.arabic);
+        shuffleArray([...words]);
+      }
+      
+      const duration = performance.now() - start;
+      expect(duration).toBeLessThan(100);
+    });
+
+    it("should validate word order quickly", () => {
+      const verse = allQuestions[0].verse;
+      const correctWords = extractArabicWords(verse.arabic);
+      const userAnswer = [...correctWords];
+      
+      const start = performance.now();
+      for (let i = 0; i < 10000; i++) {
+        userAnswer.every((word, index) => word === correctWords[index]);
+      }
+      const duration = performance.now() - start;
+      expect(duration).toBeLessThan(100);
+    });
+
+    it("should handle long verses efficiently", () => {
+      // Find longest verse
+      let longestVerse = allQuestions[0].verse;
+      for (const q of allQuestions) {
+        if (q.verse.arabic.length > longestVerse.arabic.length) {
+          longestVerse = q.verse;
+        }
+      }
+      
+      const start = performance.now();
+      const words = extractArabicWords(longestVerse.arabic);
+      const shuffled = shuffleArray([...words]);
+      const duration = performance.now() - start;
+      
+      expect(shuffled.length).toBe(words.length);
+      expect(duration).toBeLessThan(10); // Should be very fast even for long verses
+    });
+
+    it("should handle concurrent word extraction", async () => {
+      const promises = allQuestions.slice(0, 50).map((q) =>
+        Promise.resolve(extractArabicWords(q.verse.arabic))
       );
       
       const start = performance.now();
