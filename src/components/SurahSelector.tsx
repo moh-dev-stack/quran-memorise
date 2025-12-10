@@ -42,7 +42,7 @@ export default function SurahSelector({
               <div className="flex justify-between items-center">
                 <div>
                   <div className="font-medium text-gray-800 english-text">
-                    Surah {surah.name}
+                    {surah.number}. Surah {surah.name}
                   </div>
                   <div className="text-sm text-gray-600 arabic-text">
                     {surah.nameArabic} • {surah.verses.length} verses
