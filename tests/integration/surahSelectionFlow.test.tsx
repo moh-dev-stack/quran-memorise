@@ -3,7 +3,6 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import PlayPage from "@/app/play/page";
 import { fastWaitFor, fastGetByText } from "../testUtils";
-import { fastWaitFor } from "../testUtils";
 
 // Mock next/navigation
 const mockPush = vi.fn();
@@ -90,8 +89,7 @@ describe("Surah Selection Flow Integration", () => {
       expect(fastGetByText(/Back to Surah Selection/i)).toBeInTheDocument();
     });
 
-    const backButton = screen.getByText(/Back to Surah Selection/i);
-    await user.click(backButton);
+    await user.click(fastGetByText(/Back to Surah Selection/i));
 
     await fastWaitFor(() => {
       expect(fastGetByText(/Select a Surah/i)).toBeInTheDocument();
