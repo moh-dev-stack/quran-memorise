@@ -83,39 +83,120 @@ export default function FirstLastWordMode({
     // Number of words shown (same logic as shownArabic/shownTransliteration)
     const numWordsShown = Math.min(2, arabicWords.length);
 
-    return rawOptions.map((option) => {
-      // Extract words from option verses
-      const optionArabicWords = extractArabicWords(option.arabic);
-      const optionTransWords = extractTransliterationWords(option.transliteration);
+    // Process options and filter out blank ones
+    const processedOptions = rawOptions
+      .map((option) => {
+        // Extract words from option verses
+        const optionArabicWords = extractArabicWords(option.arabic);
+        const optionTransWords = extractTransliterationWords(option.transliteration);
 
-      let remainingArabicWords: string[];
-      let remainingTransWords: string[];
+        // Skip if verse doesn't have enough words to remove
+        if (optionArabicWords.length <= numWordsShown || optionTransWords.length <= numWordsShown) {
+          return null;
+        }
 
-      if (useFirst) {
-        // Remove first words (same number as shown)
-        remainingArabicWords = optionArabicWords.slice(numWordsShown);
-        remainingTransWords = optionTransWords.slice(numWordsShown);
-      } else {
-        // Remove last words (same number as shown)
-        remainingArabicWords = optionArabicWords.slice(0, -numWordsShown);
-        remainingTransWords = optionTransWords.slice(0, -numWordsShown);
-      }
+        let remainingArabicWords: string[];
+        let remainingTransWords: string[];
 
-      // Handle edge case: if all words removed, show placeholder
-      const displayArabic = remainingArabicWords.length > 0 
-        ? remainingArabicWords.join(" ") 
-        : "...";
-      const displayTrans = remainingTransWords.length > 0 
-        ? remainingTransWords.join(" ") 
-        : "...";
+        if (useFirst) {
+          // Remove first words (same number as shown)
+          remainingArabicWords = optionArabicWords.slice(numWordsShown);
+          remainingTransWords = optionTransWords.slice(numWordsShown);
+        } else {
+          // Remove last words (same number as shown)
+          remainingArabicWords = optionArabicWords.slice(0, -numWordsShown);
+          remainingTransWords = optionTransWords.slice(0, -numWordsShown);
+        }
 
-      return {
-        ...option,
-        arabic: displayArabic,
-        transliteration: displayTrans,
-      };
-    });
-  }, [rawOptions, useFirst, arabicWords.length]);
+        // Skip if no words remain (would result in blank option)
+        if (remainingArabicWords.length === 0 || remainingTransWords.length === 0) {
+          return null;
+        }
+
+        return {
+          ...option,
+          arabic: remainingArabicWords.join(" "),
+          transliteration: remainingTransWords.join(" "),
+        };
+      })
+      .filter((option): option is NonNullable<typeof option> => option !== null);
+
+    // If we filtered out the correct answer, we need to handle it specially
+    const hasCorrectAnswer = processedOptions.some(o => o.isCorrect);
+    
+    if (!hasCorrectAnswer) {
+      // The correct answer was filtered out because it would be blank
+      // In this case, we need to generate more options from verses with more words
+      // Or skip this question entirely - but for now, let's try to get more options
+      
+      // Find verses with enough words to use as distractors
+      const versesWithEnoughWords = allQuestions
+        .map(q => q.verse)
+        .filter(v => {
+          const vArabicWords = extractArabicWords(v.arabic);
+          const vTransWords = extractTransliterationWords(v.transliteration);
+          return vArabicWords.length > numWordsShown && 
+                 vTransWords.length > numWordsShown &&
+                 v.number !== question.verse.number;
+        });
+
+      // Generate additional options from verses with enough words
+      const additionalOptions = versesWithEnoughWords
+        .slice(0, Math.max(3, 4 - processedOptions.length))
+        .map((verse, index) => {
+          const verseArabicWords = extractArabicWords(verse.arabic);
+          const verseTransWords = extractTransliterationWords(verse.transliteration);
+
+          let remainingArabicWords: string[];
+          let remainingTransWords: string[];
+
+          if (useFirst) {
+            remainingArabicWords = verseArabicWords.slice(numWordsShown);
+            remainingTransWords = verseTransWords.slice(numWordsShown);
+          } else {
+            remainingArabicWords = verseArabicWords.slice(0, -numWordsShown);
+            remainingTransWords = verseTransWords.slice(0, -numWordsShown);
+          }
+
+          return {
+            arabic: remainingArabicWords.join(" "),
+            transliteration: remainingTransWords.join(" "),
+            isCorrect: false,
+            id: `distractor-${verse.number}-${index}`,
+          };
+        });
+
+      // Add the correct answer showing full verse (since removing words would make it blank)
+      processedOptions.push({
+        arabic: question.verse.arabic,
+        transliteration: question.verse.transliteration,
+        isCorrect: true,
+        id: `correct-${question.verse.number}`,
+      });
+
+      // Add additional distractors
+      processedOptions.push(...additionalOptions);
+    }
+
+    // Ensure we have at least 2 options
+    if (processedOptions.length < 2) {
+      // Last resort: use full verses as options if we can't generate enough partial ones
+      const fallbackOptions = allQuestions
+        .map(q => q.verse)
+        .filter(v => v.number !== question.verse.number)
+        .slice(0, 4 - processedOptions.length)
+        .map((verse, index) => ({
+          arabic: verse.arabic,
+          transliteration: verse.transliteration,
+          isCorrect: false,
+          id: `fallback-${verse.number}-${index}`,
+        }));
+
+      processedOptions.push(...fallbackOptions);
+    }
+
+    return processedOptions;
+  }, [rawOptions, useFirst, arabicWords.length, allQuestions, question.verse]);
 
   const correctAnswerId = useMemo(() => {
     return options.find(o => o.isCorrect)?.id || null;
