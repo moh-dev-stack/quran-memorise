@@ -2,6 +2,11 @@ import type { GameMode, GameModeOption, Verse, Question } from "./types";
 
 export const GAME_MODES: GameModeOption[] = [
   {
+    id: "continuous-reading-mode",
+    name: "Continuous Reading",
+    description: "Scroll through all verses of the surah continuously",
+  },
+  {
     id: "reading-mode",
     name: "Reading Mode",
     description: "Read through the surah verse by verse with navigation",

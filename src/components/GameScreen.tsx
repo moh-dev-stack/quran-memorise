@@ -9,6 +9,7 @@ import FirstLastWordMode from "@/components/game-modes/FirstLastWordMode";
 import VerseNumberMode from "@/components/game-modes/VerseNumberMode";
 import WordOrderMode from "@/components/game-modes/WordOrderMode";
 import ReadingMode from "@/components/game-modes/ReadingMode";
+import ContinuousReadingMode from "@/components/game-modes/ContinuousReadingMode";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import type { Question, GameMode } from "@/lib/types";
 
@@ -64,12 +65,14 @@ export default function GameScreen({
               Home
             </button>
           </div>
-          <ScoreDisplay
-            score={totalScore}
-            total={maxScore}
-            currentQuestion={currentQuestionIndex + 1}
-            totalQuestions={questions.length}
-          />
+          {selectedMode !== "continuous-reading-mode" && (
+            <ScoreDisplay
+              score={totalScore}
+              total={maxScore}
+              currentQuestion={currentQuestionIndex + 1}
+              totalQuestions={questions.length}
+            />
+          )}
         </div>
 
         {/* Game Mode Component */}
@@ -124,6 +127,13 @@ export default function GameScreen({
                 onAnswer={onAnswer}
               />
             )}
+            {selectedMode === "continuous-reading-mode" && (
+              <ContinuousReadingMode
+                question={currentQuestion}
+                allQuestions={questions}
+                onAnswer={onAnswer}
+              />
+            )}
             {selectedMode === "reading-mode" && (
               <ReadingMode
                 question={currentQuestion}
@@ -134,8 +144,8 @@ export default function GameScreen({
           </div>
         </ErrorBoundary>
 
-        {/* Next Button - Hide for reading mode */}
-        {isAnswered && selectedMode !== "reading-mode" && (
+        {/* Next Button - Hide for reading modes */}
+        {isAnswered && selectedMode !== "reading-mode" && selectedMode !== "continuous-reading-mode" && (
           <button
             onClick={onNextQuestion}
             className="w-full py-4 rounded-lg text-lg bg-green-600 text-white hover:bg-green-700 transition-colors touch-target mb-2 english-text"
@@ -151,8 +161,8 @@ export default function GameScreen({
           </button>
         )}
 
-        {/* Restart Button - Hide for reading mode */}
-        {isAnswered && selectedMode !== "reading-mode" && (
+        {/* Restart Button - Hide for reading modes */}
+        {isAnswered && selectedMode !== "reading-mode" && selectedMode !== "continuous-reading-mode" && (
           <button
             onClick={onRestart}
             className="w-full py-3 rounded-lg text-base bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors touch-target english-text"

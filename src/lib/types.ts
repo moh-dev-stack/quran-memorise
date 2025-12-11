@@ -38,6 +38,7 @@ export interface ReviewItem {
 }
 
 export type GameMode =
+  | "continuous-reading-mode"
   | "arabic-trans-to-translation"
   | "translation-to-arabic-trans"
   | "missing-word"

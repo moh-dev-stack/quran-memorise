@@ -66,10 +66,10 @@ export function selectMode(
     return state;
   }
 
-  // For reading mode, keep questions sorted by verse number (no shuffling)
+  // For reading modes, keep questions sorted by verse number (no shuffling)
   // For other modes, shuffle questions randomly
   let questionsToUse: Question[];
-  if (mode === "reading-mode") {
+  if (mode === "reading-mode" || mode === "continuous-reading-mode") {
     questionsToUse = [...state.allQuestions].sort((a, b) => {
       // First sort by surah number, then by verse number
       if (a.surahNumber !== b.surahNumber) {

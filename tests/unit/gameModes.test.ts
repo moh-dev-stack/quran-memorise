@@ -17,10 +17,12 @@ describe("Game Modes - Question Ordering", () => {
     usedReveal: false,
   });
 
-  describe("Reading Mode", () => {
-    it("should keep questions sorted by verse number", () => {
+  describe("Reading Modes", () => {
+    const readingModes = ["reading-mode", "continuous-reading-mode"] as const;
+
+    it.each(readingModes)("should keep questions sorted by verse number for %s", (mode) => {
       const state = createStateWithQuestions();
-      const newState = selectMode(state, "reading-mode");
+      const newState = selectMode(state, mode);
 
       // Questions should be sorted by verse number (1, 2, 3, ..., 11)
       expect(newState.questions.length).toBe(11);
@@ -29,10 +31,10 @@ describe("Game Modes - Question Ordering", () => {
       }
     });
 
-    it("should maintain sorted order across multiple calls", () => {
+    it.each(readingModes)("should maintain sorted order across multiple calls for %s", (mode) => {
       const state = createStateWithQuestions();
-      const state1 = selectMode(state, "reading-mode");
-      const state2 = selectMode(state, "reading-mode");
+      const state1 = selectMode(state, mode);
+      const state2 = selectMode(state, mode);
 
       // Both should have same order (sorted)
       expect(state1.questions.map(q => q.verse.number)).toEqual(
