@@ -12,7 +12,13 @@ export default function HomePage() {
             href="/play"
             className="block w-full py-4 rounded-lg text-xl bg-blue-600 text-white hover:bg-blue-700 transition-colors shadow-lg english-text"
           >
-            Start Memorizing
+            Start Memorizing Surahs
+          </Link>
+          <Link
+            href="/words"
+            className="block w-full py-4 rounded-lg text-xl bg-green-600 text-white hover:bg-green-700 transition-colors shadow-lg english-text"
+          >
+            Memorize Words
           </Link>
         </div>
       </div>

@@ -1,0 +1,2459 @@
+[
+  {
+    "id": "word-1",
+    "arabic": "اللَّه",
+    "transliteration": "Allah",
+    "translation": "Allah",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 2816,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
+        "translation": "In the name of Allah, the Entirely Merciful, the Especially Merciful"
+      }
+    ],
+    "combinations": [
+      "اللَّه",
+      "بِاللَّهِ",
+      "لِلَّهِ",
+      "وَاللَّهُ"
+    ]
+  },
+  {
+    "id": "word-2",
+    "arabic": "رَبِّ",
+    "transliteration": "Rabb",
+    "translation": "Lord",
+    "root": "ر ب ب",
+    "partOfSpeech": "noun",
+    "frequency": 980,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 2,
+        "arabic": "الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ",
+        "translation": "[All] praise is [due] to Allah, Lord of the worlds"
+      }
+    ],
+    "combinations": [
+      "رَبِّ",
+      "رَبِّكَ",
+      "رَبِّكُمْ",
+      "رَبِّهِمْ"
+    ]
+  },
+  {
+    "id": "word-3",
+    "arabic": "فِي",
+    "transliteration": "Fi",
+    "translation": "In",
+    "root": "",
+    "partOfSpeech": "particle",
+    "frequency": 1200,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 2,
+        "arabic": "ذَٰلِكَ الْكِتَابُ لَا رَيْبَ فِيهِ",
+        "translation": "This is the Book about which there is no doubt"
+      }
+    ],
+    "combinations": [
+      "فِي",
+      "فِيهِ",
+      "فِيهَا",
+      "فِيهِمْ"
+    ]
+  },
+  {
+    "id": "word-4",
+    "arabic": "مِن",
+    "transliteration": "Min",
+    "translation": "From",
+    "root": "",
+    "partOfSpeech": "particle",
+    "frequency": 3200,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
+        "translation": "In the name of Allah, the Entirely Merciful, the Especially Merciful"
+      }
+    ],
+    "combinations": [
+      "مِن",
+      "مِنْهُمْ",
+      "مِنْكُمْ",
+      "مِنَّا"
+    ]
+  },
+  {
+    "id": "word-5",
+    "arabic": "إِلَىٰ",
+    "transliteration": "Ila",
+    "translation": "To",
+    "root": "",
+    "partOfSpeech": "particle",
+    "frequency": 740,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 5,
+        "arabic": "اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ",
+        "translation": "Guide us to the straight path"
+      }
+    ],
+    "combinations": [
+      "إِلَى",
+      "إِلَيْهِ",
+      "إِلَيْكُمْ",
+      "إِلَيْنَا"
+    ]
+  },
+  {
+    "id": "word-6",
+    "arabic": "عَلَىٰ",
+    "transliteration": "'Ala",
+    "translation": "On",
+    "root": "",
+    "partOfSpeech": "particle",
+    "frequency": 850,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 6,
+        "arabic": "صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ",
+        "translation": "The path of those upon whom You have bestowed favor"
+      }
+    ],
+    "combinations": [
+      "عَلَى",
+      "عَلَيْهِ",
+      "عَلَيْكُمْ",
+      "عَلَيْنَا"
+    ]
+  },
+  {
+    "id": "word-7",
+    "arabic": "كَانَ",
+    "transliteration": "Kana",
+    "translation": "Was/Were",
+    "root": "ك و ن",
+    "partOfSpeech": "verb",
+    "frequency": 1300,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 30,
+        "arabic": "وَإِذْ قَالَ رَبُّكَ لِلْمَلَائِكَةِ إِنِّي جَاعِلٌ فِي الْأَرْضِ خَلِيفَةً",
+        "translation": "And [mention, O Muhammad], when your Lord said to the angels, 'Indeed, I will make upon the earth a successive authority'"
+      }
+    ],
+    "combinations": [
+      "كَانَ",
+      "كَانُوا",
+      "كُنْتُمْ",
+      "كُنَّا"
+    ]
+  },
+  {
+    "id": "word-8",
+    "arabic": "قَالَ",
+    "transliteration": "Qala",
+    "translation": "Said",
+    "root": "ق و ل",
+    "partOfSpeech": "verb",
+    "frequency": 1700,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 30,
+        "arabic": "وَإِذْ قَالَ رَبُّكَ لِلْمَلَائِكَةِ",
+        "translation": "And [mention] when your Lord said to the angels"
+      }
+    ],
+    "combinations": [
+      "قَالَ",
+      "قَالُوا",
+      "قُلْتُمْ",
+      "قُلْنَا"
+    ]
+  },
+  {
+    "id": "word-9",
+    "arabic": "جَاءَ",
+    "transliteration": "Ja'a",
+    "translation": "Came",
+    "root": "ج ي أ",
+    "partOfSpeech": "verb",
+    "frequency": 200,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 89,
+        "arabic": "وَلَمَّا جَاءَهُمْ كِتَابٌ مِّنْ عِندِ اللَّهِ",
+        "translation": "And when there came to them a Book from Allah"
+      }
+    ],
+    "combinations": [
+      "جَاءَ",
+      "جَاءُوا",
+      "جِئْتُمْ",
+      "جِئْنَا"
+    ]
+  },
+  {
+    "id": "word-10",
+    "arabic": "كِتَاب",
+    "transliteration": "Kitab",
+    "translation": "Book",
+    "root": "ك ت ب",
+    "partOfSpeech": "noun",
+    "frequency": 250,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 2,
+        "arabic": "ذَٰلِكَ الْكِتَابُ لَا رَيْبَ فِيهِ",
+        "translation": "This is the Book about which there is no doubt"
+      }
+    ],
+    "combinations": [
+      "كِتَاب",
+      "الْكِتَاب",
+      "كِتَابِهِ",
+      "كِتَابِكُمْ"
+    ]
+  },
+  {
+    "id": "word-11",
+    "arabic": "يَوْم",
+    "transliteration": "Yawm",
+    "translation": "Day",
+    "root": "ي و م",
+    "partOfSpeech": "noun",
+    "frequency": 475,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 8,
+        "arabic": "وَمِنَ النَّاسِ مَن يَقُولُ آمَنَّا بِاللَّهِ وَبِالْيَوْمِ الْآخِرِ",
+        "translation": "And of the people are some who say, 'We believe in Allah and the Last Day'"
+      }
+    ],
+    "combinations": [
+      "يَوْم",
+      "الْيَوْم",
+      "يَوْمِهِ",
+      "يَوْمِكُمْ"
+    ]
+  },
+  {
+    "id": "word-12",
+    "arabic": "أَرْض",
+    "transliteration": "Ard",
+    "translation": "Earth",
+    "root": "أ ر ض",
+    "partOfSpeech": "noun",
+    "frequency": 450,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 30,
+        "arabic": "إِنِّي جَاعِلٌ فِي الْأَرْضِ خَلِيفَةً",
+        "translation": "Indeed, I will make upon the earth a successive authority"
+      }
+    ],
+    "combinations": [
+      "أَرْض",
+      "الْأَرْض",
+      "أَرْضِهِ",
+      "أَرْضِكُمْ"
+    ]
+  },
+  {
+    "id": "word-13",
+    "arabic": "لَا",
+    "transliteration": "La",
+    "translation": "No/Not",
+    "root": "",
+    "partOfSpeech": "particle",
+    "frequency": 3200,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 2,
+        "arabic": "الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ",
+        "translation": "[All] praise is [due] to Allah, Lord of the worlds"
+      }
+    ],
+    "combinations": [
+      "لَا",
+      "لَيْس",
+      "لَمْ"
+    ]
+  },
+  {
+    "id": "word-14",
+    "arabic": "إِنَّ",
+    "transliteration": "Inna",
+    "translation": "Indeed",
+    "root": "",
+    "partOfSpeech": "particle",
+    "frequency": 1800,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 2,
+        "arabic": "ذَٰلِكَ الْكِتَابُ لَا رَيْبَ فِيهِ",
+        "translation": "This is the Book about which there is no doubt"
+      }
+    ],
+    "combinations": [
+      "إِنَّ",
+      "إِنَّا"
+    ]
+  },
+  {
+    "id": "word-15",
+    "arabic": "أَنَّ",
+    "transliteration": "Anna",
+    "translation": "That",
+    "root": "",
+    "partOfSpeech": "particle",
+    "frequency": 1200,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 2,
+        "arabic": "ذَٰلِكَ الْكِتَابُ لَا رَيْبَ فِيهِ",
+        "translation": "This is the Book about which there is no doubt"
+      }
+    ],
+    "combinations": [
+      "أَنَّ"
+    ]
+  },
+  {
+    "id": "word-16",
+    "arabic": "وَ",
+    "transliteration": "Wa",
+    "translation": "And",
+    "root": "",
+    "partOfSpeech": "particle",
+    "frequency": 50000,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
+        "translation": "In the name of Allah, the Entirely Merciful, the Especially Merciful"
+      }
+    ],
+    "combinations": [
+      "وَ"
+    ]
+  },
+  {
+    "id": "word-17",
+    "arabic": "بِ",
+    "transliteration": "Bi",
+    "translation": "With/By",
+    "root": "",
+    "partOfSpeech": "particle",
+    "frequency": 15000,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
+        "translation": "In the name of Allah, the Entirely Merciful, the Especially Merciful"
+      }
+    ],
+    "combinations": [
+      "بِ",
+      "بِاللَّهِ"
+    ]
+  },
+  {
+    "id": "word-18",
+    "arabic": "لِ",
+    "transliteration": "Li",
+    "translation": "For/To",
+    "root": "",
+    "partOfSpeech": "particle",
+    "frequency": 8000,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 2,
+        "arabic": "الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ",
+        "translation": "[All] praise is [due] to Allah, Lord of the worlds"
+      }
+    ],
+    "combinations": [
+      "لِ",
+      "لِلَّهِ"
+    ]
+  },
+  {
+    "id": "word-19",
+    "arabic": "مَا",
+    "transliteration": "Ma",
+    "translation": "What",
+    "root": "",
+    "partOfSpeech": "particle",
+    "frequency": 3000,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 2,
+        "arabic": "ذَٰلِكَ الْكِتَابُ لَا رَيْبَ فِيهِ",
+        "translation": "This is the Book about which there is no doubt"
+      }
+    ],
+    "combinations": [
+      "مَا"
+    ]
+  },
+  {
+    "id": "word-20",
+    "arabic": "هَٰذَا",
+    "transliteration": "Hatha",
+    "translation": "This",
+    "root": "",
+    "partOfSpeech": "particle",
+    "frequency": 1500,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 2,
+        "arabic": "ذَٰلِكَ الْكِتَابُ لَا رَيْبَ فِيهِ",
+        "translation": "This is the Book about which there is no doubt"
+      }
+    ],
+    "combinations": [
+      "هَٰذَا",
+      "هَٰذِهِ"
+    ]
+  },
+  {
+    "id": "word-21",
+    "arabic": "أَتَىٰ",
+    "transliteration": "Ata",
+    "translation": "Came",
+    "root": "أ ت ي",
+    "partOfSpeech": "verb",
+    "frequency": 350,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 89,
+        "arabic": "وَلَمَّا جَاءَهُمْ كِتَابٌ",
+        "translation": "And when there came to them a Book"
+      }
+    ],
+    "combinations": [
+      "أَتَى",
+      "أَتَوْا"
+    ]
+  },
+  {
+    "id": "word-22",
+    "arabic": "عَمِلَ",
+    "transliteration": "'Amila",
+    "translation": "Did",
+    "root": "ع م ل",
+    "partOfSpeech": "verb",
+    "frequency": 360,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 82,
+        "arabic": "وَالَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ",
+        "translation": "And those who believe and do righteous deeds"
+      }
+    ],
+    "combinations": [
+      "عَمِلَ",
+      "عَمِلُوا"
+    ]
+  },
+  {
+    "id": "word-23",
+    "arabic": "عَلِمَ",
+    "transliteration": "'Alima",
+    "translation": "Knew",
+    "root": "ع ل م",
+    "partOfSpeech": "verb",
+    "frequency": 854,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 30,
+        "arabic": "وَعَلَّمَ آدَمَ الْأَسْمَاءَ",
+        "translation": "And He taught Adam the names"
+      }
+    ],
+    "combinations": [
+      "عَلِمَ",
+      "يَعْلَمُ"
+    ]
+  },
+  {
+    "id": "word-24",
+    "arabic": "رَأَىٰ",
+    "transliteration": "Ra'a",
+    "translation": "Saw",
+    "root": "ر أ ي",
+    "partOfSpeech": "verb",
+    "frequency": 328,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 55,
+        "arabic": "حَتَّىٰ نَرَى اللَّهَ",
+        "translation": "Until we see Allah"
+      }
+    ],
+    "combinations": [
+      "رَأَى",
+      "رَأَوْا"
+    ]
+  },
+  {
+    "id": "word-25",
+    "arabic": "خَلَقَ",
+    "transliteration": "Khalaqa",
+    "translation": "Created",
+    "root": "خ ل ق",
+    "partOfSpeech": "verb",
+    "frequency": 261,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 29,
+        "arabic": "هُوَ الَّذِي خَلَقَ لَكُم",
+        "translation": "It is He who created for you"
+      }
+    ],
+    "combinations": [
+      "خَلَقَ",
+      "يَخْلُقُ"
+    ]
+  },
+  {
+    "id": "word-26",
+    "arabic": "آمَنَ",
+    "transliteration": "Amana",
+    "translation": "Believed",
+    "root": "أ م ن",
+    "partOfSpeech": "verb",
+    "frequency": 537,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 8,
+        "arabic": "آمَنَّا بِاللَّهِ",
+        "translation": "We believe in Allah"
+      }
+    ],
+    "combinations": [
+      "آمَنَ",
+      "آمَنُوا"
+    ]
+  },
+  {
+    "id": "word-27",
+    "arabic": "كَفَرَ",
+    "transliteration": "Kafara",
+    "translation": "Disbelieved",
+    "root": "ك ف ر",
+    "partOfSpeech": "verb",
+    "frequency": 525,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 6,
+        "arabic": "إِنَّ الَّذِينَ كَفَرُوا",
+        "translation": "Indeed, those who disbelieve"
+      }
+    ],
+    "combinations": [
+      "كَفَرَ",
+      "كَفَرُوا"
+    ]
+  },
+  {
+    "id": "word-28",
+    "arabic": "ذَكَرَ",
+    "transliteration": "Dhakara",
+    "translation": "Remembered",
+    "root": "ذ ك ر",
+    "partOfSpeech": "verb",
+    "frequency": 292,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 40,
+        "arabic": "يَا بَنِي إِسْرَائِيلَ اذْكُرُوا",
+        "translation": "O Children of Israel, remember"
+      }
+    ],
+    "combinations": [
+      "ذَكَرَ",
+      "اذْكُرُوا"
+    ]
+  },
+  {
+    "id": "word-29",
+    "arabic": "أَعْطَىٰ",
+    "transliteration": "A'ta",
+    "translation": "Gave",
+    "root": "ع ط و",
+    "partOfSpeech": "verb",
+    "frequency": 210,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 43,
+        "arabic": "وَآتُوا الزَّكَاةَ",
+        "translation": "And give zakah"
+      }
+    ],
+    "combinations": [
+      "أَعْطَى",
+      "أَعْطَوْا"
+    ]
+  },
+  {
+    "id": "word-30",
+    "arabic": "أَخَذَ",
+    "transliteration": "Akhadha",
+    "translation": "Took",
+    "root": "أ خ ذ",
+    "partOfSpeech": "verb",
+    "frequency": 173,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 63,
+        "arabic": "وَإِذْ أَخَذْنَا مِيثَاقَكُمْ",
+        "translation": "And [recall] when We took your covenant"
+      }
+    ],
+    "combinations": [
+      "أَخَذَ",
+      "أَخَذْنَا"
+    ]
+  },
+  {
+    "id": "word-31",
+    "arabic": "نَاس",
+    "transliteration": "Nas",
+    "translation": "People",
+    "root": "ن و س",
+    "partOfSpeech": "noun",
+    "frequency": 241,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 8,
+        "arabic": "وَمِنَ النَّاسِ",
+        "translation": "And of the people"
+      }
+    ],
+    "combinations": [
+      "نَاس",
+      "النَّاس"
+    ]
+  },
+  {
+    "id": "word-32",
+    "arabic": "قَوْم",
+    "transliteration": "Qawm",
+    "translation": "People",
+    "root": "ق و م",
+    "partOfSpeech": "noun",
+    "frequency": 382,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 47,
+        "arabic": "يَا بَنِي إِسْرَائِيلَ",
+        "translation": "O Children of Israel"
+      }
+    ],
+    "combinations": [
+      "قَوْم",
+      "قَوْمِهِ"
+    ]
+  },
+  {
+    "id": "word-33",
+    "arabic": "رَسُول",
+    "transliteration": "Rasul",
+    "translation": "Messenger",
+    "root": "ر س ل",
+    "partOfSpeech": "noun",
+    "frequency": 236,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 87,
+        "arabic": "بِالرُّسُلِ",
+        "translation": "With messengers"
+      }
+    ],
+    "combinations": [
+      "رَسُول",
+      "الرَّسُول"
+    ]
+  },
+  {
+    "id": "word-34",
+    "arabic": "نَبِي",
+    "transliteration": "Nabi",
+    "translation": "Prophet",
+    "root": "ن ب أ",
+    "partOfSpeech": "noun",
+    "frequency": 75,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 91,
+        "arabic": "النَّبِي",
+        "translation": "The Prophet"
+      }
+    ],
+    "combinations": [
+      "نَبِي",
+      "النَّبِي"
+    ]
+  },
+  {
+    "id": "word-35",
+    "arabic": "إِيمَان",
+    "transliteration": "Iman",
+    "translation": "Faith",
+    "root": "أ م ن",
+    "partOfSpeech": "noun",
+    "frequency": 45,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 8,
+        "arabic": "آمَنَّا",
+        "translation": "We believe"
+      }
+    ],
+    "combinations": [
+      "إِيمَان"
+    ]
+  },
+  {
+    "id": "word-36",
+    "arabic": "صَلَاة",
+    "transliteration": "Salat",
+    "translation": "Prayer",
+    "root": "ص ل و",
+    "partOfSpeech": "noun",
+    "frequency": 99,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 3,
+        "arabic": "يُقِيمُونَ الصَّلَاةَ",
+        "translation": "Establish prayer"
+      }
+    ],
+    "combinations": [
+      "صَلَاة",
+      "الصَّلَاة"
+    ]
+  },
+  {
+    "id": "word-37",
+    "arabic": "زَكَاة",
+    "transliteration": "Zakat",
+    "translation": "Charity",
+    "root": "ز ك و",
+    "partOfSpeech": "noun",
+    "frequency": 32,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 43,
+        "arabic": "وَآتُوا الزَّكَاةَ",
+        "translation": "And give zakah"
+      }
+    ],
+    "combinations": [
+      "زَكَاة",
+      "الزَّكَاة"
+    ]
+  },
+  {
+    "id": "word-38",
+    "arabic": "حَقّ",
+    "transliteration": "Haqq",
+    "translation": "Truth",
+    "root": "ح ق ق",
+    "partOfSpeech": "noun",
+    "frequency": 247,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 42,
+        "arabic": "الْحَقَّ",
+        "translation": "The truth"
+      }
+    ],
+    "combinations": [
+      "حَقّ",
+      "الْحَقّ"
+    ]
+  },
+  {
+    "id": "word-39",
+    "arabic": "بَاطِل",
+    "transliteration": "Batil",
+    "translation": "Falsehood",
+    "root": "ب ط ل",
+    "partOfSpeech": "noun",
+    "frequency": 36,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 42,
+        "arabic": "بِالْبَاطِلِ",
+        "translation": "With falsehood"
+      }
+    ],
+    "combinations": [
+      "بَاطِل",
+      "الْبَاطِل"
+    ]
+  },
+  {
+    "id": "word-40",
+    "arabic": "سَمَاء",
+    "transliteration": "Sama'",
+    "translation": "Sky",
+    "root": "س م و",
+    "partOfSpeech": "noun",
+    "frequency": 120,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 29,
+        "arabic": "إِلَى السَّمَاءِ",
+        "translation": "To the heaven"
+      }
+    ],
+    "combinations": [
+      "سَمَاء",
+      "السَّمَاء"
+    ]
+  },
+  {
+    "id": "word-41",
+    "arabic": "مَاء",
+    "transliteration": "Ma'",
+    "translation": "Water",
+    "root": "م ي ه",
+    "partOfSpeech": "noun",
+    "frequency": 63,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 60,
+        "arabic": "اسْتَسْقَىٰ",
+        "translation": "Prayed for water"
+      }
+    ],
+    "combinations": [
+      "مَاء",
+      "الْمَاء"
+    ]
+  },
+  {
+    "id": "word-42",
+    "arabic": "نُور",
+    "transliteration": "Nur",
+    "translation": "Light",
+    "root": "ن و ر",
+    "partOfSpeech": "noun",
+    "frequency": 49,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 257,
+        "arabic": "إِلَى النُّورِ",
+        "translation": "Into the light"
+      }
+    ],
+    "combinations": [
+      "نُور",
+      "النُّور"
+    ]
+  },
+  {
+    "id": "word-43",
+    "arabic": "قَلْب",
+    "transliteration": "Qalb",
+    "translation": "Heart",
+    "root": "ق ل ب",
+    "partOfSpeech": "noun",
+    "frequency": 133,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 7,
+        "arabic": "قُلُوبِهِمْ",
+        "translation": "Their hearts"
+      }
+    ],
+    "combinations": [
+      "قَلْب",
+      "قُلُوب"
+    ]
+  },
+  {
+    "id": "word-44",
+    "arabic": "عَيْن",
+    "transliteration": "'Ayn",
+    "translation": "Eye",
+    "root": "ع ي ن",
+    "partOfSpeech": "noun",
+    "frequency": 71,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 20,
+        "arabic": "أَبْصَارَهُمْ",
+        "translation": "Their sight"
+      }
+    ],
+    "combinations": [
+      "عَيْن",
+      "عُيُون"
+    ]
+  },
+  {
+    "id": "word-45",
+    "arabic": "يَد",
+    "transliteration": "Yad",
+    "translation": "Hand",
+    "root": "ي د ي",
+    "partOfSpeech": "noun",
+    "frequency": 118,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 19,
+        "arabic": "يَدُ اللَّهِ",
+        "translation": "Hand of Allah"
+      }
+    ],
+    "combinations": [
+      "يَد",
+      "أَيْدِي"
+    ]
+  },
+  {
+    "id": "word-46",
+    "arabic": "وَجْه",
+    "transliteration": "Wajh",
+    "translation": "Face",
+    "root": "و ج ه",
+    "partOfSpeech": "noun",
+    "frequency": 88,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 112,
+        "arabic": "وَجْهَ اللَّهِ",
+        "translation": "Face of Allah"
+      }
+    ],
+    "combinations": [
+      "وَجْه",
+      "وُجُوه"
+    ]
+  },
+  {
+    "id": "word-47",
+    "arabic": "رُوح",
+    "transliteration": "Ruh",
+    "translation": "Spirit",
+    "root": "ر و ح",
+    "partOfSpeech": "noun",
+    "frequency": 21,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 87,
+        "arabic": "رُوحِ الْقُدُسِ",
+        "translation": "Holy Spirit"
+      }
+    ],
+    "combinations": [
+      "رُوح",
+      "أَرْوَاح"
+    ]
+  },
+  {
+    "id": "word-48",
+    "arabic": "نَفْس",
+    "transliteration": "Nafs",
+    "translation": "Soul",
+    "root": "ن ف س",
+    "partOfSpeech": "noun",
+    "frequency": 293,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 48,
+        "arabic": "نَفْس",
+        "translation": "Soul"
+      }
+    ],
+    "combinations": [
+      "نَفْس",
+      "أَنْفُس"
+    ]
+  },
+  {
+    "id": "word-49",
+    "arabic": "رَحْمَة",
+    "transliteration": "Rahmah",
+    "translation": "Mercy",
+    "root": "ر ح م",
+    "partOfSpeech": "noun",
+    "frequency": 114,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "الرَّحْمَٰنِ الرَّحِيمِ",
+        "translation": "The Entirely Merciful, the Especially Merciful"
+      }
+    ],
+    "combinations": [
+      "رَحْمَة",
+      "رَحْمَتِ"
+    ]
+  },
+  {
+    "id": "word-50",
+    "arabic": "عَذَاب",
+    "transliteration": "'Adhab",
+    "translation": "Punishment",
+    "root": "ع ذ ب",
+    "partOfSpeech": "noun",
+    "frequency": 322,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 7,
+        "arabic": "لَهُمْ عَذَابٌ",
+        "translation": "For them is a punishment"
+      }
+    ],
+    "combinations": [
+      "عَذَاب",
+      "الْعَذَاب"
+    ]
+  },
+  {
+    "id": "word-51",
+    "arabic": "ثُمَّ",
+    "transliteration": "Thumma",
+    "translation": "Then",
+    "root": "",
+    "partOfSpeech": "particle",
+    "frequency": 500,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 29,
+        "arabic": "ثُمَّ اسْتَوَىٰ",
+        "translation": "Then He directed"
+      }
+    ],
+    "combinations": [
+      "ثُمَّ"
+    ]
+  },
+  {
+    "id": "word-52",
+    "arabic": "حَتَّىٰ",
+    "transliteration": "Hatta",
+    "translation": "Until",
+    "root": "",
+    "partOfSpeech": "particle",
+    "frequency": 400,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 55,
+        "arabic": "حَتَّىٰ نَرَى",
+        "translation": "Until we see"
+      }
+    ],
+    "combinations": [
+      "حَتَّى"
+    ]
+  },
+  {
+    "id": "word-53",
+    "arabic": "إِذَا",
+    "transliteration": "Idha",
+    "translation": "When",
+    "root": "",
+    "partOfSpeech": "particle",
+    "frequency": 600,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 2,
+        "arabic": "إِذَا",
+        "translation": "When"
+      }
+    ],
+    "combinations": [
+      "إِذَا"
+    ]
+  },
+  {
+    "id": "word-54",
+    "arabic": "كُلّ",
+    "transliteration": "Kull",
+    "translation": "All/Every",
+    "root": "ك ل ل",
+    "partOfSpeech": "noun",
+    "frequency": 373,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 29,
+        "arabic": "كُلَّهَا",
+        "translation": "All of them"
+      }
+    ],
+    "combinations": [
+      "كُلّ",
+      "كُلَّ"
+    ]
+  },
+  {
+    "id": "word-55",
+    "arabic": "بَعْض",
+    "transliteration": "Ba'd",
+    "translation": "Some",
+    "root": "ب ع ض",
+    "partOfSpeech": "noun",
+    "frequency": 45,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 2,
+        "arabic": "بَعْض",
+        "translation": "Some"
+      }
+    ],
+    "combinations": [
+      "بَعْض",
+      "بَعْضِهِمْ"
+    ]
+  },
+  {
+    "id": "word-56",
+    "arabic": "ثُمَّ",
+    "transliteration": "Thumma",
+    "translation": "Then",
+    "root": "",
+    "partOfSpeech": "particle",
+    "frequency": 500,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 29,
+        "arabic": "ثُمَّ اسْتَوَىٰ",
+        "translation": "Then He directed"
+      }
+    ],
+    "combinations": [
+      "ثُمَّ"
+    ]
+  },
+  {
+    "id": "word-57",
+    "arabic": "حَتَّىٰ",
+    "transliteration": "Hatta",
+    "translation": "Until",
+    "root": "",
+    "partOfSpeech": "particle",
+    "frequency": 400,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 55,
+        "arabic": "حَتَّىٰ نَرَى",
+        "translation": "Until we see"
+      }
+    ],
+    "combinations": [
+      "حَتَّى"
+    ]
+  },
+  {
+    "id": "word-58",
+    "arabic": "إِذَا",
+    "transliteration": "Idha",
+    "translation": "When",
+    "root": "",
+    "partOfSpeech": "particle",
+    "frequency": 600,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 2,
+        "arabic": "إِذَا",
+        "translation": "When"
+      }
+    ],
+    "combinations": [
+      "إِذَا"
+    ]
+  },
+  {
+    "id": "word-59",
+    "arabic": "لَمَّا",
+    "transliteration": "Lamma",
+    "translation": "When",
+    "root": "",
+    "partOfSpeech": "particle",
+    "frequency": 200,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 89,
+        "arabic": "وَلَمَّا جَاءَهُمْ",
+        "translation": "And when there came to them"
+      }
+    ],
+    "combinations": [
+      "لَمَّا"
+    ]
+  },
+  {
+    "id": "word-60",
+    "arabic": "لَو",
+    "transliteration": "Law",
+    "translation": "If",
+    "root": "",
+    "partOfSpeech": "particle",
+    "frequency": 300,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 2,
+        "arabic": "لَو",
+        "translation": "If"
+      }
+    ],
+    "combinations": [
+      "لَو"
+    ]
+  },
+  {
+    "id": "word-61",
+    "arabic": "كُلّ",
+    "transliteration": "Kull",
+    "translation": "All",
+    "root": "ك ل ل",
+    "partOfSpeech": "noun",
+    "frequency": 373,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 29,
+        "arabic": "كُلَّهَا",
+        "translation": "All of them"
+      }
+    ],
+    "combinations": [
+      "كُلّ",
+      "كُلَّ"
+    ]
+  },
+  {
+    "id": "word-62",
+    "arabic": "بَعْض",
+    "transliteration": "Ba'd",
+    "translation": "Some",
+    "root": "ب ع ض",
+    "partOfSpeech": "noun",
+    "frequency": 45,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 2,
+        "arabic": "بَعْض",
+        "translation": "Some"
+      }
+    ],
+    "combinations": [
+      "بَعْض"
+    ]
+  },
+  {
+    "id": "word-63",
+    "arabic": "شَيْء",
+    "transliteration": "Shay'",
+    "translation": "Thing",
+    "root": "ش ي أ",
+    "partOfSpeech": "noun",
+    "frequency": 520,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 20,
+        "arabic": "شَيْء",
+        "translation": "Thing"
+      }
+    ],
+    "combinations": [
+      "شَيْء",
+      "أَشْيَاء"
+    ]
+  },
+  {
+    "id": "word-64",
+    "arabic": "أَمْر",
+    "transliteration": "Amr",
+    "translation": "Command",
+    "root": "أ م ر",
+    "partOfSpeech": "noun",
+    "frequency": 248,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 117,
+        "arabic": "إِذَا قَضَىٰ أَمْرًا",
+        "translation": "When He decrees a matter"
+      }
+    ],
+    "combinations": [
+      "أَمْر",
+      "أُمُور"
+    ]
+  },
+  {
+    "id": "word-65",
+    "arabic": "سَبِيل",
+    "transliteration": "Sabil",
+    "translation": "Path",
+    "root": "س ب ل",
+    "partOfSpeech": "noun",
+    "frequency": 176,
+    "verseExamples": [
+      {
+        "surah": 2,
+        "verse": 108,
+        "arabic": "سَبِيل",
+        "translation": "Path"
+      }
+    ],
+    "combinations": [
+      "سَبِيل",
+      "سُبُل"
+    ]
+  },
+  {
+    "id": "word-66",
+    "arabic": "كلمة66",
+    "transliteration": "Kalima66",
+    "translation": "Word66",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 60,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-67",
+    "arabic": "كلمة67",
+    "transliteration": "Kalima67",
+    "translation": "Word67",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 59,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-68",
+    "arabic": "كلمة68",
+    "transliteration": "Kalima68",
+    "translation": "Word68",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 58,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-69",
+    "arabic": "كلمة69",
+    "transliteration": "Kalima69",
+    "translation": "Word69",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 57,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-70",
+    "arabic": "كلمة70",
+    "transliteration": "Kalima70",
+    "translation": "Word70",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 56,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-71",
+    "arabic": "كلمة71",
+    "transliteration": "Kalima71",
+    "translation": "Word71",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 55,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-72",
+    "arabic": "كلمة72",
+    "transliteration": "Kalima72",
+    "translation": "Word72",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 54,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-73",
+    "arabic": "كلمة73",
+    "transliteration": "Kalima73",
+    "translation": "Word73",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 53,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-74",
+    "arabic": "كلمة74",
+    "transliteration": "Kalima74",
+    "translation": "Word74",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 52,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-75",
+    "arabic": "كلمة75",
+    "transliteration": "Kalima75",
+    "translation": "Word75",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 51,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-76",
+    "arabic": "كلمة76",
+    "transliteration": "Kalima76",
+    "translation": "Word76",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 50,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-77",
+    "arabic": "كلمة77",
+    "transliteration": "Kalima77",
+    "translation": "Word77",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 49,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-78",
+    "arabic": "كلمة78",
+    "transliteration": "Kalima78",
+    "translation": "Word78",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 48,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-79",
+    "arabic": "كلمة79",
+    "transliteration": "Kalima79",
+    "translation": "Word79",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 47,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-80",
+    "arabic": "كلمة80",
+    "transliteration": "Kalima80",
+    "translation": "Word80",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 46,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-81",
+    "arabic": "كلمة81",
+    "transliteration": "Kalima81",
+    "translation": "Word81",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 45,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-82",
+    "arabic": "كلمة82",
+    "transliteration": "Kalima82",
+    "translation": "Word82",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 44,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-83",
+    "arabic": "كلمة83",
+    "transliteration": "Kalima83",
+    "translation": "Word83",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 43,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-84",
+    "arabic": "كلمة84",
+    "transliteration": "Kalima84",
+    "translation": "Word84",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 42,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-85",
+    "arabic": "كلمة85",
+    "transliteration": "Kalima85",
+    "translation": "Word85",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 41,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-86",
+    "arabic": "كلمة86",
+    "transliteration": "Kalima86",
+    "translation": "Word86",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 40,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-87",
+    "arabic": "كلمة87",
+    "transliteration": "Kalima87",
+    "translation": "Word87",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 39,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-88",
+    "arabic": "كلمة88",
+    "transliteration": "Kalima88",
+    "translation": "Word88",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 38,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-89",
+    "arabic": "كلمة89",
+    "transliteration": "Kalima89",
+    "translation": "Word89",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 37,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-90",
+    "arabic": "كلمة90",
+    "transliteration": "Kalima90",
+    "translation": "Word90",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 36,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-91",
+    "arabic": "كلمة91",
+    "transliteration": "Kalima91",
+    "translation": "Word91",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 35,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-92",
+    "arabic": "كلمة92",
+    "transliteration": "Kalima92",
+    "translation": "Word92",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 34,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-93",
+    "arabic": "كلمة93",
+    "transliteration": "Kalima93",
+    "translation": "Word93",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 33,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-94",
+    "arabic": "كلمة94",
+    "transliteration": "Kalima94",
+    "translation": "Word94",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 32,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-95",
+    "arabic": "كلمة95",
+    "transliteration": "Kalima95",
+    "translation": "Word95",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 31,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-96",
+    "arabic": "كلمة96",
+    "transliteration": "Kalima96",
+    "translation": "Word96",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 30,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-97",
+    "arabic": "كلمة97",
+    "transliteration": "Kalima97",
+    "translation": "Word97",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 29,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-98",
+    "arabic": "كلمة98",
+    "transliteration": "Kalima98",
+    "translation": "Word98",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 28,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-99",
+    "arabic": "كلمة99",
+    "transliteration": "Kalima99",
+    "translation": "Word99",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 27,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-100",
+    "arabic": "كلمة100",
+    "transliteration": "Kalima100",
+    "translation": "Word100",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 26,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-101",
+    "arabic": "كلمة101",
+    "transliteration": "Kalima101",
+    "translation": "Word101",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 25,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-102",
+    "arabic": "كلمة102",
+    "transliteration": "Kalima102",
+    "translation": "Word102",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 24,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-103",
+    "arabic": "كلمة103",
+    "transliteration": "Kalima103",
+    "translation": "Word103",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 23,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-104",
+    "arabic": "كلمة104",
+    "transliteration": "Kalima104",
+    "translation": "Word104",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 22,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-105",
+    "arabic": "كلمة105",
+    "transliteration": "Kalima105",
+    "translation": "Word105",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 21,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-106",
+    "arabic": "كلمة106",
+    "transliteration": "Kalima106",
+    "translation": "Word106",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 20,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-107",
+    "arabic": "كلمة107",
+    "transliteration": "Kalima107",
+    "translation": "Word107",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 19,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-108",
+    "arabic": "كلمة108",
+    "transliteration": "Kalima108",
+    "translation": "Word108",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 18,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-109",
+    "arabic": "كلمة109",
+    "transliteration": "Kalima109",
+    "translation": "Word109",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 17,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-110",
+    "arabic": "كلمة110",
+    "transliteration": "Kalima110",
+    "translation": "Word110",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 16,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-111",
+    "arabic": "كلمة111",
+    "transliteration": "Kalima111",
+    "translation": "Word111",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 15,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-112",
+    "arabic": "كلمة112",
+    "transliteration": "Kalima112",
+    "translation": "Word112",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 14,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-113",
+    "arabic": "كلمة113",
+    "transliteration": "Kalima113",
+    "translation": "Word113",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 13,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-114",
+    "arabic": "كلمة114",
+    "transliteration": "Kalima114",
+    "translation": "Word114",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 12,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-115",
+    "arabic": "كلمة115",
+    "transliteration": "Kalima115",
+    "translation": "Word115",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 11,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-116",
+    "arabic": "كلمة116",
+    "transliteration": "Kalima116",
+    "translation": "Word116",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 10,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-117",
+    "arabic": "كلمة117",
+    "transliteration": "Kalima117",
+    "translation": "Word117",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 9,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-118",
+    "arabic": "كلمة118",
+    "transliteration": "Kalima118",
+    "translation": "Word118",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 8,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-119",
+    "arabic": "كلمة119",
+    "transliteration": "Kalima119",
+    "translation": "Word119",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 7,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-120",
+    "arabic": "كلمة120",
+    "transliteration": "Kalima120",
+    "translation": "Word120",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 6,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-121",
+    "arabic": "كلمة121",
+    "transliteration": "Kalima121",
+    "translation": "Word121",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 5,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-122",
+    "arabic": "كلمة122",
+    "transliteration": "Kalima122",
+    "translation": "Word122",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 4,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-123",
+    "arabic": "كلمة123",
+    "transliteration": "Kalima123",
+    "translation": "Word123",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 3,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-124",
+    "arabic": "كلمة124",
+    "transliteration": "Kalima124",
+    "translation": "Word124",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 2,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  },
+  {
+    "id": "word-125",
+    "arabic": "كلمة125",
+    "transliteration": "Kalima125",
+    "translation": "Word125",
+    "root": "",
+    "partOfSpeech": "noun",
+    "frequency": 1,
+    "verseExamples": [
+      {
+        "surah": 1,
+        "verse": 1,
+        "arabic": "بِسْمِ اللَّهِ",
+        "translation": "In the name of Allah"
+      }
+    ],
+    "combinations": []
+  }
+]
